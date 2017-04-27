@@ -12,6 +12,15 @@
 		140041821EB0F16F009E5A3E /* QuanLyThuChi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 140041801EB0F16F009E5A3E /* QuanLyThuChi.xcdatamodeld */; };
 		140041841EB0F16F009E5A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140041831EB0F16F009E5A3E /* Assets.xcassets */; };
 		140041871EB0F16F009E5A3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140041851EB0F16F009E5A3E /* LaunchScreen.storyboard */; };
+		14DDE3361EB1BECC0098BF70 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE32D1EB1BECC0098BF70 /* AppExtension.swift */; };
+		14DDE3371EB1BECC0098BF70 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE32E1EB1BECC0098BF70 /* Database.swift */; };
+		14DDE3381EB1BECC0098BF70 /* GenericTypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE32F1EB1BECC0098BF70 /* GenericTypeHelper.swift */; };
+		14DDE3391EB1BECC0098BF70 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE3301EB1BECC0098BF70 /* Language.swift */; };
+		14DDE33A1EB1BECC0098BF70 /* RandomSwift3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE3311EB1BECC0098BF70 /* RandomSwift3.swift */; };
+		14DDE33B1EB1BECC0098BF70 /* SQLiteMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE3321EB1BECC0098BF70 /* SQLiteMaster.swift */; };
+		14DDE33C1EB1BECC0098BF70 /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE3331EB1BECC0098BF70 /* TempData.swift */; };
+		14DDE33D1EB1BECC0098BF70 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE3341EB1BECC0098BF70 /* UIImageExt.swift */; };
+		14DDE33E1EB1BECC0098BF70 /* UIPassingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDE3351EB1BECC0098BF70 /* UIPassingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		140041831EB0F16F009E5A3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		140041861EB0F16F009E5A3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		140041881EB0F16F009E5A3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14DDE32D1EB1BECC0098BF70 /* AppExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
+		14DDE32E1EB1BECC0098BF70 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		14DDE32F1EB1BECC0098BF70 /* GenericTypeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTypeHelper.swift; sourceTree = "<group>"; };
+		14DDE3301EB1BECC0098BF70 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		14DDE3311EB1BECC0098BF70 /* RandomSwift3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSwift3.swift; sourceTree = "<group>"; };
+		14DDE3321EB1BECC0098BF70 /* SQLiteMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteMaster.swift; sourceTree = "<group>"; };
+		14DDE3331EB1BECC0098BF70 /* TempData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempData.swift; sourceTree = "<group>"; };
+		14DDE3341EB1BECC0098BF70 /* UIImageExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
+		14DDE3351EB1BECC0098BF70 /* UIPassingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPassingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +118,15 @@
 		140041921EB0F26B009E5A3E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				14DDE32D1EB1BECC0098BF70 /* AppExtension.swift */,
+				14DDE32E1EB1BECC0098BF70 /* Database.swift */,
+				14DDE32F1EB1BECC0098BF70 /* GenericTypeHelper.swift */,
+				14DDE3301EB1BECC0098BF70 /* Language.swift */,
+				14DDE3311EB1BECC0098BF70 /* RandomSwift3.swift */,
+				14DDE3321EB1BECC0098BF70 /* SQLiteMaster.swift */,
+				14DDE3331EB1BECC0098BF70 /* TempData.swift */,
+				14DDE3341EB1BECC0098BF70 /* UIImageExt.swift */,
+				14DDE3351EB1BECC0098BF70 /* UIPassingData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -176,7 +203,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DDE33C1EB1BECC0098BF70 /* TempData.swift in Sources */,
+				14DDE3361EB1BECC0098BF70 /* AppExtension.swift in Sources */,
+				14DDE33E1EB1BECC0098BF70 /* UIPassingData.swift in Sources */,
+				14DDE33A1EB1BECC0098BF70 /* RandomSwift3.swift in Sources */,
+				14DDE3381EB1BECC0098BF70 /* GenericTypeHelper.swift in Sources */,
+				14DDE33B1EB1BECC0098BF70 /* SQLiteMaster.swift in Sources */,
+				14DDE33D1EB1BECC0098BF70 /* UIImageExt.swift in Sources */,
 				1400417A1EB0F16F009E5A3E /* AppDelegate.swift in Sources */,
+				14DDE3391EB1BECC0098BF70 /* Language.swift in Sources */,
+				14DDE3371EB1BECC0098BF70 /* Database.swift in Sources */,
 				140041821EB0F16F009E5A3E /* QuanLyThuChi.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +381,7 @@
 				1400418D1EB0F16F009E5A3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
