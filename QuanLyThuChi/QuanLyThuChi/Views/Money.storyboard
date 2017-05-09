@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,86 +17,104 @@
                         <viewControllerLayoutGuide type="top" id="jUd-u4-BC3"/>
                         <viewControllerLayoutGuide type="bottom" id="UNA-Dv-CHU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e2M-7n-Jeg">
+                    <view key="view" contentMode="scaleToFill" id="1kF-d9-JhY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VY-wB-c69">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="1gc-zC-GvZ">
-                                        <nil key="title"/>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="Yfm-ct-pOC">
-                                            <rect key="frame" x="35" y="7" width="305" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Chi"/>
-                                                <segment title="Thu"/>
-                                                <segment title="Chuyển khoản"/>
-                                            </segments>
-                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="segmentedChanged:" destination="ghA-NL-SrO" eventType="valueChanged" id="QJA-NI-VU8"/>
-                                            </connections>
-                                        </segmentedControl>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRr-tg-iv5">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <connections>
-                                    <segue destination="YmY-hQ-jks" kind="embed" id="2yh-Tj-sAZ"/>
-                                </connections>
-                            </containerView>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1k-M4-YVd">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <connections>
-                                    <segue destination="fIg-yr-Ncc" kind="embed" id="9qb-Qn-fq7"/>
-                                </connections>
-                            </containerView>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3je-oz-L4K">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <connections>
-                                    <segue destination="g7E-5t-pMe" kind="embed" id="X8L-Vr-uVN"/>
-                                </connections>
-                            </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Theme" highlightedImage="Theme" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IjG-WZ-AfN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkp-Q1-w1E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z9e-vb-b6H">
+                                        <rect key="frame" x="35" y="8" width="305" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <segments>
+                                            <segment title="Chi"/>
+                                            <segment title="Thu"/>
+                                            <segment title="Chuyển khoản"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="segmentedChanged:" destination="ghA-NL-SrO" eventType="valueChanged" id="AjH-kj-mDr"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-6b-hyr">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="YmY-hQ-jks" kind="embed" id="cAn-2e-X28"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlb-mw-zSc">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="fIg-yr-Ncc" kind="embed" id="S86-7y-4TI"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z8-Zl-vRK">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="g7E-5t-pMe" kind="embed" id="TBJ-d2-Wxq"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xlb-mw-zSc" secondAttribute="trailing" id="3Dl-zm-y2J"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Z8-Zl-vRK" secondAttribute="bottom" id="3Yn-0P-oba"/>
+                                    <constraint firstAttribute="trailing" secondItem="wvV-6b-hyr" secondAttribute="trailing" id="6QW-UQ-3qu"/>
+                                    <constraint firstAttribute="bottom" secondItem="wvV-6b-hyr" secondAttribute="bottom" id="6px-3B-II4"/>
+                                    <constraint firstItem="3Z8-Zl-vRK" firstAttribute="top" secondItem="Z9e-vb-b6H" secondAttribute="bottom" constant="8" id="BAT-v3-OdU"/>
+                                    <constraint firstItem="Z9e-vb-b6H" firstAttribute="centerX" secondItem="lkp-Q1-w1E" secondAttribute="centerX" id="Cd3-i3-nH0"/>
+                                    <constraint firstItem="Z9e-vb-b6H" firstAttribute="top" secondItem="lkp-Q1-w1E" secondAttribute="top" constant="8" id="RiU-Vf-6Au"/>
+                                    <constraint firstItem="xlb-mw-zSc" firstAttribute="top" secondItem="Z9e-vb-b6H" secondAttribute="bottom" constant="8" id="Vr5-T8-bPn"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Z8-Zl-vRK" secondAttribute="trailing" id="Xhh-LM-1Em"/>
+                                    <constraint firstAttribute="bottom" secondItem="xlb-mw-zSc" secondAttribute="bottom" id="cfD-7B-u2Q"/>
+                                    <constraint firstItem="wvV-6b-hyr" firstAttribute="top" secondItem="Z9e-vb-b6H" secondAttribute="bottom" constant="8" id="dN5-P9-DYX"/>
+                                    <constraint firstItem="wvV-6b-hyr" firstAttribute="leading" secondItem="lkp-Q1-w1E" secondAttribute="leading" id="fi1-kw-iSJ"/>
+                                    <constraint firstItem="3Z8-Zl-vRK" firstAttribute="leading" secondItem="lkp-Q1-w1E" secondAttribute="leading" id="vpb-wo-0vS"/>
+                                    <constraint firstItem="xlb-mw-zSc" firstAttribute="leading" secondItem="lkp-Q1-w1E" secondAttribute="leading" id="w98-A5-TjX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UNA-Dv-CHU" firstAttribute="top" secondItem="3je-oz-L4K" secondAttribute="bottom" id="1Nh-JC-yGn"/>
-                            <constraint firstItem="3je-oz-L4K" firstAttribute="top" secondItem="7VY-wB-c69" secondAttribute="bottom" id="8C5-iS-yhP"/>
-                            <constraint firstAttribute="trailing" secondItem="3je-oz-L4K" secondAttribute="trailing" id="9bJ-B1-w9T"/>
-                            <constraint firstItem="UNA-Dv-CHU" firstAttribute="top" secondItem="pRr-tg-iv5" secondAttribute="bottom" id="EkX-Zl-mAY"/>
-                            <constraint firstItem="pRr-tg-iv5" firstAttribute="leading" secondItem="e2M-7n-Jeg" secondAttribute="leading" id="FaK-9f-X7Z"/>
-                            <constraint firstItem="W1k-M4-YVd" firstAttribute="leading" secondItem="e2M-7n-Jeg" secondAttribute="leading" id="Hnf-gg-snX"/>
-                            <constraint firstItem="pRr-tg-iv5" firstAttribute="top" secondItem="7VY-wB-c69" secondAttribute="bottom" id="SM2-4I-bEb"/>
-                            <constraint firstItem="pRr-tg-iv5" firstAttribute="leading" secondItem="7VY-wB-c69" secondAttribute="leading" id="WXq-Kb-ZhL"/>
-                            <constraint firstItem="UNA-Dv-CHU" firstAttribute="top" secondItem="W1k-M4-YVd" secondAttribute="bottom" id="XkY-N6-bvd"/>
-                            <constraint firstItem="3je-oz-L4K" firstAttribute="leading" secondItem="e2M-7n-Jeg" secondAttribute="leading" id="ae1-zt-7QI"/>
-                            <constraint firstAttribute="trailing" secondItem="pRr-tg-iv5" secondAttribute="trailing" id="jr5-XM-q8M"/>
-                            <constraint firstItem="pRr-tg-iv5" firstAttribute="trailing" secondItem="7VY-wB-c69" secondAttribute="trailing" id="llR-g5-Xrj"/>
-                            <constraint firstAttribute="trailing" secondItem="W1k-M4-YVd" secondAttribute="trailing" id="owG-rR-oZ1"/>
-                            <constraint firstItem="W1k-M4-YVd" firstAttribute="top" secondItem="7VY-wB-c69" secondAttribute="bottom" id="yB5-v4-1EO"/>
-                            <constraint firstItem="pRr-tg-iv5" firstAttribute="top" secondItem="e2M-7n-Jeg" secondAttribute="top" constant="44" id="z7R-gS-nym"/>
+                            <constraint firstItem="UNA-Dv-CHU" firstAttribute="top" secondItem="lkp-Q1-w1E" secondAttribute="bottom" id="4Fh-fr-i0F"/>
+                            <constraint firstItem="UNA-Dv-CHU" firstAttribute="top" secondItem="IjG-WZ-AfN" secondAttribute="bottom" id="6SW-3z-x3t"/>
+                            <constraint firstAttribute="trailing" secondItem="lkp-Q1-w1E" secondAttribute="trailing" id="DZb-YP-cUS"/>
+                            <constraint firstItem="lkp-Q1-w1E" firstAttribute="leading" secondItem="1kF-d9-JhY" secondAttribute="leading" id="KHR-cz-t9g"/>
+                            <constraint firstItem="IjG-WZ-AfN" firstAttribute="leading" secondItem="1kF-d9-JhY" secondAttribute="leading" id="Yp6-2L-rUH"/>
+                            <constraint firstItem="lkp-Q1-w1E" firstAttribute="top" secondItem="1kF-d9-JhY" secondAttribute="top" id="opb-xE-49O"/>
+                            <constraint firstAttribute="trailing" secondItem="IjG-WZ-AfN" secondAttribute="trailing" id="qgr-3x-Tmx"/>
+                            <constraint firstItem="IjG-WZ-AfN" firstAttribute="top" secondItem="1kF-d9-JhY" secondAttribute="top" id="rBx-XE-Ndx"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
-                        <outlet property="container_Chi" destination="pRr-tg-iv5" id="jLF-WV-brz"/>
-                        <outlet property="container_ChuyenKhoan" destination="3je-oz-L4K" id="MVc-KY-eeo"/>
-                        <outlet property="container_Thu" destination="W1k-M4-YVd" id="qQk-Kn-4I0"/>
-                        <outlet property="navi" destination="7VY-wB-c69" id="KiJ-cz-JI9"/>
-                        <outlet property="segmented" destination="Yfm-ct-pOC" id="Qja-eb-v0M"/>
+                        <outlet property="container_Chi" destination="wvV-6b-hyr" id="NMJ-Lm-3am"/>
+                        <outlet property="container_ChuyenKhoan" destination="3Z8-Zl-vRK" id="JbI-ZK-8Rj"/>
+                        <outlet property="container_Thu" destination="xlb-mw-zSc" id="pHt-lm-mKE"/>
+                        <outlet property="segmented" destination="Z9e-vb-b6H" id="mCV-a0-edq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hf9-Cm-t7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="62"/>
+            <point key="canvasLocation" x="-66.400000000000006" y="61.619190404797607"/>
         </scene>
         <!--Expense View Controller-->
         <scene sceneID="Llb-xh-tVd">
             <objects>
                 <viewController id="YmY-hQ-jks" customClass="Expense_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HzI-oY-bZQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bse-4T-TlG"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pyy-C7-3S6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +124,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="COe-ul-tPz" secondAttribute="bottom" constant="10" id="BQe-R7-bFC"/>
                             <constraint firstItem="COe-ul-tPz" firstAttribute="leading" secondItem="Pyy-C7-3S6" secondAttribute="leading" constant="20" id="F1D-uI-0Lt"/>
@@ -139,7 +157,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Saz-Ip-ggl" firstAttribute="top" secondItem="lKj-Ru-Ci7" secondAttribute="bottom" constant="10" id="0zz-iK-9EA"/>
                             <constraint firstItem="lKj-Ru-Ci7" firstAttribute="leading" secondItem="Vl8-tX-IGy" secondAttribute="leading" constant="20" id="2Zz-Wl-jsZ"/>
@@ -172,7 +190,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oV2-YZ-Pnr" firstAttribute="top" secondItem="drr-ff-pvy" secondAttribute="bottom" constant="10" id="VnB-be-9yb"/>
                             <constraint firstAttribute="trailing" secondItem="drr-ff-pvy" secondAttribute="trailing" constant="20" id="YRC-sc-R1E"/>
@@ -189,4 +207,7 @@
             <point key="canvasLocation" x="594" y="841"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Theme" width="1920" height="1080"/>
+    </resources>
 </document>

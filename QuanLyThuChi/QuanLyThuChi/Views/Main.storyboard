@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mQ0-cO-4DX">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mQ0-cO-4DX">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="cZx-yj-S19">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mQ0-cO-4DX" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mQ0-cO-4DX" customClass="MainTabBarController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="KuF-Jy-ADl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -20,6 +20,8 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabBar" destination="KuF-Jy-ADl" id="3sg-Se-iUE"/>
+                        <outlet property="tabbar" destination="KuF-Jy-ADl" id="QiX-3a-m4m"/>
                         <segue destination="1Qp-Ry-Amg" kind="relationship" relationship="viewControllers" id="aBk-MZ-4tV"/>
                         <segue destination="swc-nG-qg1" kind="relationship" relationship="viewControllers" id="eot-Sb-qPp"/>
                         <segue destination="afi-7k-N8I" kind="relationship" relationship="viewControllers" id="mzg-fM-HgB"/>

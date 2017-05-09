@@ -10,6 +10,7 @@ import UIKit
 
 class Money_ViewController: UIViewController {
 
+
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var container_Chi: UIView!
     @IBOutlet weak var container_Thu: UIView!
@@ -18,6 +19,11 @@ class Money_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //UINavigationBar.appearance().isTranslucent = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         // Do any additional setup after loading the view.
     }
 
