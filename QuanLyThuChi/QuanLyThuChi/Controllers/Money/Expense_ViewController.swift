@@ -10,6 +10,12 @@ import UIKit
 
 class Expense_ViewController: UIViewController {
 
+    @IBOutlet weak var txt_diengiai: UITextField!
+    @IBOutlet weak var txt_ngay: UITextField!
+    @IBOutlet weak var txt_taikhoan: UITextField!
+    @IBOutlet weak var txt_mucchi: UITextField!
+    @IBOutlet weak var txt_sotien: UITextField!
+    @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var v: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,25 @@ class Expense_ViewController: UIViewController {
         v.layer.shadowRadius = 3.0
         v.layer.shadowOffset = CGSize(width: 2, height: 2)
         // Do any additional setup after loading the view.
+        
+        txt_sotien.inputAccessoryView = addDoneButton()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWillShow(_ notification: Notification){
+        let info = notification.userInfo
+        let keyboard = (info?[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        let contentinset = UIEdgeInsetsMake(0, 0, keyboard.height-44, 0)
+        scrollview.contentInset = contentinset
+        scrollview.scrollIndicatorInsets = contentinset
+    }
+    
+    func keyboardWillHide(_ notification: Notification){
+        let contentinset = UIEdgeInsetsMake(0, 0, 0, 0)
+        scrollview.contentInset = contentinset
+        scrollview.scrollIndicatorInsets = contentinset
     }
 
     override func didReceiveMemoryWarning() {

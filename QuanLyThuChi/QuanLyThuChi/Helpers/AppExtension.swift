@@ -25,7 +25,7 @@ extension UIViewController {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(title: "Done".localized(lang: AppLanguage.currentAppleLanguage()), style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
+        let doneBarButton = UIBarButtonItem(title: "Done"/*.localized(lang: AppLanguage.currentAppleLanguage())*/	, style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         return keyboardToolbar
     }
