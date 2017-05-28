@@ -8,7 +8,7 @@
 
 import UIKit
 
-class navi_money: UINavigationController {
+class navi_money: UINavigationController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,8 @@ class navi_money: UINavigationController {
     override func viewWillAppear(_ animated: Bool) {
         let storyboard = UIStoryboard.init(name: "Money", bundle: nil)
         let navi = storyboard.instantiateViewController(withIdentifier: "Money")
-        self.pushViewController(navi, animated: false)
+        //self.topViewController(navi,animated:false)
+        self.pushViewController(navi, animated: true)
         
     }
 

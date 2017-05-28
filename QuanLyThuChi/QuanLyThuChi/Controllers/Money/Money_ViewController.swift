@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Money_ViewController: UIViewController {
+class Money_ViewController: UIViewController,UITabBarControllerDelegate {
 
 
     @IBOutlet weak var segmented: UISegmentedControl!
@@ -16,6 +16,7 @@ class Money_ViewController: UIViewController {
     @IBOutlet weak var container_Thu: UIView!
     @IBOutlet weak var container_ChuyenKhoan: UIView!
     @IBOutlet weak var navi: UINavigationBar!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,6 +73,7 @@ class Money_ViewController: UIViewController {
         }
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 0.5, animations: {
@@ -79,8 +81,7 @@ class Money_ViewController: UIViewController {
         })
     }
     
-
-    /*
+       /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

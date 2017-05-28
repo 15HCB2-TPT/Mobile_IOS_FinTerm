@@ -10,6 +10,8 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
+    var previousview : UITabBarItem!
+    var count = 0
     
     @IBOutlet weak var tabbar: UITabBar!
     
@@ -35,7 +37,7 @@ class MainTabBarController: UITabBarController {
         let image = UIImage.imageWithColor(color: UIColor(red: 0.9, green: 0.9 , blue: 0.9, alpha: 0.5), size: tabBarItemSize).resizableImage(withCapInsets: UIEdgeInsets.zero)
         tabbar.selectionIndicatorImage = image
     }
-    
+
 
     /*
     // MARK: - Navigation
