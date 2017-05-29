@@ -115,7 +115,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="80" id="oPH-TO-gVX"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -167,7 +167,6 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="DU4-V2-xMa" secondAttribute="trailing" id="5Xc-s0-4Jr"/>
                                                     <constraint firstItem="DU4-V2-xMa" firstAttribute="top" secondItem="u3z-Gj-shy" secondAttribute="bottom" constant="16" id="DjF-6K-HH0"/>

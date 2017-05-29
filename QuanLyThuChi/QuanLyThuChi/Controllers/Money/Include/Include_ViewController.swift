@@ -25,6 +25,7 @@ class Include_ViewController: UIViewController {
         super.viewDidLoad()
       
         borderView(v: v)
+
         
         txt_sotien.inputAccessoryView = addDoneButton()
         createDatePicker()
@@ -82,7 +83,7 @@ class Include_ViewController: UIViewController {
     @IBAction func btndoneClick(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
 
 
     /*

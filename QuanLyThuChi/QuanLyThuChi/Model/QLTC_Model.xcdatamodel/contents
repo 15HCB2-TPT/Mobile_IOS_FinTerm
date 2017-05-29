@@ -34,6 +34,7 @@
         <element name="BagMoney_Type" positionX="-720" positionY="-346" width="128" height="58"/>
         <element name="Category" positionX="18" positionY="-315" width="128" height="73"/>
         <element name="Money" positionX="-263" positionY="9" width="128" height="133"/>
+
         <element name="Type" positionX="124" positionY="-85" width="128" height="58"/>
         <element name="Common" positionX="-81" positionY="-540" width="128" height="103"/>
     </elements>
