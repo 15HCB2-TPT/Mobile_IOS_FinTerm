@@ -1,20 +1,22 @@
 //
-//  Expense_ViewController.swift
+//  BagMoney_ViewController.swift
 //  QuanLyThuChi
 //
-//  Created by Shin-MacDesk on 5/9/17.
+//  Created by Shin-Mac on 5/29/17.
 //  Copyright © 2017 TPT.Group. All rights reserved.
 //
 
 import UIKit
 
-class Transfer_ViewController: UIViewController {
+class BagMoney_ViewController: UIViewController {
 
-    @IBOutlet weak var vfrom: UIView!
-    @IBOutlet weak var vto: UIView!
+    @IBOutlet weak var view_danhsachcuatoi: UIView!
+    @IBOutlet weak var view_themtuitien: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadUI()
+        borderView(v: view_danhsachcuatoi)
+        borderView(v: view_themtuitien)
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,12 +24,6 @@ class Transfer_ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    //load UI
-    func loadUI(){
-        borderView(v: vfrom)
-        borderView(v: vto)
-    }
 
     /*
     // MARK: - Navigation

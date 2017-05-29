@@ -10,6 +10,7 @@ import UIKit
 
 class Expense_ViewController: UIViewController,UINavigationControllerDelegate {
 
+    @IBOutlet weak var view_chinhanh: UIView!
     @IBOutlet weak var txt_diengiai: UITextField!
     @IBOutlet weak var txt_ngay: UITextField!
     @IBOutlet weak var txt_taikhoan: UITextField!
@@ -23,20 +24,8 @@ class Expense_ViewController: UIViewController,UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // border radius
-        v.layer.cornerRadius = 10
-        
-        // border
-        v.layer.borderColor = UIColor.lightGray.cgColor
-        v.layer.borderWidth = 1
-        
-        // drop shadow
-        v.layer.shadowColor = UIColor.black.cgColor
-        v.layer.shadowOpacity = 0.8
-        v.layer.shadowRadius = 3.0
-        v.layer.shadowOffset = CGSize(width: 2, height: 2)
-        // Do any additional setup after loading the view.
+        borderView(v: view_chinhanh)
+        borderView(v: v)
         
         txt_sotien.inputAccessoryView = addDoneButton()
         createDatePicker()
@@ -92,6 +81,9 @@ class Expense_ViewController: UIViewController,UINavigationControllerDelegate {
     }
     
 
+    @IBAction func btndoneClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
     /*

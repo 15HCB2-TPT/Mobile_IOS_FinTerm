@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mQ0-cO-4DX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mQ0-cO-4DX">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,11 +60,11 @@
             </objects>
             <point key="canvasLocation" x="-1356" y="-2160"/>
         </scene>
-        <!--Thiết Lập Nhanh-->
+        <!--Thiết Lập-->
         <scene sceneID="1GO-Sz-R7X">
             <objects>
-                <navigationController title="Thiết Lập Nhanh" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="afi-7k-N8I" customClass="navi_custom" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Thiết lập nhanh" image="Quick Mode On Filled-100-29" selectedImage="Quick Mode On Filled-100-29" id="kdq-ZP-kVp"/>
+                <navigationController title="Thiết Lập" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="afi-7k-N8I" customClass="navi_custom" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Thiết lập" image="Quick Mode On Filled-100-29" selectedImage="Quick Mode On Filled-100-29" id="kdq-ZP-kVp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HQu-FK-4pl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

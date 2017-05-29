@@ -42,6 +42,21 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: btnCancelTitle, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func borderView(v:UIView){
+        // border radius
+        v.layer.cornerRadius = 10
+        
+        // border
+        v.layer.borderColor = UIColor.lightGray.cgColor
+        v.layer.borderWidth = 1
+        
+        // drop shadow
+        v.layer.shadowColor = UIColor.black.cgColor
+        v.layer.shadowOpacity = 0.8
+        v.layer.shadowRadius = 3.0
+        v.layer.shadowOffset = CGSize(width: 2, height: 2)
+    }
 }
 
 extension AppDelegate {

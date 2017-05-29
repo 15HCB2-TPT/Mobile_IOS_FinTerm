@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12134.2" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12134.2" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BagMoney" representedClassName="BagMoney" syncable="YES" codeGenerationType="class">
-        <attribute name="money" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bagmoney_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney_Type" syncable="YES"/>
     </entity>
@@ -11,31 +11,30 @@
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" syncable="YES"/>
-        <relationship name="parent_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
+    </entity>
+    <entity name="Common" representedClassName="Common" syncable="YES" codeGenerationType="class">
+        <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bagmoney" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
     </entity>
     <entity name="Money" representedClassName="Money" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="money_bagmoney" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney" syncable="YES"/>
-        <relationship name="money_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" syncable="YES"/>
-    </entity>
-    <entity name="Transfer" representedClassName="Transfer" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="from" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney" syncable="YES"/>
-        <relationship name="to" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney" syncable="YES"/>
+        <relationship name="money_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
+        <relationship name="transfer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Money" syncable="YES"/>
     </entity>
     <entity name="Type" representedClassName="Type" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BagMoney" positionX="-443" positionY="-405" width="254" height="88"/>
-        <element name="BagMoney_Type" positionX="-686" positionY="-340" width="128" height="58"/>
-        <element name="Category" positionX="-216" positionY="-270" width="128" height="88"/>
-        <element name="Money" positionX="-290" positionY="-112" width="128" height="118"/>
-        <element name="Transfer" positionX="-722" positionY="-145" width="128" height="118"/>
+        <element name="BagMoney" positionX="-414" positionY="-396" width="254" height="88"/>
+        <element name="BagMoney_Type" positionX="-720" positionY="-346" width="128" height="58"/>
+        <element name="Category" positionX="18" positionY="-315" width="128" height="73"/>
+        <element name="Money" positionX="-263" positionY="9" width="128" height="133"/>
         <element name="Type" positionX="124" positionY="-85" width="128" height="58"/>
+        <element name="Common" positionX="-81" positionY="-540" width="128" height="103"/>
     </elements>
 </model>
