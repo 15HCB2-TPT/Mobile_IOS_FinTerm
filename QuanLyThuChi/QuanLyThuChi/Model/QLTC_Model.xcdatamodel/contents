@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12134.2" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12134.2" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BagMoney" representedClassName="BagMoney" syncable="YES" codeGenerationType="class">
         <attribute name="money" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,6 +19,7 @@
         <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="money_bagmoney" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney" syncable="YES"/>
         <relationship name="money_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" syncable="YES"/>
+        <relationship name="transfer_obj" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transfer" syncable="YES"/>
     </entity>
     <entity name="Transfer" representedClassName="Transfer" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -34,7 +35,7 @@
         <element name="BagMoney" positionX="-443" positionY="-405" width="254" height="88"/>
         <element name="BagMoney_Type" positionX="-686" positionY="-340" width="128" height="58"/>
         <element name="Category" positionX="-216" positionY="-270" width="128" height="88"/>
-        <element name="Money" positionX="-290" positionY="-112" width="128" height="118"/>
+        <element name="Money" positionX="-290" positionY="-82" width="128" height="133"/>
         <element name="Transfer" positionX="-722" positionY="-145" width="128" height="118"/>
         <element name="Type" positionX="124" positionY="-85" width="128" height="58"/>
     </elements>

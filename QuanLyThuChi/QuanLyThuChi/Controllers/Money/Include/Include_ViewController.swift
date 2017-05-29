@@ -10,10 +10,20 @@ import UIKit
 
 class Include_ViewController: UIViewController {
 
+    @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var v: UIView!
+    @IBOutlet weak var txt_diengiai: UITextField!
+    @IBOutlet weak var txt_ngay: UITextField!
+    @IBOutlet weak var txt_taikhoan: UITextField!
+    @IBOutlet weak var txt_mucthu: UITextField!
+    @IBOutlet weak var txt_sotien: UITextField!
+    
+    let datePicker = UIDatePicker()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // border radius
         v.layer.cornerRadius = 10
         
@@ -27,13 +37,61 @@ class Include_ViewController: UIViewController {
         v.layer.shadowRadius = 3.0
         v.layer.shadowOffset = CGSize(width: 2, height: 2)
         // Do any additional setup after loading the view.
+        
+        txt_sotien.inputAccessoryView = addDoneButton()
+        createDatePicker()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func keyboardWillShow(_ notification: Notification){
+        let info = notification.userInfo
+        let keyboard = (info?[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        let contentinset = UIEdgeInsetsMake(0, 0, keyboard.height-44, 0)
+        scrollview.contentInset = contentinset
+        scrollview.scrollIndicatorInsets = contentinset
+    }
+    
+    func keyboardWillHide(_ notification: Notification){
+        let contentinset = UIEdgeInsetsMake(0, 0, 0, 0)
+        scrollview.contentInset = contentinset
+        scrollview.scrollIndicatorInsets = contentinset
+    }
+    
+    func createDatePicker(){
+        //datePicker la bien toan cuc
+        //format date
+        datePicker.datePickerMode = .date
+        
+        //toolbar
+        let toolbar=UIToolbar()
+        toolbar.sizeToFit()
+        
+        //bar button item
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([flexBarButton,doneButton],animated:false)
+        
+        txt_ngay.inputAccessoryView = toolbar
+        txt_ngay.inputView = datePicker
+    }
+    
+    func donePressed(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        
+        txt_ngay.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+
 
     /*
     // MARK: - Navigation

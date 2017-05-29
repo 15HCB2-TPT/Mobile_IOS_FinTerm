@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -357,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="-748.125" y="839.78873239436621"/>
         </scene>
-        <!--View Controller-->
+        <!--Category Expense View Controller-->
         <scene sceneID="txI-9L-cKJ">
             <objects>
-                <viewController storyboardIdentifier="danhmucchi" id="H6Q-77-Wh4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="danhmucchi" id="H6Q-77-Wh4" customClass="CategoryExpense_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hWw-10-nhA"/>
                         <viewControllerLayoutGuide type="bottom" id="Iab-xn-S1M"/>
@@ -645,6 +645,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="scrollview" destination="V9v-0g-qUK" id="PNe-LD-nDo"/>
+                        <outlet property="txt_diengiai" destination="Icy-iI-v7h" id="MCM-lv-VdL"/>
+                        <outlet property="txt_mucthu" destination="xFQ-3a-pEb" id="2Y3-ov-wsE"/>
+                        <outlet property="txt_ngay" destination="5Pe-Ri-4YQ" id="Ksb-Gt-cL0"/>
+                        <outlet property="txt_sotien" destination="WrE-0w-M1Y" id="wRv-h5-83l"/>
+                        <outlet property="txt_taikhoan" destination="ZJg-cS-zES" id="WPH-8I-1uW"/>
                         <outlet property="v" destination="NJA-E1-fWz" id="BOM-mC-5j8"/>
                     </connections>
                 </viewController>
@@ -894,10 +900,10 @@
             </objects>
             <point key="canvasLocation" x="592.5" y="840.84507042253517"/>
         </scene>
-        <!--View Controller-->
+        <!--Category Include View Controller-->
         <scene sceneID="9Yg-WI-wDt">
             <objects>
-                <viewController id="Fjc-es-EOo" sceneMemberID="viewController">
+                <viewController id="Fjc-es-EOo" customClass="CategoryInclude_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dhi-2c-Od6"/>
                         <viewControllerLayoutGuide type="bottom" id="HY7-cr-m1d"/>
