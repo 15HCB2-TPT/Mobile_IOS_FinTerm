@@ -1,27 +1,33 @@
 //
-//  IncludeIndex_ViewController.swift
+//  Expense_ViewController.swift
 //  QuanLyThuChi
 //
-//  Created by Shin-Mac on 5/29/17.
+//  Created by Shin-MacDesk on 5/9/17.
 //  Copyright © 2017 TPT.Group. All rights reserved.
 //
 
 import UIKit
 
-class IncludeIndex_ViewController: UIViewController {
+class AddTransfer_ViewController: UIViewController {
 
-    @IBOutlet var view_table: UIView!
+    @IBOutlet weak var vfrom: UIView!
+    @IBOutlet weak var vto: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        borderView(v: view_table)
-        // Do any additional setup after loading the view.
+        loadUI()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //load UI
+    func loadUI(){
+        borderView(v: vfrom)
+        borderView(v: vto)
+    }
 
     /*
     // MARK: - Navigation

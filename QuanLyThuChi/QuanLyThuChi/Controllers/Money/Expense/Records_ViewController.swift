@@ -1,5 +1,5 @@
 //
-//  CategoryInclude_ViewController.swift
+//  ExpenseIndex_ViewController.swift
 //  QuanLyThuChi
 //
 //  Created by Shin-Mac on 5/29/17.
@@ -8,16 +8,15 @@
 
 import UIKit
 
-class CategoryInclude_ViewController: UIViewController {
-
+class Records_ViewController: UIViewController,UINavigationControllerDelegate {
 
     @IBAction func backClick(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
-
+    @IBOutlet var view_table: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            //borderView(v: view_table)
         // Do any additional setup after loading the view.
     }
 

@@ -12,8 +12,7 @@ class Money_ViewController: UIViewController,UITabBarControllerDelegate {
 
 
     @IBOutlet weak var segmented: UISegmentedControl!
-    @IBOutlet weak var container_Chi: UIView!
-    @IBOutlet weak var container_Thu: UIView!
+    @IBOutlet weak var container_GhiChep: UIView!
     @IBOutlet weak var container_ChuyenKhoan: UIView!
     @IBOutlet weak var navi: UINavigationBar!
         
@@ -34,41 +33,27 @@ class Money_ViewController: UIViewController,UITabBarControllerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        container_Chi.alpha = 0
+        container_GhiChep.alpha = 0
         container_ChuyenKhoan.alpha = 0
-        container_Thu.alpha = 0
     }
     
     @IBAction func segmentedChanged(_ sender: Any) {
         switch segmented.selectedSegmentIndex {
         case 0:
-            container_Chi.isHidden = false
-            container_Thu.isHidden = true
+            container_GhiChep.isHidden = false
             container_ChuyenKhoan.isHidden = true
             UIView.animate(withDuration: 0.5, animations: {
-                self.container_Chi.alpha = 1
-                self.container_Thu.alpha = 0
+                self.container_GhiChep.alpha = 1
                 self.container_ChuyenKhoan.alpha = 0
             })
         case 1:
-            container_Chi.isHidden = true
-            container_Thu.isHidden = false
-            container_ChuyenKhoan.isHidden = true
-            UIView.animate(withDuration: 0.5, animations: {
-                self.container_Chi.alpha = 0
-                self.container_Thu.alpha = 1
-                self.container_ChuyenKhoan.alpha = 0
-            })
-        case 2:
-            container_Chi.isHidden = true
-            container_Thu.isHidden = true
+            container_GhiChep.isHidden = true
             container_ChuyenKhoan.isHidden = false
             UIView.animate(withDuration: 0.5, animations: {
-                self.container_Chi.alpha = 0
-                self.container_Thu.alpha = 0
-                self.container_ChuyenKhoan.alpha = 1
+                self.container_GhiChep.alpha = 0
+                self.container_ChuyenKhoan.alpha = 1    
             })
-        default:
+            default:
             break
         }
     }
@@ -77,7 +62,7 @@ class Money_ViewController: UIViewController,UITabBarControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 0.5, animations: {
-            self.container_Chi.alpha = 1
+            self.container_GhiChep.alpha = 1
         })
     }
     

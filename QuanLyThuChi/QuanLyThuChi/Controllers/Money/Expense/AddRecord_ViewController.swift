@@ -8,26 +8,62 @@
 
 import UIKit
 
-class Expense_ViewController: UIViewController,UINavigationControllerDelegate {
-
-    @IBOutlet weak var view_chinhanh: UIView!
-    @IBOutlet weak var txt_diengiai: UITextField!
-    @IBOutlet weak var txt_ngay: UITextField!
-    @IBOutlet weak var txt_taikhoan: UITextField!
-    @IBOutlet weak var txt_mucchi: UITextField!
-    @IBOutlet weak var txt_sotien: UITextField!
+class AddRecord_ViewController: UIViewController,UINavigationControllerDelegate {
+    
     @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var view_ghichep: UIView!
+    @IBOutlet weak var btn_ghichep: UIButton!
+    
+    @IBOutlet weak var view_chinhanh: UIView!
+    @IBOutlet weak var btn_ghichepnhanh: UIButton!
+    
     @IBOutlet weak var v: UIView!
+    
+    @IBOutlet weak var lblKhoanChi: UILabel!
+    @IBOutlet weak var swtGhiChep: UISwitch!
+    @IBOutlet weak var lblKhoanThu: UILabel!
+    
+    @IBOutlet weak var lblSoTien: UILabel!
+    @IBOutlet weak var txt_sotien: UITextField!
+    
+    @IBOutlet weak var lblDanhMuc: UILabel!
+    @IBOutlet weak var txt_danhmuc: UITextField!
+    
+    @IBOutlet weak var lblTaiKhoan: UILabel!
+    @IBOutlet weak var txt_taikhoan: UITextField!
+    
+    @IBOutlet weak var lblNgay: UILabel!
+    @IBOutlet weak var txt_ngay: UITextField!
+    
+    @IBOutlet weak var lblDienGiai: UILabel!
+    @IBOutlet weak var txt_diengiai: UITextField!
+    
+    
+    
+    
+    
+    
     
     let datePicker = UIDatePicker()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        borderView(v: view_ghichep)
         borderView(v: view_chinhanh)
+        btn_ghichep.setTitle("Danh sách ghi chép", for: .normal)
+        btn_ghichepnhanh.setTitle("Ghi chép nhanh", for: .normal)
+        
         borderView(v: v)
+        lblKhoanChi.text = "Khoản chi"
+        lblKhoanThu.text = "Khoản thu"
+        lblSoTien.text = "Số tiền"
+        lblDanhMuc.text = "Danh mục"
+        lblTaiKhoan.text = "Tài khoản"
+        lblNgay.text = "Ngày"
+        lblDienGiai.text = "Diễn giải"
         
         txt_sotien.inputAccessoryView = addDoneButton()
+        txt_diengiai.inputAccessoryView = addDoneButton()
         createDatePicker()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
@@ -42,7 +78,7 @@ class Expense_ViewController: UIViewController,UINavigationControllerDelegate {
     func keyboardWillShow(_ notification: Notification){
         let info = notification.userInfo
         let keyboard = (info?[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
-        let contentinset = UIEdgeInsetsMake(0, 0, keyboard.height-44, 0)
+        let contentinset = UIEdgeInsetsMake(0, 0, keyboard.height - 44, 0)
         scrollview.contentInset = contentinset
         scrollview.scrollIndicatorInsets = contentinset
     }
