@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIPopoverPresentationControllerDelegate,UINavigationControllerDelegate{
     
     
     
@@ -20,16 +20,22 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     @IBOutlet weak var txt_sotien: UITextField!
     @IBOutlet weak var scrollview: UIScrollView!
     var pickerView = UIPickerView()
-    var pickOption = ["one", "two", "three", "seven", "fifteen"]
+    var pickOption = Database.select(entityName: "BagMoney_Type") as! [BagMoney_Type]
+    var addBarButton:UIBarButtonItem? = nil
+    var index = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         borderView(v: view_thongtin)
         borderView(v: view_danhsachcuatoi)
         borderView(v: view_themtuitien)
         
         txt_sotien.inputAccessoryView = addDoneButton()
-        txt_loaitui.inputAccessoryView = addDoneButton()
+        customtoolbar()
+        //txt_loaitui.inputAccessoryView = addDoneButton()
         txt_nametui.inputAccessoryView = addDoneButton()
         
         pickerView.delegate = self
@@ -39,6 +45,39 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
         // Do any additional setup after loading the view.
+    }
+
+    
+    func customtoolbar(){
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        addBarButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addNewBagMoneyCategory))
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(UIView.endEditing(_:)))
+        keyboardToolbar.items = [addBarButton!,flexBarButton, doneBarButton]
+        txt_loaitui.inputAccessoryView = keyboardToolbar
+        
+    }
+    
+    func addNewBagMoneyCategory() -> Void{
+        
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Some Title", message: "Enter a text", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = "Some default text"
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            self.txt_loaitui.text = textField?.text
+            //print("Text field: \(textField?.text)")
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,15 +104,37 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        //check
         return pickOption.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickOption[row]
+        //check
+        return pickOption[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        index = row
+        if pickOption.count <= 0 {
+            self.txt_loaitui.text = ""
+        }
+        else{
+            self.txt_loaitui.text = pickOption[row].name
+        }
+        
     }
     //
     
     @IBAction func AddClick(_ sender: Any) {
+        let bm:BagMoney = Database.create()
+        bm.money = Double(txt_sotien.text!)!
+        bm.name = txt_nametui.text
+        bm.bagmoney_type = pickOption[index]
     }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
     
     /*
      // MARK: - Navigation

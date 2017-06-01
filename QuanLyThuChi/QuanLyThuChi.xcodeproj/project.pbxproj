@@ -11,6 +11,7 @@
 		6305F4011EBE2C5D0060703C /* QLTC_Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 6305F3FD1EBE2C5D0060703C /* QLTC_Model.xcdatamodel */; };
 		631705801EDDB69300B65711 /* minus_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317057E1EDDB69300B65711 /* minus_TableViewCell.swift */; };
 		631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */; };
+		6318C2041EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */; };
 		6337D4E51EC1771D008480AD /* Money_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6337D4E41EC1771D008480AD /* Money_ViewController.swift */; };
 		636DC31D1ED9EC3B00599666 /* AddRecord_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DC31C1ED9EC3B00599666 /* AddRecord_ViewController.swift */; };
 		636DC31F1ED9EC4800599666 /* AddTransfer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DC31E1ED9EC4800599666 /* AddTransfer_ViewController.swift */; };
@@ -53,6 +54,7 @@
 		6305F3FD1EBE2C5D0060703C /* QLTC_Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QLTC_Model.xcdatamodel; sourceTree = "<group>"; };
 		6317057E1EDDB69300B65711 /* minus_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = minus_TableViewCell.swift; sourceTree = "<group>"; };
 		6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plus_TableViewCell.swift; sourceTree = "<group>"; };
+		6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTypeBagMoney_ViewController.swift; sourceTree = "<group>"; };
 		6337D4E41EC1771D008480AD /* Money_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money_ViewController.swift; sourceTree = "<group>"; };
 		636DC31C1ED9EC3B00599666 /* AddRecord_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRecord_ViewController.swift; path = Expense/AddRecord_ViewController.swift; sourceTree = "<group>"; };
 		636DC31E1ED9EC4800599666 /* AddTransfer_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTransfer_ViewController.swift; path = Transfer/AddTransfer_ViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				ADA220231EDBEA6500416A01 /* BagMoney_ViewController.swift */,
 				AD1FED891EDC242B004D6ACD /* ListBagMoney_ViewController.swift */,
 				AD1FED8B1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift */,
+				6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */,
 			);
 			path = BagMoney;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				AD14BA731EC02DB2006EF32F /* UIPassingData.swift in Sources */,
 				AD14BA6F1EC02DB2006EF32F /* RandomSwift3.swift in Sources */,
 				AD14BA6D1EC02DB2006EF32F /* GenericTypeHelper.swift in Sources */,
+				6318C2041EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift in Sources */,
 				AD14BAB31EC070DB006EF32F /* navi_custom.swift in Sources */,
 				AD14BA711EC02DB2006EF32F /* TempData.swift in Sources */,
 				631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */,
