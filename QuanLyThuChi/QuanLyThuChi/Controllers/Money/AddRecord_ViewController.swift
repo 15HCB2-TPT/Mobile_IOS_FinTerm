@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddRecord_ViewController: UIViewController,UINavigationControllerDelegate {
+class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var view_ghichep: UIView!
@@ -29,23 +29,18 @@ class AddRecord_ViewController: UIViewController,UINavigationControllerDelegate 
     @IBOutlet weak var lblDanhMuc: UILabel!
     @IBOutlet weak var txt_danhmuc: UITextField!
     
-    @IBOutlet weak var lblTaiKhoan: UILabel!
-    @IBOutlet weak var txt_taikhoan: UITextField!
-    
-    @IBOutlet weak var lblNgay: UILabel!
-    @IBOutlet weak var txt_ngay: UITextField!
-    
     @IBOutlet weak var lblDienGiai: UILabel!
     @IBOutlet weak var txt_diengiai: UITextField!
     
-    
-    
-    
-    
-    
+    @IBOutlet weak var lblTaiKhoan: UILabel!
+    @IBOutlet weak var txt_taikhoan: UITextField!
     
     let datePicker = UIDatePicker()
+    @IBOutlet weak var lblNgay: UILabel!
+    @IBOutlet weak var txt_ngay: UITextField!
 
+    @IBOutlet weak var btn_xong: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         borderView(v: view_ghichep)
@@ -58,10 +53,13 @@ class AddRecord_ViewController: UIViewController,UINavigationControllerDelegate 
         lblKhoanThu.text = "Khoản thu"
         lblSoTien.text = "Số tiền"
         lblDanhMuc.text = "Danh mục"
+        lblDienGiai.text = "Diễn giải"
         lblTaiKhoan.text = "Tài khoản"
         lblNgay.text = "Ngày"
-        lblDienGiai.text = "Diễn giải"
+        btn_xong.setTitle("Xong", for: .normal)
         
+        txt_danhmuc.delegate = self
+        txt_taikhoan.delegate = self
         txt_sotien.inputAccessoryView = addDoneButton()
         txt_diengiai.inputAccessoryView = addDoneButton()
         createDatePicker()
@@ -89,10 +87,10 @@ class AddRecord_ViewController: UIViewController,UINavigationControllerDelegate 
         scrollview.scrollIndicatorInsets = contentinset
     }
 
-    func createDatePicker(){
+    func createDatePicker() {
         //datePicker la bien toan cuc
         //format date
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
         
         //toolbar
         let toolbar=UIToolbar()
@@ -107,20 +105,27 @@ class AddRecord_ViewController: UIViewController,UINavigationControllerDelegate 
         txt_ngay.inputView = datePicker
     }
     
-    func donePressed(){
+    func donePressed() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
+        dateFormatter.timeStyle = .short
         
         txt_ngay.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-    
 
     @IBAction func btndoneClick(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        pushData(storyboard: "Money", controller: "selectCategory", data: nil)
+        return false
+    }
+    
+    @IBAction func txt_taikhoan_editingDidBegin(_ sender: Any) {
+        pushData(storyboard: "Money", controller: "selectBagMoney",  data: nil)
+    }
 
     /*
     // MARK: - Navigation

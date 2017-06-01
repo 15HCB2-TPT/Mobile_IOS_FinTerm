@@ -13,8 +13,6 @@
 		631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */; };
 		6318C2041EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */; };
 		6337D4E51EC1771D008480AD /* Money_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6337D4E41EC1771D008480AD /* Money_ViewController.swift */; };
-		636DC31D1ED9EC3B00599666 /* AddRecord_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DC31C1ED9EC3B00599666 /* AddRecord_ViewController.swift */; };
-		636DC31F1ED9EC4800599666 /* AddTransfer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DC31E1ED9EC4800599666 /* AddTransfer_ViewController.swift */; };
 		AD1127DC1EC19940004DEDD7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1127DB1EC19940004DEDD7 /* MainTabBarController.swift */; };
 		AD14BA6B1EC02DB2006EF32F /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA621EC02DB2006EF32F /* AppExtension.swift */; };
 		AD14BA6C1EC02DB2006EF32F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA631EC02DB2006EF32F /* Database.swift */; };
@@ -42,9 +40,15 @@
 		AD1FED8C1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED8B1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift */; };
 		AD1FED8E1EDC2494004D6ACD /* ListCommon_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED8D1EDC2494004D6ACD /* ListCommon_ViewController.swift */; };
 		AD1FED901EDC24A2004D6ACD /* DetailCommon_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED8F1EDC24A2004D6ACD /* DetailCommon_ViewController.swift */; };
-		ADA2201F1EDBD98200416A01 /* CategoryExpense_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2201E1EDBD98200416A01 /* CategoryExpense_ViewController.swift */; };
 		ADA220241EDBEA6500416A01 /* BagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA220231EDBEA6500416A01 /* BagMoney_ViewController.swift */; };
-		ADA220261EDBF3CE00416A01 /* Records_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA220251EDBF3CE00416A01 /* Records_ViewController.swift */; };
+		F074EBB01EDE7191001AB70C /* AddRecord_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBAF1EDE7191001AB70C /* AddRecord_ViewController.swift */; };
+		F074EBB21EDE719D001AB70C /* AddTransfer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */; };
+		F074EBB81EDE73E4001AB70C /* SelectCategory_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */; };
+		F074EBBA1EDE80D3001AB70C /* Records_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */; };
+		F074EBBC1EDE80EE001AB70C /* Records_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */; };
+		F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */; };
+		F0A758FC1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */; };
+		F0A758FE1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +60,6 @@
 		6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plus_TableViewCell.swift; sourceTree = "<group>"; };
 		6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTypeBagMoney_ViewController.swift; sourceTree = "<group>"; };
 		6337D4E41EC1771D008480AD /* Money_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money_ViewController.swift; sourceTree = "<group>"; };
-		636DC31C1ED9EC3B00599666 /* AddRecord_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddRecord_ViewController.swift; path = Expense/AddRecord_ViewController.swift; sourceTree = "<group>"; };
-		636DC31E1ED9EC4800599666 /* AddTransfer_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTransfer_ViewController.swift; path = Transfer/AddTransfer_ViewController.swift; sourceTree = "<group>"; };
 		AD1127DB1EC19940004DEDD7 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AD14BA621EC02DB2006EF32F /* AppExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
 		AD14BA631EC02DB2006EF32F /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -85,9 +87,15 @@
 		AD1FED8B1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBagMoney_ViewController.swift; sourceTree = "<group>"; };
 		AD1FED8D1EDC2494004D6ACD /* ListCommon_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCommon_ViewController.swift; sourceTree = "<group>"; };
 		AD1FED8F1EDC24A2004D6ACD /* DetailCommon_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCommon_ViewController.swift; sourceTree = "<group>"; };
-		ADA2201E1EDBD98200416A01 /* CategoryExpense_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryExpense_ViewController.swift; path = Expense/CategoryExpense_ViewController.swift; sourceTree = "<group>"; };
 		ADA220231EDBEA6500416A01 /* BagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagMoney_ViewController.swift; sourceTree = "<group>"; };
-		ADA220251EDBF3CE00416A01 /* Records_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Records_ViewController.swift; path = Expense/Records_ViewController.swift; sourceTree = "<group>"; };
+		F074EBAF1EDE7191001AB70C /* AddRecord_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecord_ViewController.swift; sourceTree = "<group>"; };
+		F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransfer_ViewController.swift; sourceTree = "<group>"; };
+		F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategory_TableViewCell.swift; sourceTree = "<group>"; };
+		F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_TableViewController.swift; sourceTree = "<group>"; };
+		F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_TableViewCell.swift; sourceTree = "<group>"; };
+		F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategory_ViewController.swift; sourceTree = "<group>"; };
+		F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_TableViewController.swift; sourceTree = "<group>"; };
+		F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,11 +166,15 @@
 		6337D4E31EC1771D008480AD /* Money */ = {
 			isa = PBXGroup;
 			children = (
-				636DC31C1ED9EC3B00599666 /* AddRecord_ViewController.swift */,
-				636DC31E1ED9EC4800599666 /* AddTransfer_ViewController.swift */,
-				ADA2201E1EDBD98200416A01 /* CategoryExpense_ViewController.swift */,
-				ADA220251EDBF3CE00416A01 /* Records_ViewController.swift */,
+				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
+				F074EBAF1EDE7191001AB70C /* AddRecord_ViewController.swift */,
 				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
+				F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */,
+				F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */,
+				F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */,
+				F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */,
+				F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */,
+				F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -305,15 +317,15 @@
 			files = (
 				AD1FED8C1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift in Sources */,
 				AD1FED8A1EDC242B004D6ACD /* ListBagMoney_ViewController.swift in Sources */,
+				F074EBBC1EDE80EE001AB70C /* Records_TableViewCell.swift in Sources */,
 				6305F4011EBE2C5D0060703C /* QLTC_Model.xcdatamodel in Sources */,
-				ADA2201F1EDBD98200416A01 /* CategoryExpense_ViewController.swift in Sources */,
 				AD14BAB51EC070DB006EF32F /* navi_report.swift in Sources */,
 				1400417A1EB0F16F009E5A3E /* AppDelegate.swift in Sources */,
 				AD14BA6C1EC02DB2006EF32F /* Database.swift in Sources */,
 				AD14BA6B1EC02DB2006EF32F /* AppExtension.swift in Sources */,
 				AD14BAB61EC070DB006EF32F /* navi_settings.swift in Sources */,
 				AD1FED901EDC24A2004D6ACD /* DetailCommon_ViewController.swift in Sources */,
-				636DC31D1ED9EC3B00599666 /* AddRecord_ViewController.swift in Sources */,
+				F0A758FC1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift in Sources */,
 				AD14BA771EC02E8E006EF32F /* AppConfigs.swift in Sources */,
 				AD14BA731EC02DB2006EF32F /* UIPassingData.swift in Sources */,
 				AD14BA6F1EC02DB2006EF32F /* RandomSwift3.swift in Sources */,
@@ -321,19 +333,23 @@
 				6318C2041EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift in Sources */,
 				AD14BAB31EC070DB006EF32F /* navi_custom.swift in Sources */,
 				AD14BA711EC02DB2006EF32F /* TempData.swift in Sources */,
+				F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */,
+				F074EBB81EDE73E4001AB70C /* SelectCategory_TableViewCell.swift in Sources */,
 				631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */,
+				F074EBB21EDE719D001AB70C /* AddTransfer_ViewController.swift in Sources */,
+				F0A758FE1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift in Sources */,
 				ADA220241EDBEA6500416A01 /* BagMoney_ViewController.swift in Sources */,
 				631705801EDDB69300B65711 /* minus_TableViewCell.swift in Sources */,
-				636DC31F1ED9EC4800599666 /* AddTransfer_ViewController.swift in Sources */,
 				6337D4E51EC1771D008480AD /* Money_ViewController.swift in Sources */,
 				AD14BAB71EC070DB006EF32F /* navi_bagmoney.swift in Sources */,
 				AD1FED881EDC1094004D6ACD /* Custom_ViewController.swift in Sources */,
 				AD1FED8E1EDC2494004D6ACD /* ListCommon_ViewController.swift in Sources */,
 				AD1127DC1EC19940004DEDD7 /* MainTabBarController.swift in Sources */,
 				AD14BA721EC02DB2006EF32F /* UIImageExt.swift in Sources */,
-				ADA220261EDBF3CE00416A01 /* Records_ViewController.swift in Sources */,
+				F074EBBA1EDE80D3001AB70C /* Records_TableViewController.swift in Sources */,
 				AD14BAB41EC070DB006EF32F /* navi_money.swift in Sources */,
 				AD14BA751EC02E37006EF32F /* Language.swift in Sources */,
+				F074EBB01EDE7191001AB70C /* AddRecord_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
