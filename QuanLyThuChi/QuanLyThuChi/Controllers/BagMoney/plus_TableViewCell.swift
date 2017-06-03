@@ -10,6 +10,8 @@ import UIKit
 
 class plus_TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_nametui: UILabel!
+    @IBOutlet weak var lbl_money: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +21,10 @@ class plus_TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func btn_info(_ sender: Any) {
+    }
+    @IBAction func btn_delete(_ sender: Any) {
     }
 
 }

@@ -13,6 +13,9 @@
 		631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */; };
 		6318C2041EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */; };
 		6337D4E51EC1771D008480AD /* Money_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6337D4E41EC1771D008480AD /* Money_ViewController.swift */; };
+		635EB1AB1EE2E1BE00B885DC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */; };
+		635EB1AD1EE2EDA200B885DC /* ListProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 635EB1AC1EE2EDA200B885DC /* ListProperty.plist */; };
+		63DDD2621EE1673500609C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DDD22F1EE1673500609C2A /* Assets.xcassets */; };
 		AD1127DC1EC19940004DEDD7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1127DB1EC19940004DEDD7 /* MainTabBarController.swift */; };
 		AD14BA6B1EC02DB2006EF32F /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA621EC02DB2006EF32F /* AppExtension.swift */; };
 		AD14BA6C1EC02DB2006EF32F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA631EC02DB2006EF32F /* Database.swift */; };
@@ -23,7 +26,6 @@
 		AD14BA731EC02DB2006EF32F /* UIPassingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA6A1EC02DB2006EF32F /* UIPassingData.swift */; };
 		AD14BA751EC02E37006EF32F /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA741EC02E37006EF32F /* Language.swift */; };
 		AD14BA771EC02E8E006EF32F /* AppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA761EC02E8E006EF32F /* AppConfigs.swift */; };
-		AD14BAA41EC06680006EF32F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD14BAA31EC06680006EF32F /* Assets.xcassets */; };
 		AD14BAB31EC070DB006EF32F /* navi_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BAA71EC070DB006EF32F /* navi_custom.swift */; };
 		AD14BAB41EC070DB006EF32F /* navi_money.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BAA81EC070DB006EF32F /* navi_money.swift */; };
 		AD14BAB51EC070DB006EF32F /* navi_report.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BAA91EC070DB006EF32F /* navi_report.swift */; };
@@ -60,6 +62,9 @@
 		6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plus_TableViewCell.swift; sourceTree = "<group>"; };
 		6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTypeBagMoney_ViewController.swift; sourceTree = "<group>"; };
 		6337D4E41EC1771D008480AD /* Money_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money_ViewController.swift; sourceTree = "<group>"; };
+		635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		635EB1AC1EE2EDA200B885DC /* ListProperty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ListProperty.plist; sourceTree = "<group>"; };
+		63DDD22F1EE1673500609C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD1127DB1EC19940004DEDD7 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AD14BA621EC02DB2006EF32F /* AppExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
 		AD14BA631EC02DB2006EF32F /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -70,7 +75,6 @@
 		AD14BA6A1EC02DB2006EF32F /* UIPassingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPassingData.swift; sourceTree = "<group>"; };
 		AD14BA741EC02E37006EF32F /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		AD14BA761EC02E8E006EF32F /* AppConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigs.swift; sourceTree = "<group>"; };
-		AD14BAA31EC06680006EF32F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD14BAA71EC070DB006EF32F /* navi_custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navi_custom.swift; sourceTree = "<group>"; };
 		AD14BAA81EC070DB006EF32F /* navi_money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navi_money.swift; sourceTree = "<group>"; };
 		AD14BAA91EC070DB006EF32F /* navi_report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navi_report.swift; sourceTree = "<group>"; };
@@ -132,8 +136,8 @@
 				AD14BAAC1EC070DB006EF32F /* Views */,
 				6305F3FC1EBE2C5D0060703C /* Model */,
 				140041921EB0F26B009E5A3E /* Helpers */,
+				63DDD22F1EE1673500609C2A /* Assets.xcassets */,
 				140041791EB0F16F009E5A3E /* AppDelegate.swift */,
-				AD14BAA31EC06680006EF32F /* Assets.xcassets */,
 				140041881EB0F16F009E5A3E /* Info.plist */,
 				AD14BA761EC02E8E006EF32F /* AppConfigs.swift */,
 			);
@@ -143,6 +147,7 @@
 		140041921EB0F26B009E5A3E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */,
 				AD14BA741EC02E37006EF32F /* Language.swift */,
 				AD14BA621EC02DB2006EF32F /* AppExtension.swift */,
 				AD14BA631EC02DB2006EF32F /* Database.swift */,
@@ -151,6 +156,7 @@
 				AD14BA681EC02DB2006EF32F /* TempData.swift */,
 				AD14BA691EC02DB2006EF32F /* UIImageExt.swift */,
 				AD14BA6A1EC02DB2006EF32F /* UIPassingData.swift */,
+				635EB1AC1EE2EDA200B885DC /* ListProperty.plist */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -299,10 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD14BAB91EC070DB006EF32F /* Main.storyboard in Resources */,
-				AD14BAA41EC06680006EF32F /* Assets.xcassets in Resources */,
 				AD14BAB81EC070DB006EF32F /* Custom.storyboard in Resources */,
 				AD14BABC1EC070DB006EF32F /* Settings.storyboard in Resources */,
 				AD14BABD1EC070DB006EF32F /* BagMoney.storyboard in Resources */,
+				63DDD2621EE1673500609C2A /* Assets.xcassets in Resources */,
+				635EB1AD1EE2EDA200B885DC /* ListProperty.plist in Resources */,
 				AD14BABA1EC070DB006EF32F /* Money.storyboard in Resources */,
 				AD14BABB1EC070DB006EF32F /* Report.storyboard in Resources */,
 			);
@@ -323,6 +330,7 @@
 				1400417A1EB0F16F009E5A3E /* AppDelegate.swift in Sources */,
 				AD14BA6C1EC02DB2006EF32F /* Database.swift in Sources */,
 				AD14BA6B1EC02DB2006EF32F /* AppExtension.swift in Sources */,
+				635EB1AB1EE2E1BE00B885DC /* CustomTextField.swift in Sources */,
 				AD14BAB61EC070DB006EF32F /* navi_settings.swift in Sources */,
 				AD1FED901EDC24A2004D6ACD /* DetailCommon_ViewController.swift in Sources */,
 				F0A758FC1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift in Sources */,
