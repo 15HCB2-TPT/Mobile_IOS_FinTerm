@@ -8,20 +8,29 @@
 
 import UIKit
 
-class SelectCategory_ViewController: UIViewController {
+class SelectCategory_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var nav_item: UINavigationItem!
     @IBOutlet weak var btn_back: UIBarButtonItem!
+    @IBOutlet weak var tblCategory: UITableView!
+    
+    var categories: [Category] = []
+    
+    override func uiPassedData(data: Any?, identity: Int) {
+        let dm = data as! String
+        categories = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name = %@", dm), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
+        tblCategory.reloadData()
+    }
     
     @IBAction func btn_back_TouchUpInside(_ sender: Any) {
         popData(data: nil)
     }
     
-    var categories = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name == 'Chi'"), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         nav_item.title = "Danh mục"
+        tblCategory.delegate = self
+        tblCategory.dataSource = self
         
         // Do any additional setup after loading the view.
     }
@@ -31,7 +40,7 @@ class SelectCategory_ViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! SelectBagMoney_TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! SelectCategory_TableViewCell
         if (categories[indexPath.row] as Category?) != nil {
             cell.lblTen.text = categories[indexPath.row].name!
         }

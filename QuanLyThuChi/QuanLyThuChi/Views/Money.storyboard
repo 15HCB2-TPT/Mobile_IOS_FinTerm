@@ -432,18 +432,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0s-Oo-3hN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0s-Oo-3hN">
                                                     <rect key="frame" x="16" y="9" width="288" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="A0s-Oo-3hN" firstAttribute="leading" secondItem="4Y0-49-SVO" secondAttribute="leadingMargin" constant="8" id="1FA-hu-LoX"/>
-                                                <constraint firstItem="A0s-Oo-3hN" firstAttribute="centerY" secondItem="4Y0-49-SVO" secondAttribute="centerY" id="Cbd-rJ-sF6"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="A0s-Oo-3hN" secondAttribute="trailing" constant="8" id="Yjp-IS-9wy"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblTen" destination="A0s-Oo-3hN" id="xc0-IH-huu"/>
@@ -467,6 +463,7 @@
                     <connections>
                         <outlet property="btn_back" destination="lkC-7Z-lDg" id="b1S-E0-Qo0"/>
                         <outlet property="nav_item" destination="LrI-L4-GIn" id="QuS-Bo-0Rt"/>
+                        <outlet property="tblCategory" destination="m6C-3x-cHl" id="6YE-fN-rM7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpL-Y0-psy" userLabel="First Responder" sceneMemberID="firstResponder"/>

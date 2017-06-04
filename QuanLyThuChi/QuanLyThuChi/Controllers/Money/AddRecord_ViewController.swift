@@ -119,7 +119,9 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        pushData(storyboard: "Money", controller: "selectCategory", data: nil)
+        if(textField == txt_danhmuc) {
+            pushData(storyboard: "Money", controller: "selectCategory", data: swtGhiChep.isOn ? "Thu" : "Chi")
+        }
         return false
     }
     
