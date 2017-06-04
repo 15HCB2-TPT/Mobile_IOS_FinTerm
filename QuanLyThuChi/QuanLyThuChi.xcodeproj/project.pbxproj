@@ -49,8 +49,8 @@
 		F074EBBA1EDE80D3001AB70C /* Records_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */; };
 		F074EBBC1EDE80EE001AB70C /* Records_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */; };
 		F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */; };
-		F0A758FC1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */; };
 		F0A758FE1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */; };
+		F0EEF91F1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEF91E1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,8 +98,8 @@
 		F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_TableViewController.swift; sourceTree = "<group>"; };
 		F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_TableViewCell.swift; sourceTree = "<group>"; };
 		F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategory_ViewController.swift; sourceTree = "<group>"; };
-		F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_TableViewController.swift; sourceTree = "<group>"; };
 		F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_TableViewCell.swift; sourceTree = "<group>"; };
+		F0EEF91E1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,15 +172,15 @@
 		6337D4E31EC1771D008480AD /* Money */ = {
 			isa = PBXGroup;
 			children = (
-				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
 				F074EBAF1EDE7191001AB70C /* AddRecord_ViewController.swift */,
-				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
-				F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */,
-				F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */,
-				F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */,
 				F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */,
 				F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */,
+				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
+				F0EEF91E1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift */,
+				F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */,
 				F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */,
+				F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */,
+				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -333,7 +333,6 @@
 				635EB1AB1EE2E1BE00B885DC /* CustomTextField.swift in Sources */,
 				AD14BAB61EC070DB006EF32F /* navi_settings.swift in Sources */,
 				AD1FED901EDC24A2004D6ACD /* DetailCommon_ViewController.swift in Sources */,
-				F0A758FC1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift in Sources */,
 				AD14BA771EC02E8E006EF32F /* AppConfigs.swift in Sources */,
 				AD14BA731EC02DB2006EF32F /* UIPassingData.swift in Sources */,
 				AD14BA6F1EC02DB2006EF32F /* RandomSwift3.swift in Sources */,
@@ -342,6 +341,7 @@
 				AD14BAB31EC070DB006EF32F /* navi_custom.swift in Sources */,
 				AD14BA711EC02DB2006EF32F /* TempData.swift in Sources */,
 				F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */,
+				F0EEF91F1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift in Sources */,
 				F074EBB81EDE73E4001AB70C /* SelectCategory_TableViewCell.swift in Sources */,
 				631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */,
 				F074EBB21EDE719D001AB70C /* AddTransfer_ViewController.swift in Sources */,

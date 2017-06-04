@@ -19,20 +19,18 @@ class SelectCategory_ViewController: UIViewController, UITableViewDelegate, UITa
     override func uiPassedData(data: Any?, identity: Int) {
         let dm = data as! String
         categories = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name = %@", dm), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
+        nav_item.title = "\("Danh mục") \(dm)"
         tblCategory.reloadData()
     }
     
     @IBAction func btn_back_TouchUpInside(_ sender: Any) {
-        popData(data: nil)
+        popData(data: nil, identity: 0)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav_item.title = "Danh mục"
         tblCategory.delegate = self
         tblCategory.dataSource = self
-        
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,7 +46,7 @@ class SelectCategory_ViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //pushData(storyboard: "Money", controller: "addRecord",  data: categories[indexPath.row])
+        popData(data: categories[indexPath.row], identity: 1)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

@@ -11,7 +11,7 @@ import UIKit
 class SelectBagMoney_TableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTen: UILabel!
-    //@IBOutlet weak var lblConLai: UILabel!
+    @IBOutlet weak var lblConLai: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
