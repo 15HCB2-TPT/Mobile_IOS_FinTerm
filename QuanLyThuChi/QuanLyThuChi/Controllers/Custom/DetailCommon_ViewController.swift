@@ -8,8 +8,9 @@
 
 import UIKit
 
-class DetailCommon_ViewController: UIViewController {
+class DetailCommon_ViewController: UIViewController,UINavigationControllerDelegate {
 
+    var common = Common()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +21,6 @@ class DetailCommon_ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

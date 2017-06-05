@@ -47,6 +47,10 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         
         pickerView.delegate = self
         txt_loaitui.inputView = pickerView
+        if pickOption.count > 0 {
+            txt_loaitui.text = pickOption[0].name
+            bm_Type = pickOption[0]
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)

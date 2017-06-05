@@ -98,13 +98,7 @@ extension UIColor {
         
         guard hex.characters.count == 6 || hex.characters.count == 8
             else { return UIColor.white.withAlphaComponent(0.0) }
-        
-//        if hex.characters.count == 3 {
-//            for (index, char) in hex.characters.enumerated() {
-//                hex.insert(char, at: hex.startIndex.advancedBy(index * 2))
-//            }
-//        }
-        
+
         if hex.characters.count == 6 {
             hex = "FF" + hex
         }
@@ -114,5 +108,24 @@ extension UIColor {
             green: CGFloat((Int(hex, radix: 16)! >> 8) & 0xFF) / 255.0,
             blue:  CGFloat((Int(hex, radix: 16)! >> 0) & 0xFF) / 255.0,
             alpha: CGFloat((Int(hex, radix: 16)! >> 24) & 0xFF) / 255.0)
+    }
+    
+    class func hex(string: String,alpha: CGFloat) -> UIColor {
+        var hex = string.hasPrefix("#")
+            ? String(string.characters.dropFirst())
+            : string
+        
+        guard hex.characters.count == 6 || hex.characters.count == 8
+            else { return UIColor.white.withAlphaComponent(0.0) }
+        
+        if hex.characters.count == 6 {
+            hex = "FF" + hex
+        }
+        
+        return UIColor(
+            red:   CGFloat((Int(hex, radix: 16)! >> 16) & 0xFF) / 255.0,
+            green: CGFloat((Int(hex, radix: 16)! >> 8) & 0xFF) / 255.0,
+            blue:  CGFloat((Int(hex, radix: 16)! >> 0) & 0xFF) / 255.0,
+            alpha: alpha)
     }
 }

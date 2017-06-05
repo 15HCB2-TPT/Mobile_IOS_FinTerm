@@ -94,7 +94,12 @@ class ListBagMoney_ViewController: UIViewController,UINavigationControllerDelega
         if let cell = (sender as AnyObject).superview??.superview as? plus_TableViewCell {
             let indexPath:IndexPath = table_tuitien.indexPath(for: cell)!
             let alert = UIAlertController(title: "Cảnh báo", message: "Thu chi sẽ bị xóa theo túi tiền, bạn có muốn tiếp tục", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: { [weak alert] (_) in
+            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: { (_) in
+                for item in Database.select(entityName: "Money") as! [Money]{
+                    if item.money_bagmoney == self.temp[indexPath.section][indexPath.row]{
+                        Database.delete(object: item)
+                    }
+                }
                 Database.delete(object: self.temp[indexPath.section][indexPath.row])
                 Database.save()
                 self.temp.removeAll()
