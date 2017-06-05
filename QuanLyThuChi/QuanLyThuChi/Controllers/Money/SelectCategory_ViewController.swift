@@ -8,22 +8,29 @@
 
 import UIKit
 
-class SelectCategory_ViewController: UIViewController {
+class SelectCategory_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var nav_item: UINavigationItem!
     @IBOutlet weak var btn_back: UIBarButtonItem!
+    @IBOutlet weak var tblCategory: UITableView!
     
-    @IBAction func btn_back_TouchUpInside(_ sender: Any) {
-        popData(data: nil)
+    var categories: [Category] = []
+    
+    override func uiPassedData(data: Any?, identity: Int) {
+        let dm = data as! String
+        categories = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name = %@", dm), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
+        nav_item.title = "\("Danh mục") \(dm)"
+        tblCategory.reloadData()
     }
     
-    var categories = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name == 'Chi'"), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
+    @IBAction func btn_back_TouchUpInside(_ sender: Any) {
+        popData(data: nil, identity: 0)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav_item.title = "Danh mục"
-        
-        // Do any additional setup after loading the view.
+        tblCategory.delegate = self
+        tblCategory.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +38,7 @@ class SelectCategory_ViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! SelectBagMoney_TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as! SelectCategory_TableViewCell
         if (categories[indexPath.row] as Category?) != nil {
             cell.lblTen.text = categories[indexPath.row].name!
         }
@@ -39,7 +46,7 @@ class SelectCategory_ViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //pushData(storyboard: "Money", controller: "addRecord",  data: categories[indexPath.row])
+        popData(data: categories[indexPath.row], identity: 1)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

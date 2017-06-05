@@ -57,8 +57,8 @@
 		F074EBBA1EDE80D3001AB70C /* Records_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */; };
 		F074EBBC1EDE80EE001AB70C /* Records_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */; };
 		F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */; };
-		F0A758FC1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */; };
 		F0A758FE1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */; };
+		F0EEF91F1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEF91E1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,8 +114,8 @@
 		F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_TableViewController.swift; sourceTree = "<group>"; };
 		F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_TableViewCell.swift; sourceTree = "<group>"; };
 		F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategory_ViewController.swift; sourceTree = "<group>"; };
-		F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_TableViewController.swift; sourceTree = "<group>"; };
 		F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_TableViewCell.swift; sourceTree = "<group>"; };
+		F0EEF91E1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,15 +189,15 @@
 		6337D4E31EC1771D008480AD /* Money */ = {
 			isa = PBXGroup;
 			children = (
-				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
 				F074EBAF1EDE7191001AB70C /* AddRecord_ViewController.swift */,
-				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
-				F0A758FB1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift */,
-				F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */,
-				F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */,
 				F074EBB91EDE80D3001AB70C /* Records_TableViewController.swift */,
 				F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */,
+				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
+				F0EEF91E1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift */,
+				F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */,
 				F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */,
+				F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */,
+				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";

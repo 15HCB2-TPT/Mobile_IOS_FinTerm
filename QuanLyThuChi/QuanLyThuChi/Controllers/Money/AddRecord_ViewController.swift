@@ -41,6 +41,9 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
 
     @IBOutlet weak var btn_xong: UIButton!
     
+    var c: Category? = nil
+    var b: BagMoney? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         borderView(v: view_ghichep)
@@ -91,7 +94,7 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
         //datePicker la bien toan cuc
         //format date
         datePicker.datePickerMode = .dateAndTime
-        
+    
         //toolbar
         let toolbar=UIToolbar()
         toolbar.sizeToFit()
@@ -101,6 +104,7 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([flexBarButton,doneButton],animated:false)
         
+        txt_ngay.text = "Hôm nay"
         txt_ngay.inputAccessoryView = toolbar
         txt_ngay.inputView = datePicker
     }
@@ -119,12 +123,27 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        pushData(storyboard: "Money", controller: "selectCategory", data: nil)
+        if(textField == txt_danhmuc) {
+            pushData(storyboard: "Money", controller: "selectCategory", data: swtGhiChep.isOn ? "Thu" : "Chi")
+        }
+        if(textField == txt_taikhoan) {
+            pushData(storyboard: "Money", controller: "selectBagMoney", data: nil)
+        }
         return false
     }
     
-    @IBAction func txt_taikhoan_editingDidBegin(_ sender: Any) {
-        pushData(storyboard: "Money", controller: "selectBagMoney",  data: nil)
+    override func uiPassedData(data: Any?, identity: Int) {
+        if (identity == 1) {
+            let dm = data as! Category
+            c = dm
+            txt_danhmuc.text = c?.name
+        }
+        
+        if (identity == 2) {
+            let tk = data as! BagMoney
+            b = tk
+            txt_taikhoan.text = b?.name
+        }
     }
 
     /*
