@@ -18,9 +18,9 @@
 		635666361EE71F4B00CD004D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 635666321EE71F3C00CD004D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6356663B1EE7232B00CD004D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356663A1EE7232B00CD004D /* CustomButton.swift */; };
 		6356663D1EE73F9D00CD004D /* NSDateCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356663C1EE73F9D00CD004D /* NSDateCompare.swift */; };
+		635666451EE745CC00CD004D /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635666441EE745CC00CD004D /* SeedData.swift */; };
 		635EB1AB1EE2E1BE00B885DC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */; };
 		635EB1AD1EE2EDA200B885DC /* ListProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 635EB1AC1EE2EDA200B885DC /* ListProperty.plist */; };
-		6397B3AB1EE536250072E107 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397B3AA1EE536250072E107 /* SeedData.swift */; };
 		63AD5C391EE426FA00C9C860 /* Category_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD5C381EE426FA00C9C860 /* Category_ViewController.swift */; };
 		63AD5C3B1EE427DB00C9C860 /* IncludeCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD5C3A1EE427DB00C9C860 /* IncludeCategory_ViewController.swift */; };
 		63AD5C3D1EE427F100C9C860 /* ExpenseCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD5C3C1EE427F100C9C860 /* ExpenseCategory_ViewController.swift */; };
@@ -116,9 +116,9 @@
 		6356662C1EE71F3C00CD004D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		6356663A1EE7232B00CD004D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		6356663C1EE73F9D00CD004D /* NSDateCompare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateCompare.swift; sourceTree = "<group>"; };
+		635666441EE745CC00CD004D /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
 		635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		635EB1AC1EE2EDA200B885DC /* ListProperty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ListProperty.plist; sourceTree = "<group>"; };
-		6397B3AA1EE536250072E107 /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
 		63AD5C381EE426FA00C9C860 /* Category_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category_ViewController.swift; sourceTree = "<group>"; };
 		63AD5C3A1EE427DB00C9C860 /* IncludeCategory_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncludeCategory_ViewController.swift; sourceTree = "<group>"; };
 		63AD5C3C1EE427F100C9C860 /* ExpenseCategory_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCategory_ViewController.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				6305F3FD1EBE2C5D0060703C /* QLTC_Model.xcdatamodel */,
-				6397B3AA1EE536250072E107 /* SeedData.swift */,
+				635666441EE745CC00CD004D /* SeedData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635666451EE745CC00CD004D /* SeedData.swift in Sources */,
 				AD1FED8C1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift in Sources */,
 				63AD5C3B1EE427DB00C9C860 /* IncludeCategory_ViewController.swift in Sources */,
 				AD1FED8A1EDC242B004D6ACD /* ListBagMoney_ViewController.swift in Sources */,
@@ -455,7 +456,6 @@
 				F03F42861EE70F91009D8FB4 /* SelectBagMoney_ViewController.swift in Sources */,
 				AD14BA711EC02DB2006EF32F /* TempData.swift in Sources */,
 				F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */,
-				6397B3AB1EE536250072E107 /* SeedData.swift in Sources */,
 				F074EBB81EDE73E4001AB70C /* SelectCategory_TableViewCell.swift in Sources */,
 				63AD5C3F1EE429AF00C9C860 /* Category_TableViewCell.swift in Sources */,
 				631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */,
@@ -471,7 +471,6 @@
 				AD1FED8E1EDC2494004D6ACD /* ListCommon_ViewController.swift in Sources */,
 				AD1127DC1EC19940004DEDD7 /* MainTabBarController.swift in Sources */,
 				AD14BA721EC02DB2006EF32F /* UIImageExt.swift in Sources */,
-				F074EBBA1EDE80D3001AB70C /* Records_TableViewController.swift in Sources */,
 				6356663B1EE7232B00CD004D /* CustomButton.swift in Sources */,
 				AD14BAB41EC070DB006EF32F /* navi_money.swift in Sources */,
 				AD14BA751EC02E37006EF32F /* Language.swift in Sources */,
