@@ -57,6 +57,19 @@ extension UIViewController {
         v.layer.shadowRadius = 3.0
         v.layer.shadowOffset = CGSize(width: 2, height: 2)
     }
+    
+    func dropshadowView(v:UIView){
+        // border
+        v.layer.borderColor = UIColor.groupTableViewBackground.cgColor
+        v.layer.borderWidth = 1
+        
+        // drop shadow
+        v.layer.shadowColor = UIColor.black.cgColor
+        v.layer.shadowOpacity = 0.1
+        v.layer.shadowRadius = 0.5
+        v.layer.shadowOffset = CGSize(width: 2, height: 2)
+    }
+    
 }
 
 extension AppDelegate {

@@ -40,6 +40,8 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dropshadowView(v: view_btndanhmucchi)
+        dropshadowView(v: view_btndanhmucthu)
         borderView(v: view_danhmucthuchi)
         borderView(v: view_thietlapnhanh)
         borderView(v: view_chi)
@@ -47,7 +49,7 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
         
         //
         txt_tienchi.inputAccessoryView = addDoneButton()
-        txt_tuithu.inputAccessoryView = addDoneButton()
+        txt_tienthu.inputAccessoryView = addDoneButton()
         customtoolbar()
         pickerview_thu.delegate = self
         pickerview_chi.delegate = self

@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource {
+protocol ReloadData:class{
+    func reloadData()
+}
+class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource,ReloadData {
+
 
     @IBOutlet weak var table_common: UITableView!
     @IBOutlet weak var view_notice: UIView!
@@ -55,10 +59,17 @@ class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "Custom", bundle: nil).instantiateViewController(withIdentifier: "DetailCommon") as! DetailCommon_ViewController
         vc.common = listcommon[indexPath.row]
+        vc.reloaddelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
         //customdelegate?.selectedcategoryfromThu(category: thucategory[indexPath.row])
         //self.navigationController?.popViewController(animated: true)
     }
+    
+    func reloadData() {
+        listcommon = Database.select()
+        table_common.reloadData()
+    }
+
     //end table view
 
     
