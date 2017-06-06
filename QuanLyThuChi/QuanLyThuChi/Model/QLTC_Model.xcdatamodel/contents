@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12134.2" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BagMoney" representedClassName="BagMoney" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bagmoney_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney_Type" syncable="YES"/>
@@ -13,6 +14,10 @@
         <relationship name="category_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" syncable="YES"/>
     </entity>
     <entity name="Common" representedClassName="Common" syncable="YES" codeGenerationType="class">
+        <attribute name="loopday" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="loopmonth" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="looptime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="loopyear" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bagmoney" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney" syncable="YES"/>
@@ -30,10 +35,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BagMoney" positionX="-414" positionY="-396" width="99" height="88"/>
+        <element name="BagMoney" positionX="-414" positionY="-396" width="99" height="103"/>
         <element name="BagMoney_Type" positionX="-569" positionY="-346" width="128" height="58"/>
         <element name="Category" positionX="-74" positionY="-378" width="128" height="73"/>
-        <element name="Common" positionX="-270" positionY="-432" width="128" height="103"/>
+        <element name="Common" positionX="-263" positionY="-585" width="128" height="163"/>
         <element name="Money" positionX="-270" positionY="-288" width="128" height="133"/>
         <element name="Type" positionX="36" positionY="-279" width="128" height="58"/>
     </elements>

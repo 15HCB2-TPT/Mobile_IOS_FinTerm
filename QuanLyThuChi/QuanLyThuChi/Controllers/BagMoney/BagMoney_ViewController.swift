@@ -215,6 +215,7 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         bm.money = Double(txt_sotien.text!)!
         bm.name = txt_nametui.text
         bm.bagmoney_type = bm_Type
+        bm.date = NSDate()
         Database.save()
         let alert = UIAlertController(title: "Thành công", message: "Đã thêm túi tiền mới thành công!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))

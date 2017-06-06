@@ -45,7 +45,7 @@ class ChooseInclude_ViewController: UIViewController,UINavigationControllerDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        customdelegate?.selectedcategoryfromThu(category: thucategory[indexPath.row])
+        customdelegate?.selectedcategory(category: thucategory[indexPath.row])
         self.navigationController?.popViewController(animated: true)
     }
     //end table view

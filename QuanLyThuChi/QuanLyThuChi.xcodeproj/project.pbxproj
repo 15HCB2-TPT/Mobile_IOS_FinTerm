@@ -14,6 +14,10 @@
 		6318C2041EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */; };
 		6334CD471EE5B46C00E43F9D /* CommonCell_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6334CD461EE5B46C00E43F9D /* CommonCell_TableViewCell.swift */; };
 		6337D4E51EC1771D008480AD /* Money_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6337D4E41EC1771D008480AD /* Money_ViewController.swift */; };
+		635666351EE71F4B00CD004D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635666321EE71F3C00CD004D /* Charts.framework */; };
+		635666361EE71F4B00CD004D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 635666321EE71F3C00CD004D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6356663B1EE7232B00CD004D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356663A1EE7232B00CD004D /* CustomButton.swift */; };
+		6356663D1EE73F9D00CD004D /* NSDateCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6356663C1EE73F9D00CD004D /* NSDateCompare.swift */; };
 		635EB1AB1EE2E1BE00B885DC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */; };
 		635EB1AD1EE2EDA200B885DC /* ListProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 635EB1AC1EE2EDA200B885DC /* ListProperty.plist */; };
 		6397B3AB1EE536250072E107 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397B3AA1EE536250072E107 /* SeedData.swift */; };
@@ -58,8 +62,45 @@
 		F074EBBC1EDE80EE001AB70C /* Records_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */; };
 		F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */; };
 		F0A758FE1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */; };
-		F0EEF91F1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEF91E1EE456A300FDBE82 /* SelectBagMoney_ViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		635666311EE71F3C00CD004D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6356662C1EE71F3C00CD004D /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		635666331EE71F3C00CD004D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6356662C1EE71F3C00CD004D /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		635666371EE71F4B00CD004D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6356662C1EE71F3C00CD004D /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		635666391EE71F4B00CD004D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				635666361EE71F4B00CD004D /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		140041761EB0F16F009E5A3E /* QuanLyThuChi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyThuChi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +112,9 @@
 		6318C2031EDF1DEA008982E7 /* AddNewTypeBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewTypeBagMoney_ViewController.swift; sourceTree = "<group>"; };
 		6334CD461EE5B46C00E43F9D /* CommonCell_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCell_TableViewCell.swift; sourceTree = "<group>"; };
 		6337D4E41EC1771D008480AD /* Money_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money_ViewController.swift; sourceTree = "<group>"; };
+		6356662C1EE71F3C00CD004D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		6356663A1EE7232B00CD004D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		6356663C1EE73F9D00CD004D /* NSDateCompare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateCompare.swift; sourceTree = "<group>"; };
 		635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		635EB1AC1EE2EDA200B885DC /* ListProperty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ListProperty.plist; sourceTree = "<group>"; };
 		6397B3AA1EE536250072E107 /* SeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
@@ -123,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635666351EE71F4B00CD004D /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +201,7 @@
 				140041791EB0F16F009E5A3E /* AppDelegate.swift */,
 				140041881EB0F16F009E5A3E /* Info.plist */,
 				AD14BA761EC02E8E006EF32F /* AppConfigs.swift */,
+				6356662C1EE71F3C00CD004D /* Charts.xcodeproj */,
 			);
 			path = QuanLyThuChi;
 			sourceTree = "<group>";
@@ -163,6 +209,8 @@
 		140041921EB0F26B009E5A3E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6356663C1EE73F9D00CD004D /* NSDateCompare.swift */,
+				6356663A1EE7232B00CD004D /* CustomButton.swift */,
 				635EB1AA1EE2E1BE00B885DC /* CustomTextField.swift */,
 				AD14BA741EC02E37006EF32F /* Language.swift */,
 				AD14BA621EC02DB2006EF32F /* AppExtension.swift */,
@@ -200,6 +248,15 @@
 				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
 			);
 			path = Money;
+			sourceTree = "<group>";
+		};
+		6356662D1EE71F3C00CD004D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				635666321EE71F3C00CD004D /* Charts.framework */,
+				635666341EE71F3C00CD004D /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AD14BAA51EC070DB006EF32F /* Controllers */ = {
@@ -279,10 +336,12 @@
 				140041721EB0F16E009E5A3E /* Sources */,
 				140041731EB0F16E009E5A3E /* Frameworks */,
 				140041741EB0F16E009E5A3E /* Resources */,
+				635666391EE71F4B00CD004D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				635666381EE71F4B00CD004D /* PBXTargetDependency */,
 			);
 			name = QuanLyThuChi;
 			productName = QuanLyThuChi;
@@ -316,12 +375,35 @@
 			mainGroup = 1400416D1EB0F16E009E5A3E;
 			productRefGroup = 140041771EB0F16F009E5A3E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6356662D1EE71F3C00CD004D /* Products */;
+					ProjectRef = 6356662C1EE71F3C00CD004D /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				140041751EB0F16E009E5A3E /* QuanLyThuChi */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		635666321EE71F3C00CD004D /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 635666311EE71F3C00CD004D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		635666341EE71F3C00CD004D /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 635666331EE71F3C00CD004D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		140041741EB0F16E009E5A3E /* Resources */ = {
@@ -361,7 +443,6 @@
 				635EB1AB1EE2E1BE00B885DC /* CustomTextField.swift in Sources */,
 				AD14BAB61EC070DB006EF32F /* navi_settings.swift in Sources */,
 				AD1FED901EDC24A2004D6ACD /* DetailCommon_ViewController.swift in Sources */,
-				F0A758FC1EDE339000B7C7C1 /* SelectBagMoney_TableViewController.swift in Sources */,
 				63AD5C391EE426FA00C9C860 /* Category_ViewController.swift in Sources */,
 				AD14BA771EC02E8E006EF32F /* AppConfigs.swift in Sources */,
 				AD14BA731EC02DB2006EF32F /* UIPassingData.swift in Sources */,
@@ -383,10 +464,12 @@
 				6337D4E51EC1771D008480AD /* Money_ViewController.swift in Sources */,
 				AD14BAB71EC070DB006EF32F /* navi_bagmoney.swift in Sources */,
 				AD1FED881EDC1094004D6ACD /* Custom_ViewController.swift in Sources */,
+				6356663D1EE73F9D00CD004D /* NSDateCompare.swift in Sources */,
 				AD1FED8E1EDC2494004D6ACD /* ListCommon_ViewController.swift in Sources */,
 				AD1127DC1EC19940004DEDD7 /* MainTabBarController.swift in Sources */,
 				AD14BA721EC02DB2006EF32F /* UIImageExt.swift in Sources */,
 				F074EBBA1EDE80D3001AB70C /* Records_TableViewController.swift in Sources */,
+				6356663B1EE7232B00CD004D /* CustomButton.swift in Sources */,
 				AD14BAB41EC070DB006EF32F /* navi_money.swift in Sources */,
 				AD14BA751EC02E37006EF32F /* Language.swift in Sources */,
 				F074EBB01EDE7191001AB70C /* AddRecord_ViewController.swift in Sources */,
@@ -394,6 +477,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		635666381EE71F4B00CD004D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 635666371EE71F4B00CD004D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		140041891EB0F16F009E5A3E /* Debug */ = {
@@ -494,6 +585,7 @@
 		1400418C1EB0F16F009E5A3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = QuanLyThuChi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -507,6 +599,7 @@
 		1400418D1EB0F16F009E5A3E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = QuanLyThuChi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;

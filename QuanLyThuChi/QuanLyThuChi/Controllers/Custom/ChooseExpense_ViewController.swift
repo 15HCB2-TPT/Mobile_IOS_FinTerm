@@ -45,7 +45,7 @@ class ChooseExpense_ViewController: UIViewController,UINavigationControllerDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        customdelegate?.selectedcategoryfromChi(category: chicategory[indexPath.row])
+        customdelegate?.selectedcategory(category: chicategory[indexPath.row])
         self.navigationController?.popViewController(animated: true)
     }
 
