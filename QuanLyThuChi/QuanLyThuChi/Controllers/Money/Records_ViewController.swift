@@ -1,24 +1,24 @@
 //
-//  SelectBagMoney_ViewController.swift
+//  Records_ViewController.swift
 //  QuanLyThuChi
 //
-//  Created by Phạm Tú on 6/4/17.
+//  Created by Phạm Tú on 6/7/17.
 //  Copyright © 2017 TPT.Group. All rights reserved.
 //
 
 import UIKit
 
-class SelectBagMoney_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class Records_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var nav_item: UINavigationItem!
     @IBOutlet weak var btn_back: UIBarButtonItem!
-    @IBOutlet weak var tblBagMoney: UITableView!
+    @IBOutlet weak var tblMoney: UITableView!
     
-    var bagmoneys: [BagMoney] = []
+    var moneys: [Money] = []
     
     override func uiPassedData(data: Any?, identity: Int) {
-        bagmoneys = Database.select(entityName: "BagMoney", predicater: nil, sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [BagMoney]
-        tblBagMoney.reloadData()
+        moneys = Database.select(entityName: "Money", predicater: NSPredicate(format: "(transfer == nil) OR (transfer != nil AND money_category.category_type.name == 'Chi')"), sorter: [NSSortDescriptor(key: "date", ascending: false)]) as! [Money]
+        tblMoney.reloadData()
     }
     
     @IBAction func btn_back_TouchUpInside(_ sender: Any) {
@@ -27,31 +27,32 @@ class SelectBagMoney_ViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav_item.title = "Tài khoản"
-        tblBagMoney.delegate = self
-        tblBagMoney.dataSource = self
+        nav_item.title = "Đã ghi"
+        tblMoney.delegate = self
+        tblMoney.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0;
+        return 80.0;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bagmoneys.count
+        return moneys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellBagMoney", for: indexPath) as! SelectBagMoney_TableViewCell
-        if (bagmoneys[indexPath.row] as BagMoney?) != nil {
-            cell.lblTen.text = bagmoneys[indexPath.row].name!
-            cell.lblConLai.text = "ahihi"
-            //            cell.lblConLai.text = "\(AppData.CurrencyFormatter(value: foods[indexPath.row].money))\(!foods[indexPath.row].is_use ? " - Ngừng kinh doanh" : "")"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellRecord", for: indexPath) as! Records_TableViewCell
+        if (moneys[indexPath.row] as Money?) != nil {
+            cell.lblDanhMuc.text = "\(String(describing: moneys[indexPath.row].money_category!.category_type!.name!)): \(String(describing: moneys[indexPath.row].money_category!.name!))"
+            cell.lblSoTien.text = "\(moneys[indexPath.row].money)"
+            cell.lblDienGiai.text = moneys[indexPath.row].reason
+            cell.lblTaiKhoan.text = moneys[indexPath.row].money_bagmoney?.name
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        popData(data: bagmoneys[indexPath.row], identity: 2)
+//        popData(data: bagmoneys[indexPath.row], identity: 2)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

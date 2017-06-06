@@ -145,7 +145,41 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
             txt_taikhoan.text = b?.name
         }
     }
+    
+    @IBAction func btn_ghichep_TouchUpInside(_ sender: Any) {
+        pushData(storyboard: "Money", controller: "listRecord", data: nil)
+    }
+    
+    @IBAction func swtGhiChep_ValueChanged(_ sender: Any) {
+        c = nil
+        txt_danhmuc.text = ""
+    }
 
+    @IBAction func btn_xong_TouchUpInside(_ sender: Any) {
+        if(b == nil || c == nil) {
+            let alert = UIAlertController(title: "Lỗi", message: "Danh mục và Tài khoản không được để trống.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            let m: Money = Database.create()
+            m.date = datePicker.date as NSDate
+            m.money = (txt_sotien.text?.doubleValue)!
+            m.money_category = c
+            m.reason = txt_diengiai.text
+            m.money_bagmoney = b
+            Database.save()
+            
+            txt_sotien.text = ""
+            txt_danhmuc.text = ""
+            txt_diengiai.text = ""
+            txt_taikhoan.text = ""
+            createDatePicker()
+            b = nil
+            c = nil
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

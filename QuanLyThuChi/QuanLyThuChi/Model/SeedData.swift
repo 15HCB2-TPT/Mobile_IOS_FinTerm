@@ -13,9 +13,10 @@ class SeedData {
     static func seedData(){
         clearData()
         seedType()
+        seedBagMoney()
     }
     
-    static func clearData(){
+    static func clearData() {
         Database.clear(entityName: "Money")
         Database.clear(entityName: "BagMoney")
         Database.clear(entityName: "BagMoney_Type")
@@ -25,7 +26,7 @@ class SeedData {
         Database.save()
     }
     
-    private static func seedType(){
+    private static func seedType() {
         let tempthu:Type = Database.create()
         tempthu.name = "Thu"
         Database.save()
@@ -33,7 +34,45 @@ class SeedData {
         tempchi.name = "Chi"
         Database.save()
         
+        let temp1:Category = Database.create()
+        temp1.name = "Lương"
+        temp1.category_type = tempthu
+        Database.save()
+        let temp2:Category = Database.create()
+        temp2.name = "Thưởng"
+        temp2.category_type = tempthu
+        Database.save()
+        
+        let temp3:Category = Database.create()
+        temp3.name = "Ăn uống"
+        temp3.category_type = tempchi
+        Database.save()
+        let temp4:Category = Database.create()
+        temp4.name = "Đi lại"
+        temp4.category_type = tempchi
+        Database.save()
     }
+    
+    private static func seedBagMoney() {
+        let temp1:BagMoney_Type = Database.create()
+        temp1.name = "Tiền mặt"
+        Database.save()
+        let temp2:BagMoney_Type = Database.create()
+        temp2.name = "Tài khoản ngân hàng"
+        Database.save()
+        
+        let temp3:BagMoney = Database.create()
+        temp3.name = "Thẻ ATM"
+        temp3.money = 500000
+        temp3.bagmoney_type = temp2
+        Database.save()
+        let temp4:BagMoney = Database.create()
+        temp4.name = "Ví"
+        temp4.money = 1000000
+        temp4.bagmoney_type = temp1
+        Database.save()
+    }
+    
 //    private static func seedFoodType(){
 //        //if Database.isEmpty(entityName: "FoodType") {
 //        let data = ["Thức uống", "Lẩu", "Đồ nướng", "Hải sản", "Cơm"]
