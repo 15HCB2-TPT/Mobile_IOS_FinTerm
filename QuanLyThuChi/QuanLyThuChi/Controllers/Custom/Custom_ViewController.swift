@@ -20,15 +20,15 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
     @IBOutlet weak var btn_Ngay: CheckBox!
     @IBOutlet weak var btn_Thang: CheckBox!
     @IBOutlet weak var btn_Nam: CheckBox!
+    @IBOutlet weak var txt_ngaychay: RightIcon_TextField!
     
     @IBOutlet weak var lbl_category: UILabel!
-    var categorythu:Category? = nil
-    var categorychi:Category? = nil
+    var datePicker = UIDatePicker()
+    var categoryofbagmoney:Category? = nil
     var pickerview_type = UIPickerView()
     var pickerview_thu = UIPickerView()
     var pickerview_chi = UIPickerView()
-    var bagmoneyselected_thu:BagMoney? = nil
-    var bagmoneyselected_chi:BagMoney? = nil
+    var bagmoneyselected:BagMoney? = nil
     var listbagmoney:[BagMoney] = Database.select()
     var listtype:[Type] = Database.select()
     @IBOutlet weak var view_danhmucthuchi: UIView!
@@ -50,6 +50,7 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
         borderView(v: view_chi)
         
         //
+        createDatePicker()
         txt_looptime.inputAccessoryView = addDoneButton()
         txt_tuichi.inputAccessoryView = addDoneButton()
         txt_type.inputAccessoryView = addDoneButton()
@@ -63,8 +64,7 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
         if listbagmoney.count>0 {
             txt_tuichi.text = listbagmoney[0].name
             txt_type.text = listtype[0].name
-            bagmoneyselected_thu = listbagmoney[0]
-            bagmoneyselected_chi = listbagmoney[0]
+            bagmoneyselected = listbagmoney[0]
         }else{
             txt_tuichi.delegate = self
             txt_type.delegate = self
@@ -80,6 +80,34 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func createDatePicker() {
+        //datePicker la bien toan cuc
+        //format date
+        datePicker.datePickerMode = .date
+        
+        //toolbar
+        let toolbar=UIToolbar()
+        toolbar.sizeToFit()
+        
+        //bar button item
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(title: "Xong"/*.localized(lang: AppLanguage.currentAppleLanguage())*/	, style: .plain, target: self, action: #selector(donePressed_datepicker))
+        toolbar.setItems([flexBarButton,doneBarButton],animated:false)
+        
+        txt_ngaychay.text = "Hôm nay"
+        txt_ngaychay.inputAccessoryView = toolbar
+        txt_ngaychay.inputView = datePicker
+    }
+    
+    func donePressed_datepicker() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateStyle = .short
+        
+        txt_ngaychay.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -112,6 +140,8 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == pickerview_type {
+            lbl_category.text = ""
+            categoryofbagmoney = nil
             txt_type.text = listtype[row].name
         }else{
             if listbagmoney.count <= 0 {
@@ -140,7 +170,7 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
 
 
     func selectedcategory(category: Category) {
-        categorythu = category
+        categoryofbagmoney = category
         lbl_category.text = category.name!
     }
     
@@ -223,17 +253,23 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
             return
         }
         
-        let alert = UIAlertController(title: "Đặt tên chi nhanh", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Đặt tên thiết lập nhanh.", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = "Tên chi nhanh"
+            textField.placeholder = "Tên thiết lập"
         }
         alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: { [weak alert] (_) in
-            let temp:[Common] = Database.select(entityName: "Common", predicater: NSPredicate(format: "name = %@ AND category.category_type.name == 'Chi'",(alert?.textFields![0].text)!), sorter: nil) as! [Common]
+            var temp = [Common]()
+            if self.txt_type.text == "Thu"{
+                temp = Database.select(entityName: "Common", predicater: NSPredicate(format: "name = %@ AND category.category_type.name == 'Thu'",(alert?.textFields![0].text)!), sorter: nil) as! [Common]
+            }else{
+                temp = Database.select(entityName: "Common", predicater: NSPredicate(format: "name = %@ AND category.category_type.name == 'Chi'",(alert?.textFields![0].text)!), sorter: nil) as! [Common]
+            }
+            
             if temp.count <= 0 && alert?.textFields![0].text != ""{
                 
                 let common:Common = Database.create()
-                common.category = self.categorychi
-                common.bagmoney = self.bagmoneyselected_chi
+                common.category = self.categoryofbagmoney
+                common.bagmoney = self.bagmoneyselected
                 common.money = Double(self.txt_tienchi.text!)!
                 common.name = alert?.textFields![0].text
                 if self.btn_Ngay.isChecked {
@@ -246,6 +282,7 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
                     common.loopyear = true
                 }
                 common.looptime = Int32(self.txt_looptime.text!)!
+                common.lastadd = self.datePicker.date as! NSDate
                 Database.save()
                 
                 let alert_notice = UIAlertController(title: "Thông báo", message: "Thêm thành công!", preferredStyle: .alert)
@@ -255,13 +292,13 @@ class Custom_ViewController: UIViewController,SelectedCategory,UIPickerViewDeleg
             }
             else{
                 if alert?.textFields![0].text == ""{
-                    let alert_notice = UIAlertController(title: "Lỗi", message: "Tên chi nhanh không được để trống!", preferredStyle: .alert)
+                    let alert_notice = UIAlertController(title: "Lỗi", message: "Tên thiết lập nhanh không được để trống!", preferredStyle: .alert)
                     alert_notice.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
                     self.present(alert_notice, animated: true, completion: nil)
                     return
                 }
                 else{
-                    let alert_notice = UIAlertController(title: "Lỗi", message: "Tên chi nhanh đã tồn tại, hãy đặt tên khác.", preferredStyle: .alert)
+                    let alert_notice = UIAlertController(title: "Lỗi", message: "Tên thiết lập đã tồn tại, hãy đặt tên khác.", preferredStyle: .alert)
                     alert_notice.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
                     self.present(alert_notice, animated: true, completion: nil)
                     return

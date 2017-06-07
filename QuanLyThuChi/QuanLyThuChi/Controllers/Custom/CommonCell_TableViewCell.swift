@@ -10,6 +10,8 @@ import UIKit
 
 class CommonCell_TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbl_money: UILabel!
+    @IBOutlet weak var lbl_loop: UILabel!
     @IBOutlet weak var lbl_name: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

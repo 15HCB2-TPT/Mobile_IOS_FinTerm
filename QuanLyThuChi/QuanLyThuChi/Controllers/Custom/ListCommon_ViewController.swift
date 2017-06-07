@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol ReloadData:class{
     func reloadData()
@@ -16,8 +17,7 @@ class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate
 
     @IBOutlet weak var table_common: UITableView!
     @IBOutlet weak var view_notice: UIView!
-    var listcommon:[Common] = Database.select()
-    
+    var listcommon: NSFetchedResultsController<Common> = Database.selectAndGroupBy(groupByColumn: "category.name")
     override func viewDidLoad() {
         super.viewDidLoad()
         table_common.delegate = self
@@ -40,33 +40,59 @@ class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate
     //tableview override
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return listcommon.count
+        return (listcommon.sections?[section].numberOfObjects)!
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commoncell", for: indexPath) as! CommonCell_TableViewCell
-        cell.lbl_name.text = listcommon[indexPath.row].name
-        if listcommon[indexPath.row].category?.category_type?.name == "Thu" {
-            cell.contentView.backgroundColor = UIColor.hex(string: "#2ecc71",alpha: 0.8)
+        let com = listcommon.object(at: indexPath)
+        cell.lbl_name.text = com.name
+        var loop = ""
+        if com.loopday || com.loopmonth || com.loopyear  {
+            if com.loopday {
+                loop = String(com.looptime) + " " + "ngày"
+            }
+            if com.loopmonth {
+                loop = String(com.looptime) + " " + "tháng"
+            }
+            if com.loopyear {
+                loop = String(com.looptime) + " " + "năm"
+            }
+            cell.lbl_loop.text = "Tự lặp: " + loop
+        }else{
+            cell.lbl_loop.isHidden = true
+        }
+        if com.category?.category_type?.name == "Thu" {
+            cell.lbl_money.textColor = UIColor.hex(string: "#2ecc71",alpha: 0.8)
         }
         else{
-            cell.contentView.backgroundColor = UIColor.hex(string: "#e74c3c",alpha: 0.8)
+            cell.lbl_money.textColor = UIColor.hex(string: "#e74c3c",alpha: 0.8)
         }
+        cell.lbl_money.text = String(com.money)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "Custom", bundle: nil).instantiateViewController(withIdentifier: "DetailCommon") as! DetailCommon_ViewController
-        vc.common = listcommon[indexPath.row]
+        vc.common = listcommon.object(at: indexPath)
         vc.reloaddelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
         //customdelegate?.selectedcategoryfromThu(category: thucategory[indexPath.row])
         //self.navigationController?.popViewController(animated: true)
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return listcommon.sections!.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) ->String? {
+        return listcommon.sections![section].name
+    }
+    
     func reloadData() {
-        listcommon = Database.select()
+        listcommon = Database.selectAndGroupBy(groupByColumn: "category.name")
+        print(listcommon.fetchedObjects?.count)
         table_common.reloadData()
     }
 
