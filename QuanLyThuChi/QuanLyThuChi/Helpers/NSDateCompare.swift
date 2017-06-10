@@ -40,4 +40,10 @@ extension NSDate {
         }
         return end - start
     }
+    
+    var dateWithoutTime: NSDate{
+        let calendar = NSCalendar(calendarIdentifier: .gregorian)! as Calendar
+        let components = calendar.dateComponents([.year, .month, .day], from: self as Date)
+        return calendar.date(from: components)! as NSDate
+    }
 }

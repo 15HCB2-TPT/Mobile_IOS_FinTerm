@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class Records_ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var nav_item: UINavigationItem!
     @IBOutlet weak var btn_back: UIBarButtonItem!
     @IBOutlet weak var tblMoney: UITableView!
-    
-    var moneys: [Money] = []
+
+    var moneys: NSFetchedResultsController<Money>!
     
     @IBAction func btn_back_TouchUpInside(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -28,7 +29,7 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        moneys = Database.select(entityName: "Money", predicater: NSPredicate(format: "(transfer == nil) OR (transfer != nil AND money_category.category_type.name == 'Chi')"), sorter: [NSSortDescriptor(key: "date", ascending: false)]) as! [Money]
+        moneys = Database.selectAndGroupBy(groupByColumn: "date.dateWithoutTime", predicater: NSPredicate(format: "(transfer == nil) OR (transfer != nil AND money_category.category_type.name == 'Chi')"), sorter: [NSSortDescriptor(key: "date", ascending: false)])
         tblMoney.reloadData()
     }
     
@@ -36,23 +37,33 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
         return 80.0;
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return moneys.sections!.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moneys.count
+        return moneys.sections![section].numberOfObjects
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let df = DateFormatter()
+        df.dateFormat = "dd-MM-yyyy"
+        return df.string(from: (moneys.sections?[section].objects?[0] as! Money).date! as Date)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellRecord", for: indexPath) as! Records_TableViewCell
-        if (moneys[indexPath.row] as Money?) != nil {
-            cell.lblDanhMuc.text = "\(String(describing: moneys[indexPath.row].money_category!.category_type!.name!)): \(String(describing: moneys[indexPath.row].money_category!.name!))"
-            cell.lblSoTien.text = "\(moneys[indexPath.row].money)"
-            cell.lblDienGiai.text = moneys[indexPath.row].reason
-            cell.lblTaiKhoan.text = moneys[indexPath.row].money_bagmoney?.name
+        if let m = moneys.sections?[indexPath.section].objects?[indexPath.row] as! Money? {
+            cell.lblDanhMuc.text = "\(String(describing: m.money_category!.category_type!.name!)): \(String(describing: m.money_category!.name!))"
+            cell.lblSoTien.text = "\(m.money)"
+            cell.lblDienGiai.text = m.reason
+            cell.lblTaiKhoan.text = m.money_bagmoney?.name
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pushData(storyboard: "Money", controller: "editRecord", data: moneys[indexPath.row], identity: 3)
+        pushData(storyboard: "Money", controller: "editRecord", data: moneys.sections?[indexPath.section].objects?[indexPath.row], identity: 3)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

@@ -9,12 +9,13 @@
 import UIKit
 
 class SeedData {
-    static let SEED_START_DATE = "2017-5-1"
+    static let SEED_START_DATE = "2017-05-01"
     static let TYPE_A = "Thu"
     static let TYPE_B = "Chi"
     
     static func seedData(){
         clearData()
+        setupDateFormatter()
         seed_BagMoney_BMType()
         seed_Type_Category()
         seed_Common()
@@ -31,10 +32,12 @@ class SeedData {
         Database.save()
     }
     
-    private static func seed_BagMoney_BMType(){
-        let dateF = DateFormatter()
+    private static let dateF = DateFormatter()
+    private static func setupDateFormatter(){
         dateF.dateFormat = "yyyy-MM-dd"
-        
+    }
+    
+    private static func seed_BagMoney_BMType(){
         let a = ["Ngân hàng", "Ví"]
         let b = [["Aribank", "Vietinbank", "Vietcombank", "Sacombank", "Techcombank", "DongABank"], ["Ví cá nhân"]]
         var c = 0
@@ -47,7 +50,7 @@ class SeedData {
                 g.bagmoney_type = e
                 g.name = f
                 g.money = 0
-                g.date = dateF.date(from: SEED_START_DATE) as! NSDate
+                g.date = dateF.date(from: SEED_START_DATE)! as NSDate
                 Database.save()
             }
             c += 1
@@ -75,9 +78,6 @@ class SeedData {
     }
     
     private static func seed_Common(){
-        let dateF = DateFormatter()
-        dateF.dateFormat = "yyyy-MM-dd"
-        
         let a = [
                     (   "Ví cá nhân",          
                         "Chi trong ngày",       
@@ -141,16 +141,13 @@ class SeedData {
                 c.looptime = Int32(b.5)
                 c.money = b.6
                 c.name = b.7
-                c.lastadd = dateF.date(from: SEED_START_DATE) as! NSDate
+                c.lastadd = dateF.date(from: SEED_START_DATE)! as NSDate
                 Database.save()
             }
         }
     }
     
     private static func seed_Money(){
-        let dateF = DateFormatter()
-        dateF.dateFormat = "yyyy-MM-dd"
-        
         //create some trades
         let a = [
                     (   "Ví cá nhân",
@@ -158,21 +155,21 @@ class SeedData {
                         200000.0,
                         "Cho Tú mượn tiền mua bikini",
                         false, false,
-                        "2017-4-25"),
+                        "2017-04-25"),
                         
                     (   "Ví cá nhân",
                         "Thu trong ngày",
                         500000.0,
                         "Lượm được của rơi tạm thời đút túi",
                         false, false,
-                        "2017-5-16"),
+                        "2017-05-16"),
                         
                     (   "Ví cá nhân",
                         "Chi trong ngày",
                         110000.0,
                         "Bể bánh xe",
                         false, false,
-                        "2017-5-20"),
+                        "2017-05-20"),
                         
                     //transfer
                     (   "Ví cá nhân",
@@ -180,14 +177,14 @@ class SeedData {
                         2000000.0,
                         "Gửi tiết kiệm",
                         false, true,
-                        "2017-6-2"),
+                        "2017-06-02"),
                         
                     (   "Aribank",
                         "",
                         2000000.0,
                         "Gửi tiết kiệm",
                         true, false,
-                        "2017-6-2")
+                        "2017-06-02")
                     //=====
                 ]
         
@@ -197,7 +194,7 @@ class SeedData {
             let e: Category? = Database.isExistAndGet(predicater: NSPredicate(format: "name = %@", b.1))
             if d != nil && (e != nil || b.4 || b.5) {
                 let c: Money = Database.create()
-                c.date = dateF.date(from: b.6) as! NSDate
+                c.date = dateF.date(from: b.6)! as NSDate
                 c.money_bagmoney = d
                 c.money_category = e
                 if e?.category_type?.name == TYPE_A {

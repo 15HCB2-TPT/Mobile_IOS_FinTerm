@@ -183,12 +183,13 @@ class Database {
         let fetchRequest: NSFetchRequest<T> = NSFetchRequest(entityName: entityName)
         
         var sorters = [NSSortDescriptor]()
-        let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
-        sorters.append(defaultSorter)
         if sorter != nil {
             for each in sorter! {
                 sorters.append(each)
             }
+        } else{
+            let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
+            sorters.append(defaultSorter)
         }
         
         fetchRequest.predicate = predicater
@@ -199,7 +200,7 @@ class Database {
         do {
             try aFetchedResultsController.performFetch()
         } catch let error {
-            print("Unresolved error \(error), \(error._userInfo)")
+            print("Unresolved error \(error), \(String(describing: error._userInfo))")
             abort()
         }
 
@@ -210,23 +211,24 @@ class Database {
         let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: entityName)
         
         var sorters = [NSSortDescriptor]()
-        let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
-        sorters.append(defaultSorter)
         if sorter != nil {
             for each in sorter! {
                 sorters.append(each)
             }
+        } else{
+            let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
+            sorters.append(defaultSorter)
         }
         
         fetchRequest.predicate = predicater
         fetchRequest.sortDescriptors = sorters
         
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: MOC, sectionNameKeyPath: groupByColumn, cacheName: nil)
-
+        
         do {
             try aFetchedResultsController.performFetch()
         } catch let error {
-            print("Unresolved error \(error), \(error._userInfo)")
+            print("Unresolved error \(error), \(String(describing: error._userInfo))")
             abort()
         }
 
@@ -238,12 +240,13 @@ class Database {
         let fetchRequest: NSFetchRequest<T> = NSFetchRequest(entityName: entityName)
         
         var sorters = [NSSortDescriptor]()
-        let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
-        sorters.append(defaultSorter)
         if sorter != nil {
             for each in sorter! {
                 sorters.append(each)
             }
+        } else{
+            let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
+            sorters.append(defaultSorter)
         }
         
         fetchRequest.fetchLimit = limit
@@ -255,7 +258,7 @@ class Database {
         do {
             try aFetchedResultsController.performFetch()
         } catch let error {
-            print("Unresolved error \(error), \(error._userInfo)")
+            print("Unresolved error \(error), \(String(describing: error._userInfo))")
             abort()
         }
 
@@ -266,12 +269,13 @@ class Database {
         let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: entityName)
         
         var sorters = [NSSortDescriptor]()
-        let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
-        sorters.append(defaultSorter)
         if sorter != nil {
             for each in sorter! {
                 sorters.append(each)
             }
+        } else{
+            let defaultSorter = NSSortDescriptor(key: groupByColumn, ascending: true)
+            sorters.append(defaultSorter)
         }
         
         fetchRequest.fetchLimit = limit
@@ -283,7 +287,7 @@ class Database {
         do {
             try aFetchedResultsController.performFetch()
         } catch let error {
-            print("Unresolved error \(error), \(error._userInfo)")
+            print("Unresolved error \(error), \(String(describing: error._userInfo))")
             abort()
         }
 
