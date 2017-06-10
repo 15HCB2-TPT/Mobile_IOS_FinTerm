@@ -16,13 +16,8 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
     
     var moneys: [Money] = []
     
-    override func uiPassedData(data: Any?, identity: Int) {
-        moneys = Database.select(entityName: "Money", predicater: NSPredicate(format: "(transfer == nil) OR (transfer != nil AND money_category.category_type.name == 'Chi')"), sorter: [NSSortDescriptor(key: "date", ascending: false)]) as! [Money]
-        tblMoney.reloadData()
-    }
-    
     @IBAction func btn_back_TouchUpInside(_ sender: Any) {
-        popData(data: nil, identity: 0)
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -30,6 +25,11 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
         nav_item.title = "Đã ghi"
         tblMoney.delegate = self
         tblMoney.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        moneys = Database.select(entityName: "Money", predicater: NSPredicate(format: "(transfer == nil) OR (transfer != nil AND money_category.category_type.name == 'Chi')"), sorter: [NSSortDescriptor(key: "date", ascending: false)]) as! [Money]
+        tblMoney.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -52,7 +52,7 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        popData(data: bagmoneys[indexPath.row], identity: 2)
+        pushData(storyboard: "Money", controller: "editRecord", data: moneys[indexPath.row], identity: 3)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
