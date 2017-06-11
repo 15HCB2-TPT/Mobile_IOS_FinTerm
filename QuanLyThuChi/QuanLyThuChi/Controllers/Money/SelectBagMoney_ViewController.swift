@@ -15,10 +15,17 @@ class SelectBagMoney_ViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tblBagMoney: UITableView!
     
     var bagmoneys: [BagMoney] = []
+    var identityTransfer: Int? = nil
     
     override func uiPassedData(data: Any?, identity: Int) {
         bagmoneys = Database.select(entityName: "BagMoney", predicater: nil, sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [BagMoney]
         tblBagMoney.reloadData()
+        if(data == nil) {
+            identityTransfer = 0
+        }
+        else {
+            identityTransfer = data as? Int
+        }
     }
     
     @IBAction func btn_back_TouchUpInside(_ sender: Any) {
@@ -51,7 +58,7 @@ class SelectBagMoney_ViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        popData(data: bagmoneys[indexPath.row], identity: 2)
+        popData(data: bagmoneys[indexPath.row], identity: identityTransfer == 0 ? 2 : identityTransfer!)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

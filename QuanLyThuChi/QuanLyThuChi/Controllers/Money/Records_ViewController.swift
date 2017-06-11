@@ -29,7 +29,7 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        moneys = Database.selectAndGroupBy(groupByColumn: "date.dateWithoutTime", predicater: NSPredicate(format: "(transfer == nil) OR (transfer != nil AND money_category.category_type.name == 'Chi')"), sorter: [NSSortDescriptor(key: "date", ascending: false)])
+        moneys = Database.selectAndGroupBy(groupByColumn: "date.dateWithoutTime", predicater: NSPredicate(format: "(transfer == nil) OR (transfer != nil AND money_type.name == 'Chi')"), sorter: [NSSortDescriptor(key: "date", ascending: false)])
         tblMoney.reloadData()
     }
     
@@ -54,7 +54,12 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellRecord", for: indexPath) as! Records_TableViewCell
         if let m = moneys.sections?[indexPath.section].objects?[indexPath.row] as! Money? {
-            cell.lblDanhMuc.text = "\(String(describing: m.money_category!.category_type!.name!)): \(String(describing: m.money_category!.name!))"
+            if(m.transfer == nil) {
+                cell.lblDanhMuc.text = "\(String(describing: m.money_type!.name!)): \(String(describing: m.money_category!.name!))"
+            }
+            else {
+                cell.lblDanhMuc.text = "Chuyển tới: \(String(describing: m.transfer!.money_bagmoney!.name!))"
+            }
             cell.lblSoTien.text = "\(m.money)"
             cell.lblDienGiai.text = m.reason
             cell.lblTaiKhoan.text = m.money_bagmoney?.name

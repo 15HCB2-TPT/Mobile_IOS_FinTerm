@@ -30,6 +30,7 @@
         <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="money_bagmoney" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BagMoney" syncable="YES"/>
         <relationship name="money_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
+        <relationship name="money_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" syncable="YES"/>
         <relationship name="transfer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Money" syncable="YES"/>
     </entity>
     <entity name="Type" representedClassName="Type" syncable="YES" codeGenerationType="class">
@@ -40,7 +41,7 @@
         <element name="BagMoney_Type" positionX="-569" positionY="-346" width="128" height="58"/>
         <element name="Category" positionX="-74" positionY="-378" width="128" height="73"/>
         <element name="Common" positionX="-263" positionY="-585" width="128" height="180"/>
-        <element name="Money" positionX="-270" positionY="-288" width="128" height="133"/>
-        <element name="Type" positionX="36" positionY="-279" width="128" height="58"/>
+        <element name="Money" positionX="-261" positionY="-319" width="117" height="148"/>
+        <element name="Type" positionX="-29" positionY="-225" width="128" height="58"/>
     </elements>
 </model>

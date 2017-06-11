@@ -19,6 +19,9 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
     
     @IBOutlet weak var v: UIView!
     
+    var tc: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Chi'"), sorter: nil)[0] as? Type
+    var tt: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Thu'"), sorter: nil)[0] as? Type
+    @IBOutlet weak var lblGhiChep: UILabel!
     @IBOutlet weak var lblKhoanChi: UILabel!
     @IBOutlet weak var swtGhiChep: UISwitch!
     @IBOutlet weak var lblKhoanThu: UILabel!
@@ -26,12 +29,14 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var lblSoTien: UILabel!
     @IBOutlet weak var txt_sotien: UITextField!
     
+    var c: Category? = nil
     @IBOutlet weak var lblDanhMuc: UILabel!
     @IBOutlet weak var txt_danhmuc: UITextField!
     
     @IBOutlet weak var lblDienGiai: UILabel!
     @IBOutlet weak var txt_diengiai: UITextField!
     
+    var b: BagMoney? = nil
     @IBOutlet weak var lblTaiKhoan: UILabel!
     @IBOutlet weak var txt_taikhoan: UITextField!
     
@@ -41,9 +46,6 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
 
     @IBOutlet weak var btn_xong: UIButton!
     
-    var c: Category? = nil
-    var b: BagMoney? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         borderView(v: view_ghichep)
@@ -52,6 +54,7 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
         btn_ghichepnhanh.setTitle("Ghi chép nhanh", for: .normal)
         
         borderView(v: v)
+        lblGhiChep.text = "Ghi chép"
         lblKhoanChi.text = "Khoản chi"
         lblKhoanThu.text = "Khoản thu"
         lblSoTien.text = "Số tiền"
@@ -163,19 +166,18 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
         }
         else {
             let m: Money = Database.create()
-            m.date = datePicker.date as NSDate
+            m.money_type = swtGhiChep.isOn ? tt : tc
             m.money = (txt_sotien.text?.doubleValue)!
             m.money_category = c
             m.reason = txt_diengiai.text
             m.money_bagmoney = b
+            m.date = datePicker.date as NSDate
             Database.save()
             
             txt_sotien.text = ""
             txt_danhmuc.text = ""
             txt_diengiai.text = ""
-            txt_taikhoan.text = ""
             createDatePicker()
-            b = nil
             c = nil
         }
     }

@@ -246,12 +246,12 @@
 				F0340C8D1EEB9AE9007EBB8C /* EditRecord_ViewController.swift */,
 				F03F42871EE71890009D8FB4 /* Records_ViewController.swift */,
 				F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */,
-				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
+				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
 				F03F42851EE70F91009D8FB4 /* SelectBagMoney_ViewController.swift */,
 				F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */,
 				F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */,
 				F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */,
-				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
+				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";

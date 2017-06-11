@@ -15,6 +15,9 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var v: UIView!
     
+    var tc: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Chi'"), sorter: nil)[0] as? Type
+    var tt: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Thu'"), sorter: nil)[0] as? Type
+    @IBOutlet weak var lblGhiChep: UILabel!
     @IBOutlet weak var lblKhoanChi: UILabel!
     @IBOutlet weak var swtGhiChep: UISwitch!
     @IBOutlet weak var lblKhoanThu: UILabel!
@@ -45,6 +48,7 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         nav_item.title = "Chỉnh sửa"
+        lblGhiChep.text = "Ghi chép"
         borderView(v: v)
         lblKhoanChi.text = "Khoản chi"
         lblKhoanThu.text = "Khoản thu"
@@ -180,11 +184,12 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
             self.present(alert, animated: true, completion: nil)
         }
         else {
-            m.date = datePicker.date as NSDate
+            m.money_type = swtGhiChep.isOn ? tt : tc
             m.money = (txt_sotien.text?.doubleValue)!
             m.money_category = c
             m.reason = txt_diengiai.text
             m.money_bagmoney = b
+            m.date = datePicker.date as NSDate
             Database.save()
             self.navigationController?.popViewController(animated: true)
         }
