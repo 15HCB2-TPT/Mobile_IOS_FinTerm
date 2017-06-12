@@ -9,17 +9,20 @@
 import UIKit
 
 class Money_ViewController: UIViewController,UITabBarControllerDelegate {
-
-
     @IBOutlet weak var segmented: UISegmentedControl!
     @IBOutlet weak var container_GhiChep: UIView!
     @IBOutlet weak var container_ChuyenKhoan: UIView!
-    @IBOutlet weak var navi: UINavigationBar!
-        
+    @IBOutlet weak var view_dsghichep: UIView!
+    @IBOutlet weak var btn_dsghichep: UIButton!
+    @IBOutlet weak var view_ghichepnhanh: UIView!
+    @IBOutlet weak var btn_ghichepnhanh: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //UINavigationBar.appearance().isTranslucent = true
+        borderView(v: view_dsghichep)
+        btn_dsghichep.setTitle("Danh sách ghi chép", for: .normal)
+        borderView(v: view_ghichepnhanh)
+        btn_ghichepnhanh.setTitle("Ghi chép nhanh", for: .normal)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -32,40 +35,28 @@ class Money_ViewController: UIViewController,UITabBarControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        container_GhiChep.alpha = 0
-        container_ChuyenKhoan.alpha = 0
-    }
-    
     @IBAction func segmentedChanged(_ sender: Any) {
         switch segmented.selectedSegmentIndex {
         case 0:
             container_GhiChep.isHidden = false
             container_ChuyenKhoan.isHidden = true
-            UIView.animate(withDuration: 0.5, animations: {
-                self.container_GhiChep.alpha = 1
-                self.container_ChuyenKhoan.alpha = 0
-            })
+            break
         case 1:
             container_GhiChep.isHidden = true
             container_ChuyenKhoan.isHidden = false
-            UIView.animate(withDuration: 0.5, animations: {
-                self.container_GhiChep.alpha = 0
-                self.container_ChuyenKhoan.alpha = 1    
-            })
-            default:
+            break
+        default:
             break
         }
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.5, animations: {
-            self.container_GhiChep.alpha = 1
-        })
+    @IBAction func btn_dsghichep_TouchUpInside(_ sender: Any) {
+        pushData(storyboard: "Money", controller: "listRecord", data: nil)
     }
     
+    @IBAction func btn_ghichepnhanh_TouchUpInside(_ sender: Any) {
+        
+    }
        /*
     // MARK: - Navigation
 

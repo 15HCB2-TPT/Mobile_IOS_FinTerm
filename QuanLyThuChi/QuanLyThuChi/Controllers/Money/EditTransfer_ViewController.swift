@@ -1,18 +1,21 @@
 //
-//  AddTransfer_ViewController.swift
+//  EditTransfer_ViewController.swift
 //  QuanLyThuChi
 //
-//  Created by Shin-MacDesk on 5/9/17.
+//  Created by Phạm Tú on 6/13/17.
 //  Copyright © 2017 TPT.Group. All rights reserved.
 //
 
 import UIKit
 
-class AddTransfer_ViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
+class EditTransfer_ViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
+    
+    @IBOutlet weak var nav_item: UINavigationItem!
     
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var v: UIView!
     
+    @IBOutlet weak var lblChuyenKhoan: UILabel!
     @IBOutlet weak var lblSoTien: UILabel!
     @IBOutlet weak var txt_sotien: UITextField!
     
@@ -29,23 +32,28 @@ class AddTransfer_ViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var lblNgay: UILabel!
     @IBOutlet weak var txt_ngay: UITextField!
     
-    @IBOutlet weak var btn_xong: UIButton!
+    @IBOutlet weak var btn_luu: UIButton!
+    @IBOutlet weak var btn_xoa: UIButton!
     
     var ttk: BagMoney? = nil
     var dtk: BagMoney? = nil
-    var tc: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Chi'"), sorter: nil)[0] as? Type
-    var tt: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Thu'"), sorter: nil)[0] as? Type
+    
+    var mc: Money!
+    var mt: Money!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        nav_item.title = "Chỉnh sửa"
         borderView(v: v)
+        lblChuyenKhoan.text = "Chuyển khoản"
         lblSoTien.text = "Số tiền"
         lblTuTaiKhoan.text = "Từ TK"
         lblDenTaiKhoan.text = "Đến TK"
         lblDienGiai.text = "Diễn giải"
         lblNgay.text = "Ngày"
-        btn_xong.setTitle("Xong", for: .normal)
+        
+        btn_luu.setTitle("Lưu", for: .normal)
+        btn_xoa.setTitle("Xoá", for: .normal)
         
         txt_tutaikhoan.delegate = self
         txt_dentaikhoan.delegate = self
@@ -124,15 +132,35 @@ class AddTransfer_ViewController: UIViewController, UINavigationControllerDelega
             ttk = tk
             txt_tutaikhoan.text = ttk?.name
         }
-        
         if (identity == 22) {
             let tk = data as! BagMoney
             dtk = tk
             txt_dentaikhoan.text = dtk?.name
         }
+        if (identity == 3) {
+            mc = data as! Money
+            if(mc != nil) {
+                txt_sotien.text = "\(mc.money)"
+                ttk = mc.money_bagmoney!
+                txt_tutaikhoan.text = ttk!.name!
+                dtk = mc.transfer!.money_bagmoney!
+                txt_dentaikhoan.text = dtk!.name!
+                txt_diengiai.text = mc.reason!
+                createDatePicker()
+                datePicker.setDate(mc.date! as Date, animated: false)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .short
+                dateFormatter.timeStyle = .short
+                txt_ngay.text = dateFormatter.string(from: datePicker.date)
+            }
+        }
     }
     
-    @IBAction func btn_xong_TouchUpInside(_ sender: Any) {
+    @IBAction func btn_back_TouchUpInside(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btn_luu_TouchUpInside(_ sender: Any) {
         if(ttk == nil || dtk == nil) {
             let alert = UIAlertController(title: "Lỗi", message: "Các tài khoản không được để trống.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -145,32 +173,27 @@ class AddTransfer_ViewController: UIViewController, UINavigationControllerDelega
                 self.present(alert, animated: true, completion: nil)
             }
             else {
-                let mc: Money = Database.create()
-                mc.money_type = tc
                 mc.money = (txt_sotien.text?.doubleValue)!
-                mc.money_category = nil
                 mc.reason = txt_diengiai.text
                 mc.money_bagmoney = ttk
                 mc.date = datePicker.date as NSDate
-                Database.save()
                 
-                let mt: Money = Database.create()
-                mt.money_type = tt
+                mt = mc.transfer!
                 mt.money = (txt_sotien.text?.doubleValue)!
-                mt.money_category = nil
                 mt.reason = txt_diengiai.text
                 mt.money_bagmoney = dtk
                 mt.date = datePicker.date as NSDate
-                
-                mt.transfer = mc
-                mc.transfer = mt
                 Database.save()
-            
-                txt_sotien.text = ""
-                txt_diengiai.text = ""
-                createDatePicker()
+                self.navigationController?.popViewController(animated: true)
             }
         }
+    }
+    
+    @IBAction func btn_xoa_TouchUpInside(_ sender: Any) {
+        Database.delete(object: mc.transfer!)
+        Database.delete(object: mc)
+        Database.save()
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

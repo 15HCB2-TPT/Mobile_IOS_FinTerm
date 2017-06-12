@@ -68,7 +68,14 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pushData(storyboard: "Money", controller: "editRecord", data: moneys.sections?[indexPath.section].objects?[indexPath.row], identity: 3)
+        if let m = moneys.sections?[indexPath.section].objects?[indexPath.row] as! Money? {
+            if(m.transfer == nil) {
+                pushData(storyboard: "Money", controller: "editRecord", data: moneys.sections?[indexPath.section].objects?[indexPath.row], identity: 3)
+            }
+            else {
+                pushData(storyboard: "Money", controller: "editTransfer", data: moneys.sections?[indexPath.section].objects?[indexPath.row], identity: 3)
+            }
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

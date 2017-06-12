@@ -64,6 +64,7 @@
 		F074EBB81EDE73E4001AB70C /* SelectCategory_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */; };
 		F074EBBC1EDE80EE001AB70C /* Records_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */; };
 		F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */; };
+		F093DCC11EEF0C9B00813267 /* EditTransfer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093DCC01EEF0C9B00813267 /* EditTransfer_ViewController.swift */; };
 		F0A758FE1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,7 @@
 		F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategory_TableViewCell.swift; sourceTree = "<group>"; };
 		F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_TableViewCell.swift; sourceTree = "<group>"; };
 		F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategory_ViewController.swift; sourceTree = "<group>"; };
+		F093DCC01EEF0C9B00813267 /* EditTransfer_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTransfer_ViewController.swift; sourceTree = "<group>"; };
 		F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +249,7 @@
 				F03F42871EE71890009D8FB4 /* Records_ViewController.swift */,
 				F074EBBB1EDE80EE001AB70C /* Records_TableViewCell.swift */,
 				F074EBB11EDE719D001AB70C /* AddTransfer_ViewController.swift */,
+				F093DCC01EEF0C9B00813267 /* EditTransfer_ViewController.swift */,
 				F03F42851EE70F91009D8FB4 /* SelectBagMoney_ViewController.swift */,
 				F0A758FD1EDE424600B7C7C1 /* SelectBagMoney_TableViewCell.swift */,
 				F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */,
@@ -488,6 +491,7 @@
 				AD14BA721EC02DB2006EF32F /* UIImageExt.swift in Sources */,
 				6356663B1EE7232B00CD004D /* CustomButton.swift in Sources */,
 				AD14BAB41EC070DB006EF32F /* navi_money.swift in Sources */,
+				F093DCC11EEF0C9B00813267 /* EditTransfer_ViewController.swift in Sources */,
 				F0340C8E1EEB9AE9007EBB8C /* EditRecord_ViewController.swift in Sources */,
 				AD14BA751EC02E37006EF32F /* Language.swift in Sources */,
 				F074EBB01EDE7191001AB70C /* AddRecord_ViewController.swift in Sources */,

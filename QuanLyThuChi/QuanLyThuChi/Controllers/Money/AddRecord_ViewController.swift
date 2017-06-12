@@ -11,17 +11,10 @@ import UIKit
 class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var scrollview: UIScrollView!
-    @IBOutlet weak var view_ghichep: UIView!
-    @IBOutlet weak var btn_ghichep: UIButton!
-    
-    @IBOutlet weak var view_chinhanh: UIView!
-    @IBOutlet weak var btn_ghichepnhanh: UIButton!
-    
     @IBOutlet weak var v: UIView!
     
     var tc: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Chi'"), sorter: nil)[0] as? Type
     var tt: Type? = Database.select(entityName: "Type", predicater: NSPredicate(format: "name = 'Thu'"), sorter: nil)[0] as? Type
-    @IBOutlet weak var lblGhiChep: UILabel!
     @IBOutlet weak var lblKhoanChi: UILabel!
     @IBOutlet weak var swtGhiChep: UISwitch!
     @IBOutlet weak var lblKhoanThu: UILabel!
@@ -48,13 +41,8 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        borderView(v: view_ghichep)
-        borderView(v: view_chinhanh)
-        btn_ghichep.setTitle("Danh sách ghi chép", for: .normal)
-        btn_ghichepnhanh.setTitle("Ghi chép nhanh", for: .normal)
         
         borderView(v: v)
-        lblGhiChep.text = "Ghi chép"
         lblKhoanChi.text = "Khoản chi"
         lblKhoanThu.text = "Khoản thu"
         lblSoTien.text = "Số tiền"
@@ -147,10 +135,6 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
             b = tk
             txt_taikhoan.text = b?.name
         }
-    }
-    
-    @IBAction func btn_ghichep_TouchUpInside(_ sender: Any) {
-        pushData(storyboard: "Money", controller: "listRecord", data: nil)
     }
     
     @IBAction func swtGhiChep_ValueChanged(_ sender: Any) {
