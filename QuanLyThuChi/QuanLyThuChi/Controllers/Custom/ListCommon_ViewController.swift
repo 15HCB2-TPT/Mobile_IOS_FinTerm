@@ -51,13 +51,13 @@ class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate
         var loop = ""
         if com.loopday || com.loopmonth || com.loopyear  {
             if com.loopday {
-                loop = String(com.looptime) + " " + "ngày"
+                loop = String(com.looptime) + " " + "Ngày".trans(1)
             }
             if com.loopmonth {
-                loop = String(com.looptime) + " " + "tháng"
+                loop = String(com.looptime) + " " + "Tháng".trans
             }
             if com.loopyear {
-                loop = String(com.looptime) + " " + "năm"
+                loop = String(com.looptime) + " " + "Năm".trans
             }
             cell.lbl_loop.text = "Tự lặp: " + loop
         }else{

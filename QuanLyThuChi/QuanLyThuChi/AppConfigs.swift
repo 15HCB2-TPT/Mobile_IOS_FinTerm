@@ -7,5 +7,7 @@
 //
 
 public class AppConfigs{
-    public static let LANGUAGE_KEY = ""
+    public static let SEED_DATA_KEY = "seedFirst"
+    public static let LANGUAGE_KEY = "language"
+    public static let CURRENCY_KEY = "currency"
 }

@@ -13,8 +13,8 @@ struct AppExtension {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(title: "Done".localized(lang: AppLanguage.currentAppleLanguage()), style: .plain, target: target, action: doneAct)
-        let cancelBarButton = UIBarButtonItem(title: "Cancel".localized(lang: AppLanguage.currentAppleLanguage()), style: .plain, target: target, action: cancelAct)
+        let doneBarButton = UIBarButtonItem(title: "Hoàn tất".trans, style: .plain, target: target, action: doneAct)
+        let cancelBarButton = UIBarButtonItem(title: "Huỷ".trans, style: .plain, target: target, action: cancelAct)
         keyboardToolbar.items = [cancelBarButton, flexBarButton, doneBarButton]
         return keyboardToolbar
     }
@@ -25,7 +25,7 @@ extension UIViewController {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(title: "Done"/*.localized(lang: AppLanguage.currentAppleLanguage())*/	, style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
+        let doneBarButton = UIBarButtonItem(title: "Hoàn tất".trans, style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         return keyboardToolbar
     }
@@ -93,13 +93,6 @@ extension String {
             }
         }
         return 0
-    }
-    
-    //load change language
-    func localized(lang:String)->String{
-        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        return NSLocalizedString(self, tableName: "Notification", bundle: bundle!, value: "", comment: "")
     }
 }
 

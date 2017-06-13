@@ -16,6 +16,7 @@ class SeedData {
     static func seedData(){
         clearData()
         setupDateFormatter()
+        seed_Currency()
         seed_BagMoney_BMType()
         seed_Type_Category()
         seed_Common()
@@ -29,12 +30,23 @@ class SeedData {
         Database.clear(entityName: "Type")
         Database.clear(entityName: "BagMoney")
         Database.clear(entityName: "BagMoney_Type")
+        Database.clear(entityName: "Currency")
         Database.save()
     }
     
     private static let dateF = DateFormatter()
     private static func setupDateFormatter(){
         dateF.dateFormat = "yyyy-MM-dd"
+    }
+    
+    private static func seed_Currency(){
+        let data = [("vi_VN", 1.0), ("en_US", 1.0 / 23000.0)]
+        for each in data {
+            let d: Currency = Database.create()
+            d.id = each.0
+            d.value = each.1
+            Database.save()
+        }
     }
     
     private static func seed_BagMoney_BMType(){

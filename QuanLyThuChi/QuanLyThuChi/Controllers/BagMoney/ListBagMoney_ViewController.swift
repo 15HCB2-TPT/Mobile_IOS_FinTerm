@@ -78,7 +78,7 @@ class ListBagMoney_ViewController: UIViewController,UINavigationControllerDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "plus_TableViewCell", for: indexPath) as! plus_TableViewCell
         cell.lbl_nametui.text = temp[indexPath.section][indexPath.row].name
-        cell.lbl_money.text = String(temp[indexPath.section][indexPath.row].money)
+        cell.lbl_money.text = temp[indexPath.section][indexPath.row].money.cur
         return cell
     }
     

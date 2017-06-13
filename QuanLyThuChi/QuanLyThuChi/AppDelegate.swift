@@ -18,10 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //set lan default
+        UserDefaults.standard.removeObject(forKey: AppConfigs.LANGUAGE_KEY)
+        if UserDefaults.standard.object(forKey: AppConfigs.LANGUAGE_KEY) == nil {
+            UserDefaults.standard.set(-1, forKey: AppConfigs.LANGUAGE_KEY)
+            UserDefaults.standard.set("vi_VN", forKey: AppConfigs.CURRENCY_KEY)
+        }
+        Translater.TranslaterIndex = UserDefaults.standard.integer(forKey: AppConfigs.LANGUAGE_KEY)
+        
         //seed data
-        UserDefaults.standard.removeObject(forKey: "seedFirst")
-        if UserDefaults.standard.object(forKey: "seedFirst") == nil {
-            UserDefaults.standard.set(0, forKey: "seedFirst")
+        UserDefaults.standard.removeObject(forKey: AppConfigs.SEED_DATA_KEY)
+        if UserDefaults.standard.object(forKey: AppConfigs.SEED_DATA_KEY) == nil {
+            UserDefaults.standard.set(0, forKey: AppConfigs.SEED_DATA_KEY)
             SeedData.seedData()
         }
         

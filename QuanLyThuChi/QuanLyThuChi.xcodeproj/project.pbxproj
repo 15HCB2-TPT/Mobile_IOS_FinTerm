@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1400417A1EB0F16F009E5A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140041791EB0F16F009E5A3E /* AppDelegate.swift */; };
+		14076AE51EEFBF8B0073FE2F /* Translater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14076AE41EEFBF8B0073FE2F /* Translater.swift */; };
+		14076AE81EEFCAF30073FE2F /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14076AE71EEFCAF30073FE2F /* SettingController.swift */; };
 		6305F4011EBE2C5D0060703C /* QLTC_Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 6305F3FD1EBE2C5D0060703C /* QLTC_Model.xcdatamodel */; };
 		631705801EDDB69300B65711 /* minus_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317057E1EDDB69300B65711 /* minus_TableViewCell.swift */; };
 		631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */; };
@@ -110,6 +112,8 @@
 		140041761EB0F16F009E5A3E /* QuanLyThuChi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyThuChi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		140041791EB0F16F009E5A3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		140041881EB0F16F009E5A3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14076AE41EEFBF8B0073FE2F /* Translater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translater.swift; sourceTree = "<group>"; };
+		14076AE71EEFCAF30073FE2F /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		6305F3FD1EBE2C5D0060703C /* QLTC_Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QLTC_Model.xcdatamodel; sourceTree = "<group>"; };
 		6317057E1EDDB69300B65711 /* minus_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = minus_TableViewCell.swift; sourceTree = "<group>"; };
 		6317057F1EDDB69300B65711 /* plus_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plus_TableViewCell.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				AD14BA691EC02DB2006EF32F /* UIImageExt.swift */,
 				AD14BA6A1EC02DB2006EF32F /* UIPassingData.swift */,
 				635EB1AC1EE2EDA200B885DC /* ListProperty.plist */,
+				14076AE41EEFBF8B0073FE2F /* Translater.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				AD14BAA61EC070DB006EF32F /* Navi */,
 				6337D4E31EC1771D008480AD /* Money */,
 				AD1127DB1EC19940004DEDD7 /* MainTabBarController.swift */,
+				14076AE71EEFCAF30073FE2F /* SettingController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 				63AD5C431EE43DC800C9C860 /* ChooseInclude_ViewController.swift in Sources */,
 				6305F4011EBE2C5D0060703C /* QLTC_Model.xcdatamodel in Sources */,
 				AD14BAB51EC070DB006EF32F /* navi_report.swift in Sources */,
+				14076AE81EEFCAF30073FE2F /* SettingController.swift in Sources */,
 				63CDF06F1EE830100076CCA6 /* ReportFilter_ViewController.swift in Sources */,
 				6334CD471EE5B46C00E43F9D /* CommonCell_TableViewCell.swift in Sources */,
 				1400417A1EB0F16F009E5A3E /* AppDelegate.swift in Sources */,
@@ -489,6 +496,7 @@
 				AD1FED8E1EDC2494004D6ACD /* ListCommon_ViewController.swift in Sources */,
 				AD1127DC1EC19940004DEDD7 /* MainTabBarController.swift in Sources */,
 				AD14BA721EC02DB2006EF32F /* UIImageExt.swift in Sources */,
+				14076AE51EEFBF8B0073FE2F /* Translater.swift in Sources */,
 				6356663B1EE7232B00CD004D /* CustomButton.swift in Sources */,
 				AD14BAB41EC070DB006EF32F /* navi_money.swift in Sources */,
 				F093DCC11EEF0C9B00813267 /* EditTransfer_ViewController.swift in Sources */,
