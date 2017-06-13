@@ -31,6 +31,7 @@
 		63AD5C431EE43DC800C9C860 /* ChooseInclude_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD5C421EE43DC800C9C860 /* ChooseInclude_ViewController.swift */; };
 		63CDF06F1EE830100076CCA6 /* ReportFilter_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CDF06E1EE830100076CCA6 /* ReportFilter_ViewController.swift */; };
 		63DDD2621EE1673500609C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63DDD22F1EE1673500609C2A /* Assets.xcassets */; };
+		63FB0E531EF03F3400DA8923 /* ReportItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB0E521EF03F3400DA8923 /* ReportItem.swift */; };
 		AD1127DC1EC19940004DEDD7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1127DB1EC19940004DEDD7 /* MainTabBarController.swift */; };
 		AD14BA6B1EC02DB2006EF32F /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA621EC02DB2006EF32F /* AppExtension.swift */; };
 		AD14BA6C1EC02DB2006EF32F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD14BA631EC02DB2006EF32F /* Database.swift */; };
@@ -135,6 +136,7 @@
 		63AD5C421EE43DC800C9C860 /* ChooseInclude_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseInclude_ViewController.swift; sourceTree = "<group>"; };
 		63CDF06E1EE830100076CCA6 /* ReportFilter_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportFilter_ViewController.swift; sourceTree = "<group>"; };
 		63DDD22F1EE1673500609C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63FB0E521EF03F3400DA8923 /* ReportItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportItem.swift; sourceTree = "<group>"; };
 		AD1127DB1EC19940004DEDD7 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AD14BA621EC02DB2006EF32F /* AppExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
 		AD14BA631EC02DB2006EF32F /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				63CDF06E1EE830100076CCA6 /* ReportFilter_ViewController.swift */,
 				AD1CA6D61EEFB21C0078BA4B /* ResultReport_ViewController.swift */,
+				63FB0E521EF03F3400DA8923 /* ReportItem.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				AD14BA6C1EC02DB2006EF32F /* Database.swift in Sources */,
 				AD14BA6B1EC02DB2006EF32F /* AppExtension.swift in Sources */,
 				635EB1AB1EE2E1BE00B885DC /* CustomTextField.swift in Sources */,
+				63FB0E531EF03F3400DA8923 /* ReportItem.swift in Sources */,
 				AD14BAB61EC070DB006EF32F /* navi_settings.swift in Sources */,
 				AD1FED901EDC24A2004D6ACD /* DetailCommon_ViewController.swift in Sources */,
 				F03F42881EE71890009D8FB4 /* Records_ViewController.swift in Sources */,

@@ -9,16 +9,23 @@
 import UIKit
 import Charts
 
-class ResultReport_ViewController: UIViewController {
-
+class ResultReport_ViewController: UIViewController,ChartViewDelegate {
+    
+    @IBOutlet weak var horizonChartView: HorizontalBarChartView!
     @IBOutlet weak var pieChartView: PieChartView!
+    var listMoney:[Money] = Database.select()
+    var thu = 0.0
+    var chi = 0.0
+    var listreportitem = [ReportItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
-        
-        setChart(dataPoints: months, values: unitsSold)
-        
+
+        processData()
+        let label = ["Thu","Chi"]
+        let value = [thu,chi]
+
+        setChart(dataPoints: label, values: value)
+        setHorizontalBarChart()
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
@@ -46,6 +53,65 @@ class ResultReport_ViewController: UIViewController {
         pieChartView.legend.labels = [label]
     }
     
+    func setHorizontalBarChart() {
+        
+        horizonChartView.drawBarShadowEnabled = false
+        horizonChartView.maxVisibleCount = 60
+        horizonChartView.chartDescription?.text = "Horizontal Bar Chart"
+        
+        
+        
+        let formatter = ChartStringFormatter()
+        formatter.nameValues = []
+        
+        var flag = false
+        for item in listMoney {
+            for rpitem in listreportitem {
+                if item.money_category?.name == rpitem.category {
+                    rpitem.money += item.money
+                    flag = true
+                    break
+                }
+            }
+            if !flag {
+                let rp = ReportItem()
+                rp.category = (item.money_category?.name)!
+                rp.money = item.money
+                listreportitem.append(rp)
+                formatter.nameValues.append(rp.category)
+            }
+            
+        }
+        horizonChartView.xAxis.valueFormatter = formatter
+  
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<listreportitem.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), yValues: [listreportitem[i].money], label: "")
+            dataEntries.append(dataEntry)
+        }
+
+        
+        let barChartDataSet = BarChartDataSet(values: dataEntries, label: "")
+        barChartDataSet.drawValuesEnabled = true
+        let barChartData = BarChartData(dataSet: barChartDataSet)
+        barChartData.barWidth = 0.2
+        horizonChartView.drawValueAboveBarEnabled = true
+        horizonChartView.data = barChartData
+        
+    }
+    
+    func processData(){
+        
+        
+        for item in listMoney {
+            if item.money_type?.name! == "Thu" {
+                thu += item.money
+            }else{
+                chi += item.money
+            }
+        }
+    }
 
     
     override func didReceiveMemoryWarning() {
