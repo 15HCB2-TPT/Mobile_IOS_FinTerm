@@ -147,7 +147,7 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
             m_old = data as! Money
             if(m_old != nil) {
                 swtGhiChep.setOn(m_old.money_type!.name! == "Thu", animated: false)
-                txt_sotien.text = "\(m_old.money)"
+                txt_sotien.text = String(format: "%.0f", m_old.money)
                 c = m_old.money_category!
                 txt_danhmuc.text = m_old.money_category!.name!
                 txt_diengiai.text = m_old.reason!

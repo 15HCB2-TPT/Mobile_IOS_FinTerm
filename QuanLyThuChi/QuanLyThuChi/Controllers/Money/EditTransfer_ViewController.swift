@@ -142,7 +142,7 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
         if (identity == 3) {
             mc = data as! Money
             if(mc != nil) {
-                txt_sotien.text = "\(mc.money)"
+                txt_sotien.text = String(format: "%.0f", mc.money)
                 m_old = mc.money
                 ttk = mc.money_bagmoney!
                 ttk_old = mc.money_bagmoney!

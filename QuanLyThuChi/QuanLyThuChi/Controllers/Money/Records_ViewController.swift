@@ -60,7 +60,7 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
             else {
                 cell.lblDanhMuc.text = "Chuyển tới: \(String(describing: m.transfer!.money_bagmoney!.name!))"
             }
-            cell.lblSoTien.text = "\(m.money)"
+            cell.lblSoTien.text = "\(m.money.cur)"
             cell.lblDienGiai.text = m.reason
             cell.lblTaiKhoan.text = m.money_bagmoney?.name
         }

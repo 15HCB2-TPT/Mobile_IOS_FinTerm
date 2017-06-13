@@ -51,7 +51,7 @@ class SelectBagMoney_ViewController: UIViewController, UITableViewDelegate, UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellBagMoney", for: indexPath) as! SelectBagMoney_TableViewCell
         if (bagmoneys[indexPath.row] as BagMoney?) != nil {
             cell.lblTen.text = bagmoneys[indexPath.row].name!
-            cell.lblConLai.text = "Hiện còn: \(bagmoneys[indexPath.row].money)"
+            cell.lblConLai.text = "Hiện còn: \(bagmoneys[indexPath.row].money.cur)"
         }
         return cell
     }
