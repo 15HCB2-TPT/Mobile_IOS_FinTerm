@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 struct AppExtension {
     static func addCancelDoneButton(target: Any?, doneAct: Selector?, cancelAct: Selector?) -> UIToolbar {
@@ -133,5 +134,14 @@ extension UIColor {
             green: CGFloat((Int(hex, radix: 16)! >> 8) & 0xFF) / 255.0,
             blue:  CGFloat((Int(hex, radix: 16)! >> 0) & 0xFF) / 255.0,
             alpha: alpha)
+    }
+}
+
+class ChartStringFormatter: NSObject, IAxisValueFormatter {
+    
+    var nameValues: [String]! =  ["A", "B", "C", "D"]
+    
+    public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return String(describing: nameValues[Int(value)])
     }
 }

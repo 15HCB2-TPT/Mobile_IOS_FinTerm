@@ -72,6 +72,51 @@ class ReportFilter_ViewController: UIViewController {
         if sender as! UIButton == btn_ChuyenKhoan {
             btn_ChuyenKhoan.isChecked = !btn_ChuyenKhoan.isChecked
         }
+        if btn_Nam.isChecked || btn_Thang.isChecked || btn_TuyChon.isChecked {
+            if btn_Nam.isChecked {
+                view_Nam.isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 1
+                    self.view_Thang.alpha = 0
+                    self.view_TuyChon.alpha = 0
+                })
+            }
+            else{
+                view_Nam.isHidden = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 0
+                })
+            }
+            if btn_Thang.isChecked {
+                view_Thang.isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 0
+                    self.view_Thang.alpha = 1
+                    self.view_TuyChon.alpha = 0
+                })
+            }
+            else{
+                view_Thang.isHidden = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Thang.alpha = 0
+                })
+            }
+            if btn_TuyChon.isChecked {
+                view_TuyChon.isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 0
+                    self.view_Thang.alpha = 0
+                    self.view_TuyChon.alpha = 1
+                })
+            }
+            else{
+                view_TuyChon.isHidden = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_TuyChon.alpha = 0
+                })
+            }
+        }
+
     }
     
     //Click Chon loai thoi gian
@@ -105,49 +150,52 @@ class ReportFilter_ViewController: UIViewController {
             }
         }
         
+        if btn_Thu.isChecked || btn_Chi.isChecked || btn_ChuyenKhoan.isChecked {
+            if btn_Nam.isChecked {
+                view_Nam.isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 1
+                    self.view_Thang.alpha = 0
+                    self.view_TuyChon.alpha = 0
+                })
+            }
+            else{
+                view_Nam.isHidden = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 0
+                })
+            }
+            if btn_Thang.isChecked {
+                view_Thang.isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 0
+                    self.view_Thang.alpha = 1
+                    self.view_TuyChon.alpha = 0
+                })
+            }
+            else{
+                view_Thang.isHidden = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Thang.alpha = 0
+                })
+            }
+            if btn_TuyChon.isChecked {
+                view_TuyChon.isHidden = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_Nam.alpha = 0
+                    self.view_Thang.alpha = 0
+                    self.view_TuyChon.alpha = 1
+                })
+            }
+            else{
+                view_TuyChon.isHidden = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.view_TuyChon.alpha = 0
+                })
+            }
+        }
         
-        if btn_Nam.isChecked {
-            view_Nam.isHidden = false
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view_Nam.alpha = 1
-                self.view_Thang.alpha = 0
-                self.view_TuyChon.alpha = 0
-            })
-        }
-        else{
-            view_Nam.isHidden = true
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view_Nam.alpha = 0
-            })
-        }
-        if btn_Thang.isChecked {
-            view_Thang.isHidden = false
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view_Nam.alpha = 0
-                self.view_Thang.alpha = 1
-                self.view_TuyChon.alpha = 0
-            })
-        }
-        else{
-            view_Thang.isHidden = true
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view_Thang.alpha = 0
-            })
-        }
-        if btn_TuyChon.isChecked {
-            view_TuyChon.isHidden = false
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view_Nam.alpha = 0
-                self.view_Thang.alpha = 0
-                self.view_TuyChon.alpha = 1
-            })
-        }
-        else{
-            view_TuyChon.isHidden = true
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view_TuyChon.alpha = 0
-            })
-        }
+        
     }
     
     //BTN Thong ke click ( ca 3 phan )

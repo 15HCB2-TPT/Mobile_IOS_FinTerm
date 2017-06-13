@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -468,40 +468,57 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQH-gb-ter" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="44" width="320" height="400"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-vp-IMb">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQH-gb-ter" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="gLf-Wv-vVG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sZ-tc-dTM" customClass="HorizontalBarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="420" width="320" height="500"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="500" id="vBx-da-68J"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="gLf-Wv-vVG"/>
+                                    <constraint firstItem="4sZ-tc-dTM" firstAttribute="top" secondItem="PQH-gb-ter" secondAttribute="bottom" id="4fQ-m8-RNZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="PQH-gb-ter" secondAttribute="trailing" id="8G8-FW-Gi8"/>
+                                    <constraint firstItem="PQH-gb-ter" firstAttribute="leading" secondItem="5dx-vp-IMb" secondAttribute="leading" id="Q4u-4R-7CR"/>
+                                    <constraint firstItem="PQH-gb-ter" firstAttribute="top" secondItem="5dx-vp-IMb" secondAttribute="top" constant="20" id="bpd-WJ-WjA"/>
+                                    <constraint firstAttribute="trailing" secondItem="4sZ-tc-dTM" secondAttribute="trailing" id="fAe-uY-7Fy"/>
+                                    <constraint firstItem="4sZ-tc-dTM" firstAttribute="top" secondItem="PQH-gb-ter" secondAttribute="bottom" id="gZq-iP-BwW"/>
+                                    <constraint firstAttribute="bottom" secondItem="4sZ-tc-dTM" secondAttribute="bottom" id="iKP-vy-Mzt"/>
+                                    <constraint firstItem="4sZ-tc-dTM" firstAttribute="leading" secondItem="5dx-vp-IMb" secondAttribute="leading" id="toB-4e-NjF"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sZ-tc-dTM">
-                                <rect key="frame" x="0.0" y="444" width="320" height="124"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="145-Fi-SR5" firstAttribute="top" secondItem="gsA-F7-9pS" secondAttribute="top" id="3zO-bW-L0e"/>
-                            <constraint firstItem="4sZ-tc-dTM" firstAttribute="leading" secondItem="gsA-F7-9pS" secondAttribute="leading" id="6xH-7t-WEd"/>
-                            <constraint firstItem="4sZ-tc-dTM" firstAttribute="top" secondItem="PQH-gb-ter" secondAttribute="bottom" id="JGN-b2-owg"/>
-                            <constraint firstItem="fqg-9a-CU4" firstAttribute="top" secondItem="4sZ-tc-dTM" secondAttribute="bottom" id="Nx7-bh-lQl"/>
-                            <constraint firstAttribute="trailing" secondItem="PQH-gb-ter" secondAttribute="trailing" id="W77-vu-WBW"/>
-                            <constraint firstAttribute="trailing" secondItem="4sZ-tc-dTM" secondAttribute="trailing" id="ddg-B4-YKc"/>
+                            <constraint firstItem="fqg-9a-CU4" firstAttribute="top" secondItem="5dx-vp-IMb" secondAttribute="bottom" id="LSZ-DW-UhX"/>
+                            <constraint firstItem="5dx-vp-IMb" firstAttribute="top" secondItem="145-Fi-SR5" secondAttribute="bottom" id="MMO-Ir-NoL"/>
+                            <constraint firstItem="PQH-gb-ter" firstAttribute="width" secondItem="gsA-F7-9pS" secondAttribute="width" id="TgL-dz-M0J"/>
+                            <constraint firstItem="5dx-vp-IMb" firstAttribute="leading" secondItem="gsA-F7-9pS" secondAttribute="leading" id="Wg9-BR-vYM"/>
                             <constraint firstAttribute="trailing" secondItem="145-Fi-SR5" secondAttribute="trailing" id="dvv-eg-tFP"/>
-                            <constraint firstItem="PQH-gb-ter" firstAttribute="leading" secondItem="gsA-F7-9pS" secondAttribute="leading" id="eAZ-lM-3H6"/>
+                            <constraint firstAttribute="trailing" secondItem="5dx-vp-IMb" secondAttribute="trailing" id="ilH-Bb-Y1I"/>
                             <constraint firstItem="145-Fi-SR5" firstAttribute="leading" secondItem="gsA-F7-9pS" secondAttribute="leading" id="jS0-Jy-t3c"/>
-                            <constraint firstItem="PQH-gb-ter" firstAttribute="top" secondItem="145-Fi-SR5" secondAttribute="bottom" id="rst-4J-Jpi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L6M-97-FbI"/>
                     <connections>
+                        <outlet property="horizonChartView" destination="4sZ-tc-dTM" id="zzf-57-Xir"/>
                         <outlet property="pieChartView" destination="PQH-gb-ter" id="2Lk-Ni-DQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9b-Wc-Tle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="-161"/>
+            <point key="canvasLocation" x="1125" y="-161.61971830985917"/>
         </scene>
     </scenes>
     <resources>
