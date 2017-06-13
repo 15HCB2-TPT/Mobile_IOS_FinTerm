@@ -36,8 +36,10 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
     @IBOutlet weak var btn_xoa: UIButton!
     
     var ttk: BagMoney? = nil
+    var ttk_old: BagMoney!
     var dtk: BagMoney? = nil
-    
+    var dtk_old: BagMoney!
+    var m_old: Double!
     var mc: Money!
     var mt: Money!
     
@@ -141,9 +143,12 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
             mc = data as! Money
             if(mc != nil) {
                 txt_sotien.text = "\(mc.money)"
+                m_old = mc.money
                 ttk = mc.money_bagmoney!
+                ttk_old = mc.money_bagmoney!
                 txt_tutaikhoan.text = ttk!.name!
                 dtk = mc.transfer!.money_bagmoney!
+                dtk_old = mc.transfer!.money_bagmoney!
                 txt_dentaikhoan.text = dtk!.name!
                 txt_diengiai.text = mc.reason!
                 createDatePicker()
@@ -176,12 +181,16 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
                 mc.money = (txt_sotien.text?.doubleValue)!
                 mc.reason = txt_diengiai.text
                 mc.money_bagmoney = ttk
+                ttk_old.money = ttk_old.money + m_old
+                ttk?.money = (ttk?.money)! - mc.money
                 mc.date = datePicker.date as NSDate
                 
                 mt = mc.transfer!
                 mt.money = (txt_sotien.text?.doubleValue)!
                 mt.reason = txt_diengiai.text
                 mt.money_bagmoney = dtk
+                dtk_old.money = dtk_old.money - m_old
+                dtk?.money = (dtk?.money)! + mc.money
                 mt.date = datePicker.date as NSDate
                 Database.save()
                 self.navigationController?.popViewController(animated: true)
@@ -190,6 +199,8 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
     }
     
     @IBAction func btn_xoa_TouchUpInside(_ sender: Any) {
+        ttk_old.money = ttk_old.money + m_old
+        dtk_old.money = dtk_old.money - m_old
         Database.delete(object: mc.transfer!)
         Database.delete(object: mc)
         Database.save()

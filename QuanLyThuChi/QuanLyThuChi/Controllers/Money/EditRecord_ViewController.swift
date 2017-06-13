@@ -43,7 +43,7 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var btn_xong: UIButton!
     @IBOutlet weak var btn_xoa: UIButton!
     
-    var m: Money!
+    var m_old: Money!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,22 +144,17 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
         }
         
         if (identity == 3) {
-            m = data as! Money
-            if(m != nil) {
-                swtGhiChep.setOn(m.money_category!.category_type!.name! == "Thu", animated: false)
-                
-                txt_sotien.text = "\(m.money)"
-                
-                c = m.money_category!
-                txt_danhmuc.text = m.money_category!.name!
-                
-                txt_diengiai.text = m.reason!
-                
-                b = m.money_bagmoney!
-                txt_taikhoan.text = m.money_bagmoney!.name!
-                
+            m_old = data as! Money
+            if(m_old != nil) {
+                swtGhiChep.setOn(m_old.money_type!.name! == "Thu", animated: false)
+                txt_sotien.text = "\(m_old.money)"
+                c = m_old.money_category!
+                txt_danhmuc.text = m_old.money_category!.name!
+                txt_diengiai.text = m_old.reason!
+                b = m_old.money_bagmoney!
+                txt_taikhoan.text = m_old.money_bagmoney!.name!
                 createDatePicker()
-                datePicker.setDate(m.date! as Date, animated: false)
+                datePicker.setDate(m_old.date! as Date, animated: false)
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .short
                 dateFormatter.timeStyle = .short
@@ -184,19 +179,39 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
             self.present(alert, animated: true, completion: nil)
         }
         else {
-            m.money_type = swtGhiChep.isOn ? tt : tc
-            m.money = (txt_sotien.text?.doubleValue)!
-            m.money_category = c
-            m.reason = txt_diengiai.text
-            m.money_bagmoney = b
-            m.date = datePicker.date as NSDate
+            if(m_old.money_type!.name! == "Chi") {
+                m_old.money_bagmoney?.money = (m_old.money_bagmoney?.money)! + m_old.money
+            }
+            if(m_old.money_type!.name! == "Thu") {
+                m_old.money_bagmoney?.money = (m_old.money_bagmoney?.money)! - m_old.money
+            }
             Database.save()
+            Database.delete(object: m_old)
+            Database.save()
+            
+            let mn: Money = Database.create()
+            mn.money_type = swtGhiChep.isOn ? tt : tc
+            mn.money = (txt_sotien.text?.doubleValue)!
+            mn.money_category = c
+            mn.reason = txt_diengiai.text
+            mn.money_bagmoney = b
+            b?.money = swtGhiChep.isOn ? (b?.money)! + mn.money : (b?.money)! - mn.money
+            mn.date = datePicker.date as NSDate
+            Database.save()
+            
             self.navigationController?.popViewController(animated: true)
         }
     }
     
     @IBAction func btn_xoa_TouchUpInside(_ sender: Any) {
-        Database.delete(object: m)
+        if(m_old.money_type!.name! == "Chi") {
+            m_old.money_bagmoney?.money = (m_old.money_bagmoney?.money)! + m_old.money
+        }
+        if(m_old.money_type!.name! == "Thu") {
+            m_old.money_bagmoney?.money = (m_old.money_bagmoney?.money)! - m_old.money
+        }
+        Database.save()
+        Database.delete(object: m_old)
         Database.save()
         self.navigationController?.popViewController(animated: true)
     }

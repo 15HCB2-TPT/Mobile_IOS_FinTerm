@@ -51,8 +51,7 @@ class SelectBagMoney_ViewController: UIViewController, UITableViewDelegate, UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellBagMoney", for: indexPath) as! SelectBagMoney_TableViewCell
         if (bagmoneys[indexPath.row] as BagMoney?) != nil {
             cell.lblTen.text = bagmoneys[indexPath.row].name!
-            cell.lblConLai.text = "ahihi"
-            //            cell.lblConLai.text = "\(AppData.CurrencyFormatter(value: foods[indexPath.row].money))\(!foods[indexPath.row].is_use ? " - Ngừng kinh doanh" : "")"
+            cell.lblConLai.text = "Hiện còn: \(bagmoneys[indexPath.row].money)"
         }
         return cell
     }

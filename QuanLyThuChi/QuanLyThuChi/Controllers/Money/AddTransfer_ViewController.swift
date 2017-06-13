@@ -151,6 +151,7 @@ class AddTransfer_ViewController: UIViewController, UINavigationControllerDelega
                 mc.money_category = nil
                 mc.reason = txt_diengiai.text
                 mc.money_bagmoney = ttk
+                ttk?.money = (ttk?.money)! - mc.money
                 mc.date = datePicker.date as NSDate
                 Database.save()
                 
@@ -160,6 +161,7 @@ class AddTransfer_ViewController: UIViewController, UINavigationControllerDelega
                 mt.money_category = nil
                 mt.reason = txt_diengiai.text
                 mt.money_bagmoney = dtk
+                dtk?.money = (dtk?.money)! + mt.money
                 mt.date = datePicker.date as NSDate
                 
                 mt.transfer = mc

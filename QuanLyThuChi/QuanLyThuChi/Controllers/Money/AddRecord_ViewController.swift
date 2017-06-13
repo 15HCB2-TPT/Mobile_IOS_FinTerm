@@ -155,6 +155,7 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
             m.money_category = c
             m.reason = txt_diengiai.text
             m.money_bagmoney = b
+            b?.money = swtGhiChep.isOn ? (b?.money)! + m.money : (b?.money)! - m.money
             m.date = datePicker.date as NSDate
             Database.save()
             
