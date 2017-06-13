@@ -103,29 +103,11 @@ class SeedData {
                         2000000.0,  
                         "Chơi hụi"),
                         
-                    (   "Aribank",
+                    (   "Ví cá nhân",
                         "Thu trong tháng",      
                         false, true, false, 1,
                         10000000.0, 
-                        "Lãnh lương"),
-                    
-                    (   "Aribank",
-                        "Chi trong tháng",
-                        false, true, false, 1,
-                        10000000.0,
-                        "Rút tiền lương tháng"),
-                    
-                    (   "Ví cá nhân",
-                        "Thu trong tháng",
-                        false, true, false, 1,
-                        10000000.0,
-                        "Rút tiền lương"),
-                    
-                    (   "Ví cá nhân",
-                        "Chi trong tháng",
-                        false, true, false, 1,
-                        6000000.0,
-                        "Đưa vợ")
+                        "Lãnh lương")
                 ]
         
         for b in a {
@@ -153,7 +135,7 @@ class SeedData {
                     (   "Ví cá nhân",
                         "Chi trong ngày",
                         200000.0,
-                        "Cho Tú mượn tiền mua bikini",
+                        "Cho Tín mượn tiền mua bikini",
                         false, false,
                         "2017-04-25"),
                         
@@ -173,14 +155,14 @@ class SeedData {
                         
                     //transfer
                     (   "Ví cá nhân",
-                        "",
+                        "Chi",
                         2000000.0,
                         "Gửi tiết kiệm",
                         false, true,
                         "2017-06-02"),
                         
                     (   "Aribank",
-                        "",
+                        "Thu",
                         2000000.0,
                         "Gửi tiết kiệm",
                         true, false,
@@ -191,25 +173,34 @@ class SeedData {
         var old: Money!
         for b in a {
             let d: BagMoney? = Database.isExistAndGet(predicater: NSPredicate(format: "name = %@", b.0))
-            let e: Category? = Database.isExistAndGet(predicater: NSPredicate(format: "name = %@", b.1))
-            if d != nil && (e != nil || b.4 || b.5) {
+            if d != nil {
                 let c: Money = Database.create()
-                c.date = dateF.date(from: b.6)! as NSDate
                 c.money_bagmoney = d
-                c.money_category = e
-                if e?.category_type?.name == TYPE_A {
+                if b.4 || b.5 {
+                    c.money_category = nil
+                    c.money_type = Database.isExistAndGet(predicater: NSPredicate(format: "name = %@", b.1))
+                } else {
+                    c.money_category = Database.isExistAndGet(predicater: NSPredicate(format: "name = %@", b.1))
+                    c.money_type = c.money_category?.category_type
+                }
+                
+                if c.money_type?.name == TYPE_A {
                     d?.money += b.2
-                } else if e?.category_type?.name == TYPE_B {
+                } else if c.money_type?.name == TYPE_B {
                     d?.money -= b.2
                 }
-                c.money = b.2
-                c.reason = b.3
+                
                 if b.4 {
                     c.transfer = old
                     old.transfer = c
                 }else{
                     c.transfer = nil
                 }
+                
+                c.money = b.2
+                c.reason = b.3
+                c.date = dateF.date(from: b.6)! as NSDate
+                
                 Database.save()
                 old = c
             }
@@ -234,10 +225,11 @@ class SeedData {
                         let trade: Money = Database.create()
                         trade.date = eachCom.lastadd
                         trade.money = eachCom.money
-                        trade.transfer = nil
                         trade.reason = eachCom.name
                         trade.money_bagmoney = eachCom.bagmoney
                         trade.money_category = eachCom.category
+                        trade.money_type = trade.money_category?.category_type
+                        trade.transfer = nil
                         if eachCom.category?.category_type?.name == TYPE_A {
                             eachCom.bagmoney?.money += eachCom.money
                         } else if eachCom.category?.category_type?.name == TYPE_B {
@@ -271,10 +263,11 @@ class SeedData {
                         let trade: Money = Database.create()
                         trade.date = eachCom.lastadd
                         trade.money = eachCom.money
-                        trade.transfer = nil
                         trade.reason = eachCom.name
                         trade.money_bagmoney = eachCom.bagmoney
                         trade.money_category = eachCom.category
+                        trade.money_type = trade.money_category?.category_type
+                        trade.transfer = nil
                         if eachCom.category?.category_type?.name == TYPE_A {
                             eachCom.bagmoney?.money += eachCom.money
                         } else if eachCom.category?.category_type?.name == TYPE_B {
