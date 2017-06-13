@@ -52,6 +52,7 @@
 		AD14BABB1EC070DB006EF32F /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD14BAB01EC070DB006EF32F /* Report.storyboard */; };
 		AD14BABC1EC070DB006EF32F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD14BAB11EC070DB006EF32F /* Settings.storyboard */; };
 		AD14BABD1EC070DB006EF32F /* BagMoney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD14BAB21EC070DB006EF32F /* BagMoney.storyboard */; };
+		AD1CA6D71EEFB21C0078BA4B /* ResultReport_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CA6D61EEFB21C0078BA4B /* ResultReport_ViewController.swift */; };
 		AD1FED881EDC1094004D6ACD /* Custom_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED871EDC1094004D6ACD /* Custom_ViewController.swift */; };
 		AD1FED8A1EDC242B004D6ACD /* ListBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED891EDC242B004D6ACD /* ListBagMoney_ViewController.swift */; };
 		AD1FED8C1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED8B1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift */; };
@@ -155,6 +156,7 @@
 		AD14BAB01EC070DB006EF32F /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		AD14BAB11EC070DB006EF32F /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		AD14BAB21EC070DB006EF32F /* BagMoney.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BagMoney.storyboard; sourceTree = "<group>"; };
+		AD1CA6D61EEFB21C0078BA4B /* ResultReport_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultReport_ViewController.swift; sourceTree = "<group>"; };
 		AD1FED871EDC1094004D6ACD /* Custom_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_ViewController.swift; sourceTree = "<group>"; };
 		AD1FED891EDC242B004D6ACD /* ListBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBagMoney_ViewController.swift; sourceTree = "<group>"; };
 		AD1FED8B1EDC243D004D6ACD /* DetailBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBagMoney_ViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				63CDF06E1EE830100076CCA6 /* ReportFilter_ViewController.swift */,
+				AD1CA6D61EEFB21C0078BA4B /* ResultReport_ViewController.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				63AD5C3B1EE427DB00C9C860 /* IncludeCategory_ViewController.swift in Sources */,
 				AD1FED8A1EDC242B004D6ACD /* ListBagMoney_ViewController.swift in Sources */,
 				63AD5C411EE43D9300C9C860 /* ChooseExpense_ViewController.swift in Sources */,
+				AD1CA6D71EEFB21C0078BA4B /* ResultReport_ViewController.swift in Sources */,
 				F074EBBC1EDE80EE001AB70C /* Records_TableViewCell.swift in Sources */,
 				63AD5C431EE43DC800C9C860 /* ChooseInclude_ViewController.swift in Sources */,
 				6305F4011EBE2C5D0060703C /* QLTC_Model.xcdatamodel in Sources */,
