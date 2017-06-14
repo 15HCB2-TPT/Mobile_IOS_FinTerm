@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,58 +44,13 @@
                                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqd-iw-uuw">
-                                                                <rect key="frame" x="0.0" y="46" width="300" height="180"/>
+                                                                <rect key="frame" x="0.0" y="46" width="300" height="100"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thống kê theo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dg-ya-4Ca">
-                                                                        <rect key="frame" x="8" y="16" width="284" height="21"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onv-Og-d6R" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                        <rect key="frame" x="8" y="53" width="52" height="30"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="7yl-us-g2H"/>
-                                                                            <constraint firstAttribute="height" constant="30" id="BXL-uR-ep5"/>
-                                                                        </constraints>
-                                                                        <state key="normal" title="Thu" image="UnChecked">
-                                                                            <color key="titleColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </state>
-                                                                        <connections>
-                                                                            <action selector="LoaiThongKeClick:" destination="FPH-2z-gkB" eventType="touchUpInside" id="Nbj-uU-A4n"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZY-Co-xua" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                        <rect key="frame" x="68" y="53" width="90" height="30"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="V74-6f-2zO"/>
-                                                                            <constraint firstAttribute="width" constant="90" id="pYQ-wW-r61"/>
-                                                                        </constraints>
-                                                                        <state key="normal" title="Chi" image="UnChecked">
-                                                                            <color key="titleColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </state>
-                                                                        <connections>
-                                                                            <action selector="LoaiThongKeClick:" destination="FPH-2z-gkB" eventType="touchUpInside" id="VG1-61-b4x"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecj-sg-hYN" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                        <rect key="frame" x="166" y="53" width="136" height="30"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="ZHE-Pu-hpU"/>
-                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="c7l-pE-WNw"/>
-                                                                        </constraints>
-                                                                        <state key="normal" title="Chuyển khoản" image="UnChecked">
-                                                                            <color key="titleColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        </state>
-                                                                        <connections>
-                                                                            <action selector="LoaiThongKeClick:" destination="FPH-2z-gkB" eventType="touchUpInside" id="N90-ft-e9b"/>
-                                                                        </connections>
-                                                                    </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgX-fv-ufO">
-                                                                        <rect key="frame" x="0.0" y="91" width="300" height="73"/>
+                                                                        <rect key="frame" x="8" y="8" width="284" height="84"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thời gian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gW-rT-Ha0">
-                                                                                <rect key="frame" x="8" y="8" width="284" height="21"/>
+                                                                                <rect key="frame" x="8" y="8" width="268" height="21"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
@@ -142,38 +97,29 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="7gW-rT-Ha0" firstAttribute="top" secondItem="dgX-fv-ufO" secondAttribute="top" constant="8" id="01a-Hm-vdE"/>
                                                                             <constraint firstItem="1bl-hK-y4P" firstAttribute="centerY" secondItem="gPg-Rp-tL6" secondAttribute="centerY" id="16Z-Yk-npD"/>
                                                                             <constraint firstItem="1bl-hK-y4P" firstAttribute="leading" secondItem="gPg-Rp-tL6" secondAttribute="trailing" constant="8" id="91J-Et-kJ3"/>
                                                                             <constraint firstItem="gPg-Rp-tL6" firstAttribute="top" secondItem="7gW-rT-Ha0" secondAttribute="bottom" constant="8" id="B2k-MT-jPJ"/>
                                                                             <constraint firstItem="CgT-nq-EHG" firstAttribute="leading" secondItem="1bl-hK-y4P" secondAttribute="trailing" constant="8" id="Bhu-YA-6J0"/>
                                                                             <constraint firstItem="CgT-nq-EHG" firstAttribute="centerY" secondItem="1bl-hK-y4P" secondAttribute="centerY" id="QIi-gz-4cN"/>
-                                                                            <constraint firstItem="7gW-rT-Ha0" firstAttribute="leading" secondItem="dgX-fv-ufO" secondAttribute="leading" constant="8" id="Yh2-DH-x37"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="7gW-rT-Ha0" secondAttribute="trailing" constant="8" id="fbR-2H-Dqv"/>
-                                                                            <constraint firstItem="gPg-Rp-tL6" firstAttribute="leading" secondItem="dgX-fv-ufO" secondAttribute="leading" constant="8" id="x9D-jk-wU1"/>
+                                                                            <constraint firstItem="7gW-rT-Ha0" firstAttribute="leading" secondItem="dgX-fv-ufO" secondAttribute="leading" constant="8" id="Yw1-dF-1NG"/>
+                                                                            <constraint firstItem="gPg-Rp-tL6" firstAttribute="leading" secondItem="7gW-rT-Ha0" secondAttribute="leading" id="fPC-CR-70V"/>
+                                                                            <constraint firstItem="7gW-rT-Ha0" firstAttribute="top" secondItem="dgX-fv-ufO" secondAttribute="top" constant="8" id="hru-EI-WWM"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="7gW-rT-Ha0" secondAttribute="trailing" constant="8" id="jbw-k1-VRz"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="6dg-ya-4Ca" firstAttribute="leading" secondItem="Xqd-iw-uuw" secondAttribute="leading" constant="8" id="9Er-lO-CjV"/>
-                                                                    <constraint firstItem="6dg-ya-4Ca" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="top" constant="16" id="A8x-2F-Nie"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="dgX-fv-ufO" secondAttribute="trailing" id="BwI-Vj-tXq"/>
-                                                                    <constraint firstItem="onv-Og-d6R" firstAttribute="top" secondItem="6dg-ya-4Ca" secondAttribute="bottom" constant="16" id="E5l-bN-J7Q"/>
-                                                                    <constraint firstItem="onv-Og-d6R" firstAttribute="leading" secondItem="Xqd-iw-uuw" secondAttribute="leading" constant="8" id="FWY-Xk-rbX"/>
-                                                                    <constraint firstAttribute="height" constant="180" id="Ndn-PV-6BP"/>
-                                                                    <constraint firstItem="4ZY-Co-xua" firstAttribute="centerY" secondItem="onv-Og-d6R" secondAttribute="centerY" id="OFQ-w2-odm"/>
-                                                                    <constraint firstItem="4ZY-Co-xua" firstAttribute="leading" secondItem="onv-Og-d6R" secondAttribute="trailing" constant="8" id="XMx-j9-EFS"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="6dg-ya-4Ca" secondAttribute="trailing" constant="8" id="dm0-YI-3Rm"/>
-                                                                    <constraint firstItem="dgX-fv-ufO" firstAttribute="top" secondItem="ecj-sg-hYN" secondAttribute="bottom" constant="8" id="eai-j7-3pS"/>
-                                                                    <constraint firstItem="ecj-sg-hYN" firstAttribute="leading" secondItem="4ZY-Co-xua" secondAttribute="trailing" constant="8" id="eoq-9c-N8J"/>
-                                                                    <constraint firstItem="dgX-fv-ufO" firstAttribute="leading" secondItem="Xqd-iw-uuw" secondAttribute="leading" id="ewn-Yk-XAL"/>
-                                                                    <constraint firstItem="ecj-sg-hYN" firstAttribute="centerY" secondItem="4ZY-Co-xua" secondAttribute="centerY" id="nDD-Jg-XAp"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="dgX-fv-ufO" secondAttribute="bottom" constant="16" id="uxR-Ga-kA1"/>
+                                                                    <constraint firstAttribute="height" constant="100" id="2bI-FJ-50d"/>
+                                                                    <constraint firstItem="dgX-fv-ufO" firstAttribute="leading" secondItem="Xqd-iw-uuw" secondAttribute="leading" constant="8" id="5q0-pq-crZ"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="dgX-fv-ufO" secondAttribute="trailing" constant="8" id="Rbw-Qv-aRc"/>
+                                                                    <constraint firstItem="dgX-fv-ufO" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="top" constant="8" id="hmz-J3-RbP"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="dgX-fv-ufO" secondAttribute="bottom" constant="8" id="pKi-bb-Ezz"/>
                                                                 </constraints>
                                                             </view>
                                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNz-dh-PAP" userLabel="View nam">
-                                                                <rect key="frame" x="30" y="234" width="240" height="100"/>
+                                                                <rect key="frame" x="30" y="162" width="240" height="100"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucY-cz-Ee6">
                                                                         <rect key="frame" x="16" y="16" width="36" height="21"/>
@@ -200,7 +146,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="LoaiThoiGianClick:" destination="FPH-2z-gkB" eventType="touchUpInside" id="Cuf-Ga-aYF"/>
-                                                                            <segue destination="rU1-ae-G0q" kind="push" id="urW-P6-9Xh"/>
+                                                                            <action selector="btn_ThongKeTheoNam:" destination="FPH-2z-gkB" eventType="touchUpInside" id="Ngs-d7-ax9"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -218,7 +164,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-iF-5UI" userLabel="View thang">
-                                                                <rect key="frame" x="30" y="234" width="240" height="160"/>
+                                                                <rect key="frame" x="30" y="162" width="240" height="160"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEI-2N-tZI">
                                                                         <rect key="frame" x="16" y="21" width="60" height="21"/>
@@ -266,7 +212,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="LoaiThoiGianClick:" destination="FPH-2z-gkB" eventType="touchUpInside" id="px7-Ga-F77"/>
-                                                                            <segue destination="rU1-ae-G0q" kind="push" id="ViE-Uw-G57"/>
+                                                                            <action selector="btn_ThongKeTheoThang:" destination="FPH-2z-gkB" eventType="touchUpInside" id="ig4-mW-vX1"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -293,7 +239,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVK-bu-lXB" userLabel="View tuychon">
-                                                                <rect key="frame" x="30" y="234" width="240" height="160"/>
+                                                                <rect key="frame" x="30" y="162" width="240" height="160"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Từ ngày" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT0-k1-zsN">
                                                                         <rect key="frame" x="16" y="21" width="80" height="21"/>
@@ -341,7 +287,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="LoaiThoiGianClick:" destination="FPH-2z-gkB" eventType="touchUpInside" id="rWa-lt-p9q"/>
-                                                                            <segue destination="rU1-ae-G0q" kind="push" id="GvJ-cf-8UF"/>
+                                                                            <action selector="btn_ThongKeTuyChon:" destination="FPH-2z-gkB" eventType="touchUpInside" id="xC1-TB-9XR"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -369,19 +315,19 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="Ear-2c-H3Z" firstAttribute="leading" secondItem="FTm-mW-qFD" secondAttribute="leading" id="4IC-6m-5Lh"/>
-                                                            <constraint firstItem="Xqd-iw-uuw" firstAttribute="leading" secondItem="FTm-mW-qFD" secondAttribute="leading" id="DNg-vC-jTu"/>
+                                                            <constraint firstItem="GVK-bu-lXB" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="bottom" constant="16" id="Bcl-ae-bcV"/>
                                                             <constraint firstItem="sNz-dh-PAP" firstAttribute="leading" secondItem="FTm-mW-qFD" secondAttribute="leading" constant="30" id="I1g-Uc-iOO"/>
                                                             <constraint firstItem="Ear-2c-H3Z" firstAttribute="top" secondItem="FTm-mW-qFD" secondAttribute="top" id="IxF-cd-SXD"/>
-                                                            <constraint firstItem="sNz-dh-PAP" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="bottom" constant="8" id="Koi-w8-AYa"/>
                                                             <constraint firstItem="YEZ-iF-5UI" firstAttribute="leading" secondItem="FTm-mW-qFD" secondAttribute="leading" constant="30" id="Oat-sR-xt2"/>
-                                                            <constraint firstItem="YEZ-iF-5UI" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="bottom" constant="8" id="UKD-5w-Oef"/>
+                                                            <constraint firstItem="Xqd-iw-uuw" firstAttribute="top" secondItem="Ear-2c-H3Z" secondAttribute="bottom" constant="16" id="QxI-H2-9jg"/>
                                                             <constraint firstAttribute="trailing" secondItem="Ear-2c-H3Z" secondAttribute="trailing" id="e78-Qg-wyp"/>
-                                                            <constraint firstItem="GVK-bu-lXB" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="bottom" constant="8" id="egb-rR-h5a"/>
                                                             <constraint firstAttribute="trailing" secondItem="sNz-dh-PAP" secondAttribute="trailing" constant="30" id="g5e-5Y-KDF"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Xqd-iw-uuw" secondAttribute="trailing" id="gDd-QO-KrD"/>
                                                             <constraint firstItem="GVK-bu-lXB" firstAttribute="leading" secondItem="FTm-mW-qFD" secondAttribute="leading" constant="30" id="hGb-fC-h76"/>
+                                                            <constraint firstItem="Xqd-iw-uuw" firstAttribute="leading" secondItem="FTm-mW-qFD" secondAttribute="leading" id="kCy-5R-56k"/>
                                                             <constraint firstAttribute="trailing" secondItem="YEZ-iF-5UI" secondAttribute="trailing" constant="30" id="mVI-mG-WZc"/>
-                                                            <constraint firstItem="Xqd-iw-uuw" firstAttribute="top" secondItem="Ear-2c-H3Z" secondAttribute="bottom" constant="16" id="s89-aY-jl5"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Xqd-iw-uuw" secondAttribute="trailing" id="vko-I2-qcX"/>
+                                                            <constraint firstItem="sNz-dh-PAP" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="bottom" constant="16" id="r5U-mF-XpN"/>
+                                                            <constraint firstItem="YEZ-iF-5UI" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="bottom" constant="16" id="tn3-84-Tal"/>
                                                             <constraint firstAttribute="trailing" secondItem="GVK-bu-lXB" secondAttribute="trailing" constant="30" id="zgy-v9-hXf"/>
                                                         </constraints>
                                                     </view>
@@ -432,13 +378,10 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
-                        <outlet property="btn_Chi" destination="4ZY-Co-xua" id="Zvc-ZB-QTd"/>
-                        <outlet property="btn_ChuyenKhoan" destination="ecj-sg-hYN" id="6c6-uN-aV7"/>
                         <outlet property="btn_Nam" destination="gPg-Rp-tL6" id="Cqx-md-9lh"/>
                         <outlet property="btn_Thang" destination="1bl-hK-y4P" id="8L2-ea-cKb"/>
                         <outlet property="btn_ThongKeNam" destination="1vc-vC-UeG" id="17g-hJ-nSy"/>
                         <outlet property="btn_ThongKeThang" destination="MAw-He-uiv" id="G6Q-Hu-XL8"/>
-                        <outlet property="btn_Thu" destination="onv-Og-d6R" id="WVl-H6-Zsr"/>
                         <outlet property="btn_TuyChon" destination="CgT-nq-EHG" id="2G0-p3-FWC"/>
                         <outlet property="btn_thongkengay" destination="J3F-cK-bbE" id="GbC-cM-vES"/>
                         <outlet property="lbl_Nam" destination="ucY-cz-Ee6" id="vN5-eb-Qme"/>
@@ -446,9 +389,14 @@
                         <outlet property="lbl_ThangOfThang" destination="0vm-KE-YYu" id="lRa-rO-hyS"/>
                         <outlet property="lbl_ThoiGian" destination="7gW-rT-Ha0" id="Srr-u3-vqM"/>
                         <outlet property="lbl_Thongke" destination="Ear-2c-H3Z" id="gQY-ls-ZRO"/>
-                        <outlet property="lbl_Thongketheo" destination="6dg-ya-4Ca" id="0Fr-3n-AJV"/>
                         <outlet property="lbl_denngay" destination="aP1-YE-QNF" id="p1F-sY-DmS"/>
                         <outlet property="lbl_tungay" destination="wT0-k1-zsN" id="LRa-La-ZgM"/>
+                        <outlet property="scrollview" destination="vsz-Fn-fbd" id="gzc-Ga-FcB"/>
+                        <outlet property="txt_DenNgay" destination="zv0-ya-DFh" id="fdi-wc-j2A"/>
+                        <outlet property="txt_NamOfNam" destination="TYI-YD-z7D" id="eXX-Er-cbZ"/>
+                        <outlet property="txt_NamOfThang" destination="Yxh-w6-EuY" id="gaR-m1-CI4"/>
+                        <outlet property="txt_ThangOfThang" destination="4NA-b0-mOp" id="ioU-60-bbJ"/>
+                        <outlet property="txt_TuNgay" destination="pfd-vC-yc6" id="qAF-oB-0dd"/>
                         <outlet property="view_Nam" destination="sNz-dh-PAP" id="dcg-zC-cmw"/>
                         <outlet property="view_Thang" destination="YEZ-iF-5UI" id="0Wt-ZK-eRG"/>
                         <outlet property="view_ThongKe" destination="Xqd-iw-uuw" id="ULP-gE-cqj"/>
@@ -462,7 +410,7 @@
         <!--Result Report View Controller-->
         <scene sceneID="alC-GU-Kdr">
             <objects>
-                <viewController id="rU1-ae-G0q" customClass="ResultReport_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultReport" id="rU1-ae-G0q" customClass="ResultReport_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="79W-jH-j8p"/>
                         <viewControllerLayoutGuide type="bottom" id="fqg-9a-CU4"/>
@@ -475,7 +423,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="PXo-Tu-naH">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;Trở lại" id="Rsv-wU-gDB"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;Trở lại" id="Rsv-wU-gDB">
+                                            <connections>
+                                                <action selector="BackClick:" destination="rU1-ae-G0q" id="fb4-2H-8jX"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -483,14 +435,14 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQH-gb-ter" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="20" width="320" height="400"/>
+                                        <rect key="frame" x="0.0" y="20" width="320" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="gLf-Wv-vVG"/>
+                                            <constraint firstAttribute="height" constant="300" id="gLf-Wv-vVG"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sZ-tc-dTM" customClass="HorizontalBarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="420" width="320" height="500"/>
+                                        <rect key="frame" x="0.0" y="320" width="320" height="500"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="500" id="vBx-da-68J"/>
@@ -523,8 +475,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="L6M-97-FbI"/>
                     <connections>
+                        <outlet property="btn_back" destination="Rsv-wU-gDB" id="g8y-h8-y4e"/>
                         <outlet property="horizonChartView" destination="4sZ-tc-dTM" id="zzf-57-Xir"/>
                         <outlet property="pieChartView" destination="PQH-gb-ter" id="2Lk-Ni-DQd"/>
+                        <outlet property="title_report" destination="PXo-Tu-naH" id="q2A-3f-gpr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9b-Wc-Tle" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -536,7 +490,4 @@
         <image name="Theme" width="1920" height="1080"/>
         <image name="UnChecked" width="20" height="20"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="urW-P6-9Xh"/>
-    </inferredMetricsTieBreakers>
 </document>

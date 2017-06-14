@@ -131,7 +131,7 @@ extension UIColor {
 
 class ChartStringFormatter: NSObject, IAxisValueFormatter {
     
-    var nameValues: [String]! =  ["A", "B", "C", "D"]
+    var nameValues: [String]! =  []
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return String(describing: nameValues[Int(value)])
@@ -142,6 +142,7 @@ class PieFormatter: NSObject, IValueFormatter{
     let formatter = NumberFormatter()
     var stringsValues:[String] = []
     var doubleValues = [Double]()
+    private static var count = 0
     
     init(values:[String]) {
         stringsValues = values
@@ -152,10 +153,14 @@ class PieFormatter: NSObject, IValueFormatter{
     }
     
     public func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
+        if PieFormatter.count >= doubleValues.count {
+            PieFormatter.count = 0
+        }
         formatter.minimumFractionDigits = 1
         formatter.maximumFractionDigits = 1
         formatter.minimumIntegerDigits = 1
-        
-        return doubleValues[dataSetIndex].cur
+        let temp = doubleValues[PieFormatter.count].cur
+        PieFormatter.count += 1
+        return temp
     }
 }

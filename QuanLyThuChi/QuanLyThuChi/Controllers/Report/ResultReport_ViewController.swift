@@ -9,7 +9,18 @@
 import UIKit
 import Charts
 
-class ResultReport_ViewController: UIViewController,ChartViewDelegate {
+class ResultReport_ViewController: UIViewController,ChartViewDelegate,UINavigationControllerDelegate {
+    
+    //Data transfer
+    var nam = 0
+    var thang = 0
+    var fromdate:Date? = nil
+    var todate:Date? = nil
+    var type:[Int] = []
+    //
+    
+    @IBOutlet weak var btn_back: UIBarButtonItem!
+    @IBOutlet weak var title_report: UINavigationItem!
     
     @IBOutlet weak var horizonChartView: HorizontalBarChartView!
     @IBOutlet weak var pieChartView: PieChartView!
@@ -17,6 +28,8 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate {
     var thu = 0.0
     var chi = 0.0
     var listreportitem = [ReportItem]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +39,18 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate {
 
         setChart(dataPoints: label, values: value)
         setHorizontalBarChart()
+        
+        
+        if thu == 0 && chi == 0 && listreportitem.count == 0 {
+            let alerttemp = UIAlertController(title: "Thông báo", message: "Không có dữ liệu để thống kê", preferredStyle: .alert)
+            self.present(alerttemp,animated:true,completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3, execute: {
+                alerttemp.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
+        
+        
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
@@ -53,37 +78,129 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate {
         pieChartView.data = pieChartData
         pieChartView.legend.labels = [label]
     }
+    @IBAction func BackClick(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     func setHorizontalBarChart() {
         
         horizonChartView.drawBarShadowEnabled = false
         horizonChartView.maxVisibleCount = 60
-        horizonChartView.chartDescription?.text = "Horizontal Bar Chart"
+        horizonChartView.chartDescription?.text = "Thống kê".trans
+        horizonChartView.legend.enabled = false
+
+
+        horizonChartView.leftAxis.enabled = false
+        horizonChartView.leftAxis.drawGridLinesEnabled = false
+        horizonChartView.leftAxis.drawAxisLineEnabled = false
         
+        horizonChartView.rightAxis.enabled = false
+        horizonChartView.rightAxis.drawGridLinesEnabled = false
+        horizonChartView.rightAxis.drawAxisLineEnabled = false
+        
+        horizonChartView.xAxis.drawGridLinesEnabled = false
+        horizonChartView.xAxis.labelPosition = .bottom
+        horizonChartView.xAxis.drawAxisLineEnabled = false
+        horizonChartView.xAxis.granularity = 1.0
+        horizonChartView.xAxis.axisMinimum = -0.5
+        horizonChartView.xAxis.labelWidth = 0.5
         
         
         let formatter = ChartStringFormatter()
         formatter.nameValues = []
-        
-        var flag = false
         for item in listMoney {
-            for rpitem in listreportitem {
-                if item.money_category?.name == rpitem.category {
-                    rpitem.money += item.money
-                    flag = true
-                    break
+            var flag = false
+            
+            if thang == 0 {
+                if nam != 0 && Calendar.current.component(.year, from: item.date as! Date) == nam {
+                    for rpitem in listreportitem {
+                        if item.money_category?.name == rpitem.category {
+                            rpitem.money += item.money
+                            flag = true
+                            break
+                        }
+                    }
+                    if !flag {
+                        if item.money_category != nil {
+                            let rp = ReportItem()
+                            rp.category = (item.money_category?.name)!
+                            rp.money = item.money
+                            listreportitem.append(rp)
+                            var flagname = false
+                            for name in formatter.nameValues {
+                                if name == rp.category {
+                                    flagname = true
+                                    break
+                                }
+                            }
+                            if !flagname {
+                                formatter.nameValues.append(rp.category)
+                            }
+                        }
+                    }
                 }
             }
-            if !flag {
-                let rp = ReportItem()
-                rp.category = (item.money_category?.name)!
-                rp.money = item.money
-                listreportitem.append(rp)
-                formatter.nameValues.append(rp.category)
+            if thang != 0 && nam != 0 {
+                if Calendar.current.component(.month, from: item.date as! Date) == thang && Calendar.current.component(.year, from: item.date as! Date) == nam {
+                    for rpitem in listreportitem {
+                        if item.money_category?.name == rpitem.category {
+                            rpitem.money += item.money
+                            flag = true
+                            break
+                        }
+                    }
+                    if !flag {
+                        if item.money_category != nil {
+                            let rp = ReportItem()
+                            rp.category = (item.money_category?.name)!
+                            rp.money = item.money
+                            listreportitem.append(rp)
+                            var flagname = false
+                            for name in formatter.nameValues {
+                                if name == rp.category {
+                                    flagname = true
+                                    break
+                                }
+                            }
+                            if !flagname {
+                                formatter.nameValues.append(rp.category)
+                            }
+                        }
+                    }
+                }
             }
-            
+            if fromdate != nil && todate != nil {
+                if (item.date as! Date) > fromdate! && (item.date as! Date) < todate! {
+                    for rpitem in listreportitem {
+                        if item.money_category?.name == rpitem.category {
+                            rpitem.money += item.money
+                            flag = true
+                            break
+                        }
+                    }
+                    if !flag {
+                        if item.money_category != nil {
+                            let rp = ReportItem()
+                            rp.category = (item.money_category?.name)!
+                            rp.money = item.money
+                            listreportitem.append(rp)
+                            var flagname = false
+                            for name in formatter.nameValues {
+                                if name == rp.category {
+                                    flagname = true
+                                    break
+                                }
+                            }
+                            if !flagname {
+                                formatter.nameValues.append(rp.category)
+                            }
+                        }
+                    }
+                }
+            }
         }
         horizonChartView.xAxis.valueFormatter = formatter
+        
   
         var dataEntries: [ChartDataEntry] = []
         
@@ -96,22 +213,49 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate {
         let barChartDataSet = BarChartDataSet(values: dataEntries, label: "")
         barChartDataSet.drawValuesEnabled = true
         let barChartData = BarChartData(dataSet: barChartDataSet)
-        barChartData.barWidth = 0.2
-        horizonChartView.drawValueAboveBarEnabled = true
+        barChartData.barWidth = 0.4
         horizonChartView.data = barChartData
         
     }
     
     func processData(){
-        
-        
         for item in listMoney {
             if item.money_type?.name! == "Thu" {
-                thu += item.money
+                if thang == 0 {
+                    if nam != 0 && Calendar.current.component(.year, from: item.date as! Date) == nam {
+                        thu += item.money
+                    }
+                }
+                if thang != 0 && nam != 0 {
+                    if Calendar.current.component(.month, from: item.date as! Date) == thang && Calendar.current.component(.year, from: item.date as! Date) == nam {
+                        thu += item.money
+                    }
+                }
+                if fromdate != nil && todate != nil {
+                    if (item.date as! Date) > fromdate! && (item.date as! Date) < todate! {
+                        thu += item.money
+                    }
+                }
             }else{
-                chi += item.money
+                if thang == 0 {
+                    if nam != 0 && Calendar.current.component(.year, from: item.date as! Date) == nam {
+                        chi += item.money
+                    }
+                }
+                if thang != 0 && nam != 0 {
+                    if Calendar.current.component(.month, from: item.date as! Date) == thang && Calendar.current.component(.year, from: item.date as! Date) == nam {
+                        chi += item.money
+                    }
+                }
+                if fromdate != nil && todate != nil {
+                    if (item.date as! Date) > fromdate! && (item.date as! Date) < todate! {
+                        chi += item.money
+                    }
+                }
             }
         }
+        
+        
     }
 
     
