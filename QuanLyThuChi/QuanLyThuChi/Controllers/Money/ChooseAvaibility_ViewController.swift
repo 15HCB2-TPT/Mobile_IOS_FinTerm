@@ -68,7 +68,7 @@ class ChooseAvaibility_ViewController: UIViewController,UINavigationControllerDe
         else{
             cell.lbl_money.textColor = UIColor.hex(string: "#e74c3c",alpha: 0.8)
         }
-        cell.lbl_money.text = String(com.money)
+        cell.lbl_money.text = com.money.cur
         return cell
     }
     
@@ -83,6 +83,7 @@ class ChooseAvaibility_ViewController: UIViewController,UINavigationControllerDe
             moneyitem.money_bagmoney = common.bagmoney
             moneyitem.money_category = common.category
             moneyitem.money_type = common.category?.category_type
+            common.bagmoney?.money = moneyitem.money_type?.name == "Thu" ? (common.bagmoney?.money)! + common.money : (common.bagmoney?.money)! - common.money
             moneyitem.reason = common.name
             moneyitem.transfer = nil
             Database.save()
