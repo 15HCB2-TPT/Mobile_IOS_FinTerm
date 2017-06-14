@@ -14,15 +14,23 @@ protocol ReloadData:class{
 }
 class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource,ReloadData {
 
+    @IBOutlet weak var btn_back: UIBarButtonItem!
+    @IBOutlet weak var title_thietlapnhanh: UINavigationItem!
 
     @IBOutlet weak var table_common: UITableView!
     @IBOutlet weak var view_notice: UIView!
     var listcommon: NSFetchedResultsController<Common> = Database.selectAndGroupBy(groupByColumn: "category.name")
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadtext()
         table_common.delegate = self
         table_common.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    func loadtext(){
+        btn_back.title = "<Trở lại".trans
+        title_thietlapnhanh.title = "Thiết lập".trans
     }
 
     override func didReceiveMemoryWarning() {

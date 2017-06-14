@@ -45,17 +45,10 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav_item.title = "Chỉnh sửa"
-        borderView(v: v)
-        lblChuyenKhoan.text = "Chuyển khoản"
-        lblSoTien.text = "Số tiền"
-        lblTuTaiKhoan.text = "Từ TK"
-        lblDenTaiKhoan.text = "Đến TK"
-        lblDienGiai.text = "Diễn giải"
-        lblNgay.text = "Ngày"
+        loadtext()
         
-        btn_luu.setTitle("Lưu", for: .normal)
-        btn_xoa.setTitle("Xoá", for: .normal)
+        borderView(v: v)
+        
         
         txt_tutaikhoan.delegate = self
         txt_dentaikhoan.delegate = self
@@ -70,6 +63,19 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadtext(){
+        nav_item.title = "Chỉnh sửa".trans
+        lblChuyenKhoan.text = "Chuyển khoản".trans
+        lblSoTien.text = "Số tiền".trans
+        lblTuTaiKhoan.text = "Từ TK".trans
+        lblDenTaiKhoan.text = "Đến TK".trans
+        lblDienGiai.text = "Diễn giải".trans
+        lblNgay.text = "Ngày".trans
+        
+        btn_luu.setTitle("Lưu".trans, for: .normal)
+        btn_xoa.setTitle("Xoá".trans, for: .normal)
     }
     
     func keyboardWillShow(_ notification: Notification){
@@ -167,14 +173,14 @@ class EditTransfer_ViewController: UIViewController, UINavigationControllerDeleg
     
     @IBAction func btn_luu_TouchUpInside(_ sender: Any) {
         if(ttk == nil || dtk == nil) {
-            let alert = UIAlertController(title: "Lỗi", message: "Các tài khoản không được để trống.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Các tài khoản không được để trống.".trans, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Hiểu".trans, style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else {
             if(ttk == dtk) {
-                let alert = UIAlertController(title: "Lỗi", message: "Không thể chuyển trong cùng tài khoản.", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                let alert = UIAlertController(title: "Lỗi".trans, message: "Không thể chuyển trong cùng tài khoản.".trans, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Hiểu".trans, style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
             else {

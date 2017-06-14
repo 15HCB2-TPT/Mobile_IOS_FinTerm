@@ -19,6 +19,7 @@ class ChooseAvaibility_ViewController: UIViewController,UINavigationControllerDe
     var listcommon: NSFetchedResultsController<Common> = Database.selectAndGroupBy(groupByColumn: "category.name", predicater: NSPredicate(format: "loopday = 'false' and loopmonth = 'false' and loopyear = 'false'"))
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadtext()
         table_common.delegate = self
         table_common.dataSource = self
         // Do any additional setup after loading the view.
@@ -29,7 +30,10 @@ class ChooseAvaibility_ViewController: UIViewController,UINavigationControllerDe
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func loadtext(){
+        btn_back.title = "<Trở lại".trans
+        lbl_label.title = "Thiết lập".trans
+    }
     
     @IBAction func backClick(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -73,7 +77,7 @@ class ChooseAvaibility_ViewController: UIViewController,UINavigationControllerDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Thông báo", message: "Bạn muốn ghi chép nhanh mục này chứ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Thông báo".trans, message: "Bạn muốn ghi chép nhanh mục này chứ?".trans, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: {
         [weak alert] (_) in
             let common = self.listcommon.object(at: indexPath)
@@ -88,14 +92,14 @@ class ChooseAvaibility_ViewController: UIViewController,UINavigationControllerDe
             moneyitem.transfer = nil
             Database.save()
             
-            let alerttemp = UIAlertController(title: "Thành công", message: "Ghi chép nhanh thành công", preferredStyle: .alert)
+            let alerttemp = UIAlertController(title: "Thành công".trans, message: "Ghi chép nhanh thành công".trans, preferredStyle: .alert)
             self.present(alerttemp,animated:true,completion: nil)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
                 alerttemp.dismiss(animated: true, completion: nil)
                 self.navigationController?.popViewController(animated: true)
             })
         }))
-        alert.addAction(UIAlertAction(title: "Hủy", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Hủy".trans, style: .default, handler: nil))
         self.present(alert,animated: true,completion: nil)
     }
     

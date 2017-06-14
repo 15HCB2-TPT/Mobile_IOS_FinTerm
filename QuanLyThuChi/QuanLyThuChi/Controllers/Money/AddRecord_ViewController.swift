@@ -41,16 +41,9 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadtext()
         borderView(v: v)
-        lblKhoanChi.text = "Khoản chi"
-        lblKhoanThu.text = "Khoản thu"
-        lblSoTien.text = "Số tiền"
-        lblDanhMuc.text = "Danh mục"
-        lblDienGiai.text = "Diễn giải"
-        lblTaiKhoan.text = "Tài khoản"
-        lblNgay.text = "Ngày"
-        btn_xong.setTitle("Xong", for: .normal)
+        
         
         txt_danhmuc.delegate = self
         txt_taikhoan.delegate = self
@@ -65,6 +58,17 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadtext(){
+        lblKhoanChi.text = "Khoản chi".trans
+        lblKhoanThu.text = "Khoản thu".trans
+        lblSoTien.text = "Số tiền".trans
+        lblDanhMuc.text = "Danh mục".trans
+        lblDienGiai.text = "Diễn giải".trans
+        lblTaiKhoan.text = "Tài khoản".trans
+        lblNgay.text = "Ngày".trans
+        btn_xong.setTitle("Xong".trans, for: .normal)
     }
     
     func keyboardWillShow(_ notification: Notification){
@@ -95,7 +99,7 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([flexBarButton,doneButton],animated:false)
         
-        txt_ngay.text = "Hôm nay"
+        txt_ngay.text = "Hôm nay".trans
         txt_ngay.inputAccessoryView = toolbar
         txt_ngay.inputView = datePicker
     }
@@ -144,8 +148,8 @@ class AddRecord_ViewController: UIViewController, UINavigationControllerDelegate
 
     @IBAction func btn_xong_TouchUpInside(_ sender: Any) {
         if(b == nil || c == nil) {
-            let alert = UIAlertController(title: "Lỗi", message: "Danh mục và Tài khoản không được để trống.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Danh mục và Tài khoản không được để trống.".trans, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK".trans, style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else {

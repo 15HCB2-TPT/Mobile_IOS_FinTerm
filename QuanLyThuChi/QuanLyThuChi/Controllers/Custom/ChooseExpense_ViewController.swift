@@ -10,15 +10,23 @@ import UIKit
 
 class ChooseExpense_ViewController: UIViewController,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate {
 
+    @IBOutlet weak var title_danhmucchi: UINavigationItem!
+    @IBOutlet weak var btn_back: UIBarButtonItem!
     @IBOutlet weak var table_categoryChi: UITableView!
     var chicategory:[Category] = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name == 'Chi'"), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
     var customdelegate:SelectedCategory? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadtext()
         
         table_categoryChi.delegate = self
         table_categoryChi.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    func loadtext(){
+        btn_back.title = "<Trở lại".trans
+        title_danhmucchi.title = "Danh mục chi".trans
     }
     
     override func didReceiveMemoryWarning() {

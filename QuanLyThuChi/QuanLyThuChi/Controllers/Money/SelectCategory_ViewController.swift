@@ -29,6 +29,7 @@ class SelectCategory_ViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nav_item.title = "Danh mục".trans
         tblCategory.delegate = self
         tblCategory.dataSource = self
     }

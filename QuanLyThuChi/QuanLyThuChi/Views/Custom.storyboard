@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,7 +120,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="YKP-nL-Cib"/>
                     <connections>
+                        <outlet property="btn_back" destination="AFG-y9-aNX" id="0P5-rC-YqT"/>
                         <outlet property="table_common" destination="5Hw-mq-Lct" id="9ZA-3x-WVG"/>
+                        <outlet property="title_thietlapnhanh" destination="rT8-I2-865" id="sgz-AS-NjY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KB-7B-GBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,14 +236,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzh-gk-J50">
-                                <rect key="frame" x="160" y="302" width="1" height="258"/>
+                                <rect key="frame" x="159.5" y="302" width="1" height="258"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="Vuq-FZ-yrC"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kow-cb-iYZ">
-                                <rect key="frame" x="20" y="314" width="130" height="32"/>
+                                <rect key="frame" x="20" y="314" width="129.5" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="lPJ-a5-buj"/>
@@ -259,7 +261,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xww-Kd-gsS">
-                                <rect key="frame" x="171" y="314" width="129" height="32"/>
+                                <rect key="frame" x="170.5" y="314" width="129.5" height="32"/>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Kxi-ss-YQk"/>
@@ -322,6 +324,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btn_huy" destination="xww-Kd-gsS" id="2uu-K7-S8E"/>
+                        <outlet property="btn_luu" destination="kow-cb-iYZ" id="duI-Mu-C5l"/>
+                        <outlet property="lbl_danhmuc" destination="U4w-ef-bHc" id="ckU-AI-0pU"/>
+                        <outlet property="lbl_loaidung" destination="pfe-7k-orG" id="ZOa-Nt-x3S"/>
+                        <outlet property="lbl_name" destination="mbI-8u-V3K" id="lOD-xv-nlp"/>
+                        <outlet property="lbl_sotien" destination="xg9-8O-Qdn" id="Hxd-DU-2jt"/>
+                        <outlet property="lbl_taikhoan" destination="zbX-vR-YzX" id="KmV-Nu-xa3"/>
+                        <outlet property="title_capnhatthietlap" destination="389-3V-52X" id="fKl-ak-f0Y"/>
                         <outlet property="txt_danhmuc" destination="BYb-YA-Xe0" id="NK7-fd-TKt"/>
                         <outlet property="txt_sotien" destination="Nzn-nK-6qb" id="KgA-hb-uRc"/>
                         <outlet property="txt_ten" destination="ig5-K0-RCP" id="zP7-hs-L4U"/>
@@ -946,7 +956,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lco-HV-1KP"/>
                     <connections>
+                        <outlet property="btn_back" destination="JAw-7h-a2v" id="mjy-KR-1Me"/>
                         <outlet property="table_categoryChi" destination="737-uo-e4U" id="xGU-Ya-qUe"/>
+                        <outlet property="title_danhmucchi" destination="YQg-GX-Ce4" id="brg-v1-z73"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehz-4q-3vd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1022,7 +1034,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="NOg-MG-Ad7"/>
                     <connections>
+                        <outlet property="btn_back" destination="vPk-I1-taP" id="3bK-bP-x5E"/>
                         <outlet property="table_categoryThu" destination="MOc-s5-PT0" id="x6B-PZ-C2X"/>
+                        <outlet property="title_danhmucthu" destination="fss-VG-Dcd" id="clf-ch-elY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUt-HI-q9k" userLabel="First Responder" sceneMemberID="firstResponder"/>

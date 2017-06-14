@@ -23,7 +23,7 @@ class Records_ViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav_item.title = "Đã ghi"
+        nav_item.title = "Đã ghi".trans
         tblMoney.delegate = self
         tblMoney.dataSource = self
     }
