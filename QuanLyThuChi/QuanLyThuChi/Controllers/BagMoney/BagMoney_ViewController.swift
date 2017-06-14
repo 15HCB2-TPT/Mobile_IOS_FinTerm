@@ -16,6 +16,17 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
 
     
     
+    @IBOutlet weak var lbl_minusbagmoney: UILabel!
+    @IBOutlet weak var lbl_totalnumberbagmoney: UILabel!
+    @IBOutlet weak var lbl_totalmoney: UILabel!
+    @IBOutlet weak var lbl_info: UILabel!
+    @IBOutlet weak var btn_addbagmoney: UIButton!
+    @IBOutlet weak var lbl_money: UILabel!
+    @IBOutlet weak var lbl_typebagmoney: UILabel!
+    @IBOutlet weak var lbl_namebagmoney: UILabel!
+    @IBOutlet weak var lbl_textAddBagMoney: UILabel!
+    @IBOutlet weak var lbl_textHeaderBagMoney: UILabel!
+    @IBOutlet weak var btn_mylistbagmoney: UIButton!
     @IBOutlet weak var lbl_tongtien: UILabel!
     @IBOutlet weak var lbl_tongtui: UILabel!
     @IBOutlet weak var lbl_sotuiam: UILabel!
@@ -34,9 +45,10 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Translater.AddForm(form: self)
         
         processThongTinCaNhan()
-        
+        loadtext()
         borderView(v: view_thongtin)
         borderView(v: view_danhsachcuatoi)
         borderView(v: view_themtuitien)
@@ -57,6 +69,28 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         // Do any additional setup after loading the view.
     }
     
+    override func transReload() {
+        loadtext()
+    }
+    
+    func loadtext(){
+        self.title = "Tài khoản".trans
+        lbl_minusbagmoney.text = "Số tài khoản âm".trans
+        lbl_totalnumberbagmoney.text = "Tổng số tài khoản".trans
+        lbl_totalmoney.text = "Tổng số tiền".trans
+        lbl_info.text = "Thông tin cá nhân".trans
+        btn_addbagmoney.setTitle("Thêm tài khoản".trans, for: UIControlState.normal)
+        lbl_money.text = "Số tiền".trans
+        lbl_typebagmoney.text = "Loại tk".trans
+        lbl_namebagmoney.text = "Tên tk".trans
+        lbl_textAddBagMoney.text = "Thêm tài khoản mới".trans
+        lbl_textHeaderBagMoney.text = "Tài khoản".trans
+        btn_mylistbagmoney.setTitle("Danh sách tài khoản của tôi".trans, for: UIControlState.normal)
+        txt_nametui.placeholder = "Tên tài khoản".trans
+        txt_loaitui.placeholder = "Loại tài khoản".trans
+        txt_sotien.placeholder = "Số tiền".trans
+    }
+    
     func reload() {
         processThongTinCaNhan()
         clearAllTextField()
@@ -74,7 +108,7 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         }
         
 
-        lbl_tongtien.text = String(totalmoney)
+        lbl_tongtien.text = totalmoney.cur
         lbl_sotuiam.text = String(count)
         if totalmoney > 0 {
             lbl_tongtien.textColor = UIColor.hex(string: "#2ecc71")
@@ -101,25 +135,25 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     func customtoolbar(){
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
-        addBarButton = UIBarButtonItem(title: "Thêm", style: .plain, target: self, action: #selector(addNewBagMoneyCategory))
+        addBarButton = UIBarButtonItem(title: "Thêm".trans, style: .plain, target: self, action: #selector(addNewBagMoneyCategory))
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(title: "Xong", style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
+        let doneBarButton = UIBarButtonItem(title: "Xong".trans, style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
         keyboardToolbar.items = [addBarButton!,flexBarButton, doneBarButton]
         txt_loaitui.inputAccessoryView = keyboardToolbar
     }
     
     func addNewBagMoneyCategory() -> Void{
         var isExists = false
-        let alert = UIAlertController(title: "Thêm loại túi", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Thêm loại tài khoản".trans, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = "Tên loại túi tiền"
+            textField.placeholder = "Tên loại tài khoản".trans
         }
-        alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: { [weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: { [weak alert] (_) in
             for item in self.pickOption {
                 if item.name == alert?.textFields![0].text {
                     isExists = true
-                    let alert_error = UIAlertController(title: "Lỗi", message: "Loại túi đã tồn tại", preferredStyle: .alert)
-                    alert_error.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+                    let alert_error = UIAlertController(title: "Lỗi".trans, message: "Loại túi đã tồn tại".trans, preferredStyle: .alert)
+                    alert_error.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
                     self.present(alert_error,animated: true,completion: nil)
                 }
             }
@@ -134,7 +168,7 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
 
             }
         }))
-        alert.addAction(UIAlertAction(title: "Hủy", style: .default, handler: {[weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "Hủy".trans, style: .default, handler: {[weak alert] (_) in
             alert?.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
@@ -192,21 +226,21 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
             }
         }
         if txt_nametui.text! == "" {
-            let alert = UIAlertController(title: "Lỗi", message: "Hãy nhập tên túi tiền", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Hãy nhập tên túi tiền".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert,animated: true,completion: nil)
             return
         }
         
         if Double(txt_sotien.text!) == nil {
-            let alert = UIAlertController(title: "Lỗi", message: "Số tiền có sẵn trong túi không đúng", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Số tiền có sẵn trong túi không đúng".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert,animated: true,completion: nil)
             return
         }
         if bm_Type == nil {
-            let alert_error = UIAlertController(title: "Lỗi", message: "Loại túi không tồn tại", preferredStyle: .alert)
-            alert_error.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert_error = UIAlertController(title: "Lỗi".trans, message: "Loại túi không tồn tại".trans, preferredStyle: .alert)
+            alert_error.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert_error,animated: true,completion: nil)
             return
         }
@@ -217,8 +251,8 @@ class BagMoney_ViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         bm.bagmoney_type = bm_Type
         bm.date = NSDate()
         Database.save()
-        let alert = UIAlertController(title: "Thành công", message: "Đã thêm túi tiền mới thành công!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+        let alert = UIAlertController(title: "Thành công".trans, message: "Đã thêm túi tiền mới thành công!".trans, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
         self.present(alert,animated: true,completion: nil)
         self.processThongTinCaNhan()
         self.clearAllTextField()

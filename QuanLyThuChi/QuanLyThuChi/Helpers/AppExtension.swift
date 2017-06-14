@@ -73,14 +73,6 @@ extension UIViewController {
     
 }
 
-extension AppDelegate {
-    static func restart(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = storyboard.instantiateInitialViewController()
-    }
-}
-
 extension String {
     var doubleValue: Double {
         let nf = NumberFormatter()
@@ -143,5 +135,27 @@ class ChartStringFormatter: NSObject, IAxisValueFormatter {
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return String(describing: nameValues[Int(value)])
+    }
+}
+
+class PieFormatter: NSObject, IValueFormatter{
+    let formatter = NumberFormatter()
+    var stringsValues:[String] = []
+    var doubleValues = [Double]()
+    
+    init(values:[String]) {
+        stringsValues = values
+    }
+    
+    init(doublevalues:[Double]){
+        doubleValues = doublevalues
+    }
+    
+    public func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
+        formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 1
+        formatter.minimumIntegerDigits = 1
+        
+        return doubleValues[dataSetIndex].cur
     }
 }

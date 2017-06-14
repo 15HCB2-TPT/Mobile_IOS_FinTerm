@@ -10,6 +10,17 @@ import UIKit
 
 class ReportFilter_ViewController: UIViewController {
 
+    @IBOutlet weak var btn_thongkengay: UIButton!
+    @IBOutlet weak var lbl_denngay: UILabel!
+    @IBOutlet weak var lbl_tungay: UILabel!
+    @IBOutlet weak var btn_ThongKeThang: UIButton!
+    @IBOutlet weak var lbl_ThangOfThang: UILabel!
+    @IBOutlet weak var lbl_NamOfThang: UILabel!
+    @IBOutlet weak var btn_ThongKeNam: UIButton!
+    @IBOutlet weak var lbl_Nam: UILabel!
+    @IBOutlet weak var lbl_ThoiGian: UILabel!
+    @IBOutlet weak var lbl_Thongketheo: UILabel!
+    @IBOutlet weak var lbl_Thongke: UILabel!
     //cum btn loai thong ke
     @IBOutlet weak var btn_Thu: CheckBox!
     @IBOutlet weak var btn_Chi: CheckBox!
@@ -52,8 +63,38 @@ class ReportFilter_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadtext()
+        Translater.AddForm(form: self)
         loadUI()
         // Do any additional setup after loading the view.
+    }
+    
+    override func transReload() {
+        loadtext()
+    }
+    
+    func loadtext(){
+        self.title = "Thống kê".trans
+        btn_thongkengay.setTitle("Thống kê".trans, for: .normal)
+        lbl_denngay.text = "Từ ngày".trans
+        lbl_tungay.text = "Đến ngày".trans
+        btn_ThongKeThang.setTitle("Thống kê".trans, for: .normal)
+        lbl_ThangOfThang.text = "Tháng".trans
+        lbl_NamOfThang.text = "Năm".trans
+        btn_ThongKeNam.setTitle("Thống kê".trans, for: .normal)
+        lbl_Nam.text = "Năm".trans
+        lbl_ThoiGian.text = "Theo thời gian".trans
+        lbl_Thongketheo.text = "Thống kê theo".trans
+        lbl_Thongke.text = "Thống kê".trans
+        //cum btn loai thong ke
+        btn_Thu.setTitle("Thu".trans, for: .normal)
+        btn_Chi.setTitle("Chi".trans, for: .normal)
+        btn_ChuyenKhoan.setTitle("Chuyển khoản".trans, for: .normal)
+        
+        //cum btn thoi gian
+        btn_Nam.setTitle("Năm".trans, for: .normal)
+        btn_Thang.setTitle("Tháng".trans, for: .normal)
+        btn_TuyChon.setTitle("Tùy chọn".trans, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

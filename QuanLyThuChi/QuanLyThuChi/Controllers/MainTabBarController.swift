@@ -14,12 +14,23 @@ class MainTabBarController: UITabBarController {
     var count = 0
     
     @IBOutlet weak var tabbar: UITabBar!
+    var titles = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Translater.AddForm(form: self)
+        for item in tabbar.items! {
+            titles.append(item.title!)
+        }
         
         customTabbar()
         // Do any additional setup after loading the view.
+    }
+    
+    override func transReload() {
+        for i in 0 ..< tabbar.items!.count {
+            tabbar.items?[i].title = titles[i].trans
+        }
     }
 
     override func didReceiveMemoryWarning() {

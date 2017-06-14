@@ -19,6 +19,7 @@ class Money_ViewController: UIViewController,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Ghi chép".trans
         borderView(v: view_dsghichep)
         btn_dsghichep.setTitle("Danh sách ghi chép", for: .normal)
         borderView(v: view_ghichepnhanh)

@@ -10,6 +10,9 @@ import UIKit
 
 class Category_ViewController: UIViewController,UINavigationControllerDelegate {
 
+    @IBOutlet weak var btn_back: UIBarButtonItem!
+    
+    
     @IBOutlet weak var container_Chi: UIView!
     @IBOutlet weak var container_Thu: UIView!
     @IBOutlet weak var segmented: UISegmentedControl!
@@ -17,7 +20,7 @@ class Category_ViewController: UIViewController,UINavigationControllerDelegate {
     var viewchi:ExpenseCategory_ViewController? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadtext()
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +28,12 @@ class Category_ViewController: UIViewController,UINavigationControllerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func loadtext(){
+        btn_back.title = "<Trở lại".trans
+        segmented.setTitle("Thu".trans, forSegmentAt: 0)
+        segmented.setTitle("Chi".trans, forSegmentAt: 1)
+    }
+    
     @IBAction func BackClick(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

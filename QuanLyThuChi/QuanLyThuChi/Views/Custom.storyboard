@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueInfo" translatesAutoresizingMaskIntoConstraints="NO" id="Fsx-XB-hPq">
-                                                    <rect key="frame" x="282" y="51.5" width="30" height="30"/>
+                                                    <rect key="frame" x="282" y="52" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="lxa-k4-oRC"/>
                                                         <constraint firstAttribute="width" constant="30" id="tSM-Dc-WMa"/>
@@ -228,7 +228,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tiền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xg9-8O-Qdn">
-                                <rect key="frame" x="20" y="268.5" width="53" height="21"/>
+                                <rect key="frame" x="20" y="269" width="53" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -404,6 +404,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Dtz-pz-6iB"/>
                     <connections>
+                        <outlet property="btn_back" destination="Xbj-ar-F4j" id="rYH-RF-ROn"/>
                         <outlet property="container_Chi" destination="eO9-AJ-a5s" id="rRh-hK-btu"/>
                         <outlet property="container_Thu" destination="k4V-OM-fpM" id="m2j-Cg-IaH"/>
                         <outlet property="segmented" destination="Eeu-fC-O3V" id="piM-za-9Op"/>
@@ -648,7 +649,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXh-vX-dai" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                <rect key="frame" x="16" y="245.5" width="62" height="22"/>
+                                                                <rect key="frame" x="16" y="246" width="62" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="72" id="uLJ-hY-WrH"/>
                                                                 </constraints>
@@ -660,7 +661,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9G-kJ-Et7" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                <rect key="frame" x="166" y="245.5" width="58" height="22"/>
+                                                                <rect key="frame" x="166" y="246" width="58" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="72" id="7nk-cc-CmZ"/>
                                                                 </constraints>
@@ -696,7 +697,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lặp lại theo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrx-EK-fVu">
-                                                                <rect key="frame" x="16" y="208.5" width="90" height="21"/>
+                                                                <rect key="frame" x="16" y="209" width="90" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="90" id="Iq9-gG-zwJ"/>
                                                                 </constraints>
@@ -705,7 +706,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUp-Fx-t9O" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                <rect key="frame" x="86" y="245.5" width="72" height="22"/>
+                                                                <rect key="frame" x="86" y="246" width="72" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="72" id="HaO-So-Mm5"/>
                                                                 </constraints>
@@ -720,7 +721,7 @@
                                                                 <rect key="frame" x="114" y="204" width="174" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":TypeLoop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5F-fl-Wgh">
-                                                                        <rect key="frame" x="94" y="5" width="80" height="20.5"/>
+                                                                        <rect key="frame" x="94" y="5" width="80" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="A32-qA-rFp"/>
                                                                         </constraints>
@@ -846,7 +847,18 @@
                         <outlet property="btn_Nam" destination="f9G-kJ-Et7" id="qna-db-UP0"/>
                         <outlet property="btn_Ngay" destination="iXh-vX-dai" id="Kpk-ta-yrI"/>
                         <outlet property="btn_Thang" destination="pUp-Fx-t9O" id="Dtj-1y-f37"/>
+                        <outlet property="btn_ThemMoi" destination="9kW-jB-Xkl" id="jkS-CM-pnW"/>
+                        <outlet property="btn_danhmuc" destination="8bA-M3-pTm" id="ZmN-C3-zv8"/>
+                        <outlet property="btn_danhmucthuchi" destination="AgW-Mf-s4g" id="gTZ-Du-IjP"/>
+                        <outlet property="btn_danhsachcustom" destination="yVS-AT-7m8" id="cvs-SO-CKH"/>
                         <outlet property="lbl_category" destination="Eui-SP-sMG" id="ufs-oF-iPe"/>
+                        <outlet property="lbl_loaiphi" destination="eRX-4x-hUh" id="Hqd-j4-XVD"/>
+                        <outlet property="lbl_loop" destination="xrx-EK-fVu" id="3OG-fz-FPb"/>
+                        <outlet property="lbl_money" destination="zin-Oh-v8Y" id="NOs-5u-hHr"/>
+                        <outlet property="lbl_runtime" destination="3Bd-mn-Php" id="EVJ-Hk-Nag"/>
+                        <outlet property="lbl_thietlap" destination="PKk-Wl-iAD" id="kTd-AC-WEK"/>
+                        <outlet property="lbl_thietlapnhanh" destination="Gvt-fg-i2K" id="pJA-fv-xLZ"/>
+                        <outlet property="lbl_tuihaydung" destination="fAb-Nj-SBa" id="SVo-T9-0we"/>
                         <outlet property="lbl_typeloop" destination="f5F-fl-Wgh" id="Bvu-4F-Bw8"/>
                         <outlet property="scrollview" destination="sA8-4T-NrX" id="0VW-30-dAg"/>
                         <outlet property="txt_looptime" destination="fem-Zr-JLy" id="OiQ-hC-uQX"/>
@@ -901,7 +913,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adI-i0-wOi">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -977,7 +989,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5B6-GT-Pky">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1053,7 +1065,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sh-cq-6jv">
-                                                    <rect key="frame" x="20" y="12" width="240" height="20.5"/>
+                                                    <rect key="frame" x="20" y="12" width="240" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1093,6 +1105,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lbl_thu" destination="oVc-YH-jvZ" id="xcx-Er-rh5"/>
                         <outlet property="table_ThuCategory" destination="lh9-Ap-Dfq" id="KXj-bj-7JJ"/>
                     </connections>
                 </viewController>
@@ -1177,6 +1190,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lbl_chi" destination="pAv-4c-aLI" id="Zbd-fa-oYc"/>
                         <outlet property="table_ChiCategory" destination="YTh-4Z-lag" id="ubj-9M-Rks"/>
                     </connections>
                 </viewController>

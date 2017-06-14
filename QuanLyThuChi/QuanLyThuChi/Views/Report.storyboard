@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -53,9 +53,9 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onv-Og-d6R" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="53" width="52" height="30"/>
+                                                                        <rect key="frame" x="8" y="53" width="52" height="30"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="7yl-us-g2H"/>
+                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="7yl-us-g2H"/>
                                                                             <constraint firstAttribute="height" constant="30" id="BXL-uR-ep5"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Thu" image="UnChecked">
@@ -66,10 +66,10 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZY-Co-xua" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                        <rect key="frame" x="84" y="53" width="47" height="30"/>
+                                                                        <rect key="frame" x="68" y="53" width="90" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="V74-6f-2zO"/>
-                                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="pYQ-wW-r61"/>
+                                                                            <constraint firstAttribute="width" constant="90" id="pYQ-wW-r61"/>
                                                                         </constraints>
                                                                         <state key="normal" title="Chi" image="UnChecked">
                                                                             <color key="titleColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,7 +79,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecj-sg-hYN" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                        <rect key="frame" x="147" y="53" width="136" height="30"/>
+                                                                        <rect key="frame" x="166" y="53" width="136" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="ZHE-Pu-hpU"/>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="c7l-pE-WNw"/>
@@ -101,7 +101,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPg-Rp-tL6" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                                <rect key="frame" x="16" y="37" width="58" height="30"/>
+                                                                                <rect key="frame" x="8" y="37" width="58" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="30" id="0eV-K8-21j"/>
                                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="rjC-uM-HdT"/>
@@ -114,7 +114,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bl-hK-y4P" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                                <rect key="frame" x="90" y="37" width="72" height="30"/>
+                                                                                <rect key="frame" x="74" y="37" width="72" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="30" id="5Wz-hI-V6l"/>
                                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="UzZ-fC-uhW"/>
@@ -127,7 +127,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgT-nq-EHG" customClass="CheckBox" customModule="QuanLyThuChi" customModuleProvider="target">
-                                                                                <rect key="frame" x="178" y="37" width="94" height="30"/>
+                                                                                <rect key="frame" x="154" y="37" width="94" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="AIC-eq-D0C"/>
                                                                                     <constraint firstAttribute="height" constant="30" id="jyw-c5-MwU"/>
@@ -144,13 +144,13 @@
                                                                         <constraints>
                                                                             <constraint firstItem="7gW-rT-Ha0" firstAttribute="top" secondItem="dgX-fv-ufO" secondAttribute="top" constant="8" id="01a-Hm-vdE"/>
                                                                             <constraint firstItem="1bl-hK-y4P" firstAttribute="centerY" secondItem="gPg-Rp-tL6" secondAttribute="centerY" id="16Z-Yk-npD"/>
-                                                                            <constraint firstItem="1bl-hK-y4P" firstAttribute="leading" secondItem="gPg-Rp-tL6" secondAttribute="trailing" constant="16" id="91J-Et-kJ3"/>
+                                                                            <constraint firstItem="1bl-hK-y4P" firstAttribute="leading" secondItem="gPg-Rp-tL6" secondAttribute="trailing" constant="8" id="91J-Et-kJ3"/>
                                                                             <constraint firstItem="gPg-Rp-tL6" firstAttribute="top" secondItem="7gW-rT-Ha0" secondAttribute="bottom" constant="8" id="B2k-MT-jPJ"/>
-                                                                            <constraint firstItem="CgT-nq-EHG" firstAttribute="leading" secondItem="1bl-hK-y4P" secondAttribute="trailing" constant="16" id="Bhu-YA-6J0"/>
+                                                                            <constraint firstItem="CgT-nq-EHG" firstAttribute="leading" secondItem="1bl-hK-y4P" secondAttribute="trailing" constant="8" id="Bhu-YA-6J0"/>
                                                                             <constraint firstItem="CgT-nq-EHG" firstAttribute="centerY" secondItem="1bl-hK-y4P" secondAttribute="centerY" id="QIi-gz-4cN"/>
                                                                             <constraint firstItem="7gW-rT-Ha0" firstAttribute="leading" secondItem="dgX-fv-ufO" secondAttribute="leading" constant="8" id="Yh2-DH-x37"/>
                                                                             <constraint firstAttribute="trailing" secondItem="7gW-rT-Ha0" secondAttribute="trailing" constant="8" id="fbR-2H-Dqv"/>
-                                                                            <constraint firstItem="gPg-Rp-tL6" firstAttribute="leading" secondItem="dgX-fv-ufO" secondAttribute="leading" constant="16" id="x9D-jk-wU1"/>
+                                                                            <constraint firstItem="gPg-Rp-tL6" firstAttribute="leading" secondItem="dgX-fv-ufO" secondAttribute="leading" constant="8" id="x9D-jk-wU1"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
@@ -160,13 +160,13 @@
                                                                     <constraint firstItem="6dg-ya-4Ca" firstAttribute="top" secondItem="Xqd-iw-uuw" secondAttribute="top" constant="16" id="A8x-2F-Nie"/>
                                                                     <constraint firstAttribute="trailing" secondItem="dgX-fv-ufO" secondAttribute="trailing" id="BwI-Vj-tXq"/>
                                                                     <constraint firstItem="onv-Og-d6R" firstAttribute="top" secondItem="6dg-ya-4Ca" secondAttribute="bottom" constant="16" id="E5l-bN-J7Q"/>
-                                                                    <constraint firstItem="onv-Og-d6R" firstAttribute="leading" secondItem="Xqd-iw-uuw" secondAttribute="leading" constant="16" id="FWY-Xk-rbX"/>
+                                                                    <constraint firstItem="onv-Og-d6R" firstAttribute="leading" secondItem="Xqd-iw-uuw" secondAttribute="leading" constant="8" id="FWY-Xk-rbX"/>
                                                                     <constraint firstAttribute="height" constant="180" id="Ndn-PV-6BP"/>
                                                                     <constraint firstItem="4ZY-Co-xua" firstAttribute="centerY" secondItem="onv-Og-d6R" secondAttribute="centerY" id="OFQ-w2-odm"/>
-                                                                    <constraint firstItem="4ZY-Co-xua" firstAttribute="leading" secondItem="onv-Og-d6R" secondAttribute="trailing" constant="16" id="XMx-j9-EFS"/>
+                                                                    <constraint firstItem="4ZY-Co-xua" firstAttribute="leading" secondItem="onv-Og-d6R" secondAttribute="trailing" constant="8" id="XMx-j9-EFS"/>
                                                                     <constraint firstAttribute="trailing" secondItem="6dg-ya-4Ca" secondAttribute="trailing" constant="8" id="dm0-YI-3Rm"/>
                                                                     <constraint firstItem="dgX-fv-ufO" firstAttribute="top" secondItem="ecj-sg-hYN" secondAttribute="bottom" constant="8" id="eai-j7-3pS"/>
-                                                                    <constraint firstItem="ecj-sg-hYN" firstAttribute="leading" secondItem="4ZY-Co-xua" secondAttribute="trailing" constant="16" id="eoq-9c-N8J"/>
+                                                                    <constraint firstItem="ecj-sg-hYN" firstAttribute="leading" secondItem="4ZY-Co-xua" secondAttribute="trailing" constant="8" id="eoq-9c-N8J"/>
                                                                     <constraint firstItem="dgX-fv-ufO" firstAttribute="leading" secondItem="Xqd-iw-uuw" secondAttribute="leading" id="ewn-Yk-XAL"/>
                                                                     <constraint firstItem="ecj-sg-hYN" firstAttribute="centerY" secondItem="4ZY-Co-xua" secondAttribute="centerY" id="nDD-Jg-XAp"/>
                                                                     <constraint firstAttribute="bottom" secondItem="dgX-fv-ufO" secondAttribute="bottom" constant="16" id="uxR-Ga-kA1"/>
@@ -436,8 +436,19 @@
                         <outlet property="btn_ChuyenKhoan" destination="ecj-sg-hYN" id="6c6-uN-aV7"/>
                         <outlet property="btn_Nam" destination="gPg-Rp-tL6" id="Cqx-md-9lh"/>
                         <outlet property="btn_Thang" destination="1bl-hK-y4P" id="8L2-ea-cKb"/>
+                        <outlet property="btn_ThongKeNam" destination="1vc-vC-UeG" id="17g-hJ-nSy"/>
+                        <outlet property="btn_ThongKeThang" destination="MAw-He-uiv" id="G6Q-Hu-XL8"/>
                         <outlet property="btn_Thu" destination="onv-Og-d6R" id="WVl-H6-Zsr"/>
                         <outlet property="btn_TuyChon" destination="CgT-nq-EHG" id="2G0-p3-FWC"/>
+                        <outlet property="btn_thongkengay" destination="J3F-cK-bbE" id="GbC-cM-vES"/>
+                        <outlet property="lbl_Nam" destination="ucY-cz-Ee6" id="vN5-eb-Qme"/>
+                        <outlet property="lbl_NamOfThang" destination="JEI-2N-tZI" id="tBa-Nu-0UI"/>
+                        <outlet property="lbl_ThangOfThang" destination="0vm-KE-YYu" id="lRa-rO-hyS"/>
+                        <outlet property="lbl_ThoiGian" destination="7gW-rT-Ha0" id="Srr-u3-vqM"/>
+                        <outlet property="lbl_Thongke" destination="Ear-2c-H3Z" id="gQY-ls-ZRO"/>
+                        <outlet property="lbl_Thongketheo" destination="6dg-ya-4Ca" id="0Fr-3n-AJV"/>
+                        <outlet property="lbl_denngay" destination="aP1-YE-QNF" id="p1F-sY-DmS"/>
+                        <outlet property="lbl_tungay" destination="wT0-k1-zsN" id="LRa-La-ZgM"/>
                         <outlet property="view_Nam" destination="sNz-dh-PAP" id="dcg-zC-cmw"/>
                         <outlet property="view_Thang" destination="YEZ-iF-5UI" id="0Wt-ZK-eRG"/>
                         <outlet property="view_ThongKe" destination="Xqd-iw-uuw" id="ULP-gE-cqj"/>

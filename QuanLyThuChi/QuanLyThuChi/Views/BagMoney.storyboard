@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Túi Tiền-->
+        <!--Tài khoản-->
         <scene sceneID="vBt-3e-wbl">
             <objects>
-                <viewController storyboardIdentifier="BagMoney" title="Túi Tiền" id="S5d-Lz-Q87" customClass="BagMoney_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BagMoney" title="Tài khoản" id="S5d-Lz-Q87" customClass="BagMoney_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aam-TR-v18"/>
                         <viewControllerLayoutGuide type="bottom" id="SFl-Cs-9fF"/>
@@ -33,7 +33,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHf-Mb-eBe">
                                                 <rect key="frame" x="0.0" y="0.0" width="304" height="532"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Túi tiền" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKM-qy-vvi">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tài khoản" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKM-qy-vvi">
                                                         <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,7 +79,7 @@
                                                         <rect key="frame" x="0.0" y="126" width="304" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên túi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h78-bl-fwx">
-                                                                <rect key="frame" x="16" y="20.5" width="80" height="21"/>
+                                                                <rect key="frame" x="16" y="21" width="80" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="80" id="vlt-cg-75O"/>
                                                                 </constraints>
@@ -94,7 +94,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loại túi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eu-fi-S7S">
-                                                                <rect key="frame" x="16" y="66.5" width="80" height="21"/>
+                                                                <rect key="frame" x="16" y="67" width="80" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="80" id="yop-gD-n87"/>
                                                                 </constraints>
@@ -125,7 +125,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tiền" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5J-ti-Q0Q">
-                                                                <rect key="frame" x="16" y="112.5" width="80" height="21"/>
+                                                                <rect key="frame" x="16" y="113" width="80" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="80" id="0A7-OI-SUe"/>
                                                                 </constraints>
@@ -202,7 +202,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng số túi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-br-ZX9">
-                                                                <rect key="frame" x="16" y="53" width="84.5" height="21"/>
+                                                                <rect key="frame" x="16" y="53" width="85" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -307,9 +307,20 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
+                        <outlet property="btn_addbagmoney" destination="htA-GF-utU" id="mjz-Ik-Z2O"/>
+                        <outlet property="btn_mylistbagmoney" destination="po7-ph-vc4" id="9K3-SQ-W7d"/>
+                        <outlet property="lbl_info" destination="r8i-z5-JxE" id="iox-hC-g2U"/>
+                        <outlet property="lbl_minusbagmoney" destination="QnM-Xs-WtY" id="oWV-r3-E0e"/>
+                        <outlet property="lbl_money" destination="J5J-ti-Q0Q" id="EDL-0L-Mbj"/>
+                        <outlet property="lbl_namebagmoney" destination="h78-bl-fwx" id="WOv-pa-Ll1"/>
                         <outlet property="lbl_sotuiam" destination="ryH-2R-Kf7" id="8v7-R5-9eG"/>
+                        <outlet property="lbl_textAddBagMoney" destination="hGD-UB-NMk" id="xpd-lz-RQA"/>
+                        <outlet property="lbl_textHeaderBagMoney" destination="bKM-qy-vvi" id="in7-Ud-LE7"/>
                         <outlet property="lbl_tongtien" destination="Yq4-Zu-07O" id="VLJ-dE-1ke"/>
                         <outlet property="lbl_tongtui" destination="nrv-N2-rbf" id="ixh-QJ-CQ8"/>
+                        <outlet property="lbl_totalmoney" destination="aVd-Wb-2Z9" id="yy6-5F-alY"/>
+                        <outlet property="lbl_totalnumberbagmoney" destination="fhn-br-ZX9" id="jWH-SR-fEh"/>
+                        <outlet property="lbl_typebagmoney" destination="9eu-fi-S7S" id="pM5-LS-Uau"/>
                         <outlet property="scrollview" destination="qIk-oe-xxf" id="ly9-Vp-ZM9"/>
                         <outlet property="txt_loaitui" destination="pbW-jL-ZQQ" id="brd-uJ-OyV"/>
                         <outlet property="txt_nametui" destination="9u4-jg-QHa" id="9Tv-jk-8gN"/>
@@ -355,7 +366,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QFc-xK-yxh" id="Dwx-pB-9PL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGz-ei-cQf">
@@ -414,7 +425,7 @@
                                         <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZcV-pe-zhg" id="JMN-SL-VER">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -434,30 +445,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="6VZ-4b-blm"/>
                     <connections>
+                        <outlet property="btn_back" destination="9zM-zO-XMs" id="QmK-F8-gjc"/>
+                        <outlet property="navi_title" destination="QsH-U2-M3z" id="rk9-hG-044"/>
                         <outlet property="table_tuitien" destination="I0s-2T-qJj" id="lgD-C2-4Pm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1BF-71-tUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1122" y="-234"/>
-        </scene>
-        <!--Detail BagMoney-->
-        <scene sceneID="Pld-HF-Zui">
-            <objects>
-                <viewController title="Detail BagMoney" id="VkP-v4-f9V" customClass="DetailBagMoney_ViewController" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6VI-PE-vkn"/>
-                        <viewControllerLayoutGuide type="bottom" id="hmC-5r-DYq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rRZ-aB-Agc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KcT-1j-X9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1990" y="-234"/>
         </scene>
     </scenes>
     <resources>

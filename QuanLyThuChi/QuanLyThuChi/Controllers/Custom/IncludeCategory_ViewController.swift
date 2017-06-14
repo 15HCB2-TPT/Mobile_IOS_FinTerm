@@ -9,11 +9,13 @@
 import UIKit
 
 class IncludeCategory_ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var lbl_thu: UILabel!
 
     @IBOutlet weak var table_ThuCategory: UITableView!
     var thucategory:[Category] = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name == 'Thu'"), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
     override func viewDidLoad() {
         super.viewDidLoad()
+        lbl_thu.text = "Thu".trans
         table_ThuCategory.dataSource = self
         table_ThuCategory.delegate = self
 

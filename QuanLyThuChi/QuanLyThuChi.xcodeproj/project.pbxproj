@@ -60,6 +60,7 @@
 		AD1FED8E1EDC2494004D6ACD /* ListCommon_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED8D1EDC2494004D6ACD /* ListCommon_ViewController.swift */; };
 		AD1FED901EDC24A2004D6ACD /* DetailCommon_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FED8F1EDC24A2004D6ACD /* DetailCommon_ViewController.swift */; };
 		ADA220241EDBEA6500416A01 /* BagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA220231EDBEA6500416A01 /* BagMoney_ViewController.swift */; };
+		ADB4F6951EF13AD000600186 /* ChooseAvaibility_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB4F6941EF13AD000600186 /* ChooseAvaibility_ViewController.swift */; };
 		F0340C8E1EEB9AE9007EBB8C /* EditRecord_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0340C8D1EEB9AE9007EBB8C /* EditRecord_ViewController.swift */; };
 		F03F42861EE70F91009D8FB4 /* SelectBagMoney_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F42851EE70F91009D8FB4 /* SelectBagMoney_ViewController.swift */; };
 		F03F42881EE71890009D8FB4 /* Records_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F42871EE71890009D8FB4 /* Records_ViewController.swift */; };
@@ -165,6 +166,7 @@
 		AD1FED8D1EDC2494004D6ACD /* ListCommon_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCommon_ViewController.swift; sourceTree = "<group>"; };
 		AD1FED8F1EDC24A2004D6ACD /* DetailCommon_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCommon_ViewController.swift; sourceTree = "<group>"; };
 		ADA220231EDBEA6500416A01 /* BagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagMoney_ViewController.swift; sourceTree = "<group>"; };
+		ADB4F6941EF13AD000600186 /* ChooseAvaibility_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAvaibility_ViewController.swift; sourceTree = "<group>"; };
 		F0340C8D1EEB9AE9007EBB8C /* EditRecord_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecord_ViewController.swift; sourceTree = "<group>"; };
 		F03F42851EE70F91009D8FB4 /* SelectBagMoney_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectBagMoney_ViewController.swift; sourceTree = "<group>"; };
 		F03F42871EE71890009D8FB4 /* Records_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Records_ViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				F074EBC51EDEBAA4001AB70C /* SelectCategory_ViewController.swift */,
 				F074EBB71EDE73E4001AB70C /* SelectCategory_TableViewCell.swift */,
 				6337D4E41EC1771D008480AD /* Money_ViewController.swift */,
+				ADB4F6941EF13AD000600186 /* ChooseAvaibility_ViewController.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				F03F42861EE70F91009D8FB4 /* SelectBagMoney_ViewController.swift in Sources */,
 				AD14BA711EC02DB2006EF32F /* TempData.swift in Sources */,
 				F074EBC61EDEBAA4001AB70C /* SelectCategory_ViewController.swift in Sources */,
+				ADB4F6951EF13AD000600186 /* ChooseAvaibility_ViewController.swift in Sources */,
 				F074EBB81EDE73E4001AB70C /* SelectCategory_TableViewCell.swift in Sources */,
 				63AD5C3F1EE429AF00C9C860 /* Category_TableViewCell.swift in Sources */,
 				631705811EDDB69300B65711 /* plus_TableViewCell.swift in Sources */,

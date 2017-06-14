@@ -32,15 +32,18 @@
             </objects>
             <point key="canvasLocation" x="-2446" y="-1957"/>
         </scene>
-        <!--Tiền Bạc-->
+        <!--Ghi chép-->
         <scene sceneID="ioU-Lw-pJh">
             <objects>
-                <navigationController title="Tiền Bạc" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="1Qp-Ry-Amg" customClass="navi_money" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tiền bạc" image="Money-80-20" selectedImage="Money-80-20" id="fuP-05-DuB"/>
+                <navigationController title="Ghi chép" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="1Qp-Ry-Amg" customClass="navi_money" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ghi chép" image="Money-80-20" selectedImage="Money-80-20" id="fuP-05-DuB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QIw-WE-Cag">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <outlet property="tabbaritem_money" destination="fuP-05-DuB" id="7H3-MJ-Tmr"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icm-7h-AlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,8 +52,8 @@
         <!--Túi Tiền-->
         <scene sceneID="fpN-mx-zFO">
             <objects>
-                <navigationController title="Túi Tiền" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="swc-nG-qg1" customClass="navi_bagmoney" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Túi tiền" image="Money Bag-80-29" selectedImage="Money Bag-80-29" id="XYa-xR-zFg"/>
+                <navigationController storyboardIdentifier="test" title="Túi Tiền" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="swc-nG-qg1" customClass="navi_bagmoney" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tài khoản" image="Money Bag-80-29" selectedImage="Money Bag-80-29" id="XYa-xR-zFg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DM8-zv-fEC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -60,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-1356" y="-2160"/>
         </scene>
-        <!--Thiết Lập-->
+        <!--Thiết lập-->
         <scene sceneID="1GO-Sz-R7X">
             <objects>
-                <navigationController title="Thiết Lập" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="afi-7k-N8I" customClass="navi_custom" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="Thiết lập" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="afi-7k-N8I" customClass="navi_custom" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Thiết lập" image="Quick Mode On Filled-100-29" selectedImage="Quick Mode On Filled-100-29" id="kdq-ZP-kVp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HQu-FK-4pl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -74,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-1356" y="-2002"/>
         </scene>
-        <!--Thống Kê-->
+        <!--Thống kê-->
         <scene sceneID="qO6-rR-q3I">
             <objects>
-                <navigationController title="Thống Kê" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="csN-47-VrP" customClass="navi_report" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="Thống kê" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="csN-47-VrP" customClass="navi_report" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Thống kê" image="Bar Chart-96-20" selectedImage="Bar Chart-96-20" id="Xam-k1-DXZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Cu-Ef-dyA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -88,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="-1356" y="-1836"/>
         </scene>
-        <!--Cài Đặt-->
+        <!--Cài đặt-->
         <scene sceneID="NVe-4O-mUc">
             <objects>
-                <navigationController title="Cài Đặt" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wdN-vV-7gD" customClass="navi_settings" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController title="Cài đặt" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wdN-vV-7gD" customClass="navi_settings" customModule="QuanLyThuChi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cài đặt" image="Settings-96-20" selectedImage="Settings-96-20" id="27b-nI-1Ha"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P9C-cv-1UQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

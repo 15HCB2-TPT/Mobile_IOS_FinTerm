@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(-1, forKey: AppConfigs.LANGUAGE_KEY)
             UserDefaults.standard.set("vi_VN", forKey: AppConfigs.CURRENCY_KEY)
         }
-        Translater.TranslaterIndex = UserDefaults.standard.integer(forKey: AppConfigs.LANGUAGE_KEY)
+        Translater.ChangeTransIndex(UserDefaults.standard.integer(forKey: AppConfigs.LANGUAGE_KEY))
         
         //seed data
         UserDefaults.standard.removeObject(forKey: AppConfigs.SEED_DATA_KEY)

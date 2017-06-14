@@ -10,10 +10,12 @@ import UIKit
 
 class ExpenseCategory_ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    @IBOutlet weak var lbl_chi: UILabel!
     @IBOutlet weak var table_ChiCategory: UITableView!
     var chicategory:[Category] = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name == 'Chi'"), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
     override func viewDidLoad() {
         super.viewDidLoad()
+        lbl_chi.text = "Chi".trans
         table_ChiCategory.dataSource = self
         table_ChiCategory.delegate = self
         

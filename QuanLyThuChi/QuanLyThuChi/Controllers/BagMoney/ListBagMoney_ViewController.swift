@@ -11,6 +11,9 @@ import UIKit
 class ListBagMoney_ViewController: UIViewController,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate {
 
     
+    @IBOutlet weak var btn_back: UIBarButtonItem!
+    @IBOutlet weak var navi_title: UINavigationItem!
+    
     var sections:[BagMoney_Type] = Database.select()
     var listBagMoney:[BagMoney] = Database.select()
     var rl = [BagMoney]()
@@ -20,10 +23,16 @@ class ListBagMoney_ViewController: UIViewController,UINavigationControllerDelega
     @IBOutlet weak var table_tuitien: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadtext()
         processSection()
         table_tuitien.delegate = self
         table_tuitien.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    func loadtext(){
+        btn_back.title = "<Trở lại".trans
+        navi_title.title = "Danh sách túi tiền".trans
     }
     
     func processSection(){
@@ -93,8 +102,8 @@ class ListBagMoney_ViewController: UIViewController,UINavigationControllerDelega
     @IBAction func deleteClick(_ sender: Any) {
         if let cell = (sender as AnyObject).superview??.superview as? plus_TableViewCell {
             let indexPath:IndexPath = table_tuitien.indexPath(for: cell)!
-            let alert = UIAlertController(title: "Cảnh báo", message: "Thu chi sẽ bị xóa theo túi tiền, bạn có muốn tiếp tục", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: { (_) in
+            let alert = UIAlertController(title: "Cảnh báo".trans, message: "Thu chi sẽ bị xóa theo túi tiền, bạn có muốn tiếp tục".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: { (_) in
                 for item in Database.select(entityName: "Money") as! [Money]{
                     if item.money_bagmoney == self.temp[indexPath.section][indexPath.row]{
                         Database.delete(object: item)
@@ -107,7 +116,7 @@ class ListBagMoney_ViewController: UIViewController,UINavigationControllerDelega
                 self.processSection()
                 self.table_tuitien.reloadData()
             }))
-            alert.addAction(UIAlertAction(title: "Hủy", style: .default, handler: {[weak alert] (_) in
+            alert.addAction(UIAlertAction(title: "Hủy".trans, style: .default, handler: {[weak alert] (_) in
                 alert?.dismiss(animated: true, completion: nil)
             }))
             self.present(alert, animated: true, completion: nil)

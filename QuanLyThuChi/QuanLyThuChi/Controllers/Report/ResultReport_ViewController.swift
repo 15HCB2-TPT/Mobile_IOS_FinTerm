@@ -49,6 +49,7 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate {
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: nil)
         pieChartDataSet.colors = colors
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        pieChartData.setValueFormatter(PieFormatter.init(doublevalues: values))
         pieChartView.data = pieChartData
         pieChartView.legend.labels = [label]
     }

@@ -16,11 +16,19 @@ class SettingController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadtext()
         // Do any additional setup after loading the view.
+        Translater.AddForm(form: self)
+        changeLan(lanValue: UserDefaults.standard.integer(forKey: AppConfigs.LANGUAGE_KEY))
+    }
+    override func transReload() {
+        loadtext()
+    }
+    func loadtext(){
+        self.title = "Cài đặt".trans
         labelLanguage.text = "Ngôn ngữ".trans
         rbVietnamese.setTitle("Tiếng Việt".trans, for: .normal)
         rbEnglish.setTitle("Tiếng Anh".trans, for: .normal)
-        changeLan(lanValue: UserDefaults.standard.integer(forKey: AppConfigs.LANGUAGE_KEY))
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,16 +38,14 @@ class SettingController: UIViewController {
     
     @IBAction func rbVietnamese_Click(_ sender: Any) {
         changeLan(lanValue: -1)
-        reload()
     }
     
     @IBAction func rbEnglish_Click(_ sender: Any) {
         changeLan(lanValue: 0)
-        reload()
     }
     
     func changeLan(lanValue: Int){
-        Translater.TranslaterIndex = lanValue
+        Translater.ChangeTransIndex(lanValue)
         if lanValue == -1 {
             UserDefaults.standard.set("vi_VN", forKey: AppConfigs.CURRENCY_KEY)
             rbVietnamese.isChecked = true
@@ -50,10 +56,6 @@ class SettingController: UIViewController {
             rbVietnamese.isChecked = false
         }
         UserDefaults.standard.set(lanValue, forKey: AppConfigs.LANGUAGE_KEY)
-    }
-    
-    func reload(){
-        AppDelegate.restart()
     }
 
 }
