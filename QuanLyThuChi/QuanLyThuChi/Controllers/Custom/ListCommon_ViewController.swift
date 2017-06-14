@@ -69,7 +69,7 @@ class ListCommon_ViewController: UIViewController,UINavigationControllerDelegate
         else{
             cell.lbl_money.textColor = UIColor.hex(string: "#e74c3c",alpha: 0.8)
         }
-        cell.lbl_money.text = String(com.money)
+        cell.lbl_money.text = com.money.cur
         return cell
     }
     
