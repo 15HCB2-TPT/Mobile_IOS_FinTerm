@@ -47,19 +47,8 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav_item.title = "Chỉnh sửa"
-        lblGhiChep.text = "Ghi chép"
+        loadtext()
         borderView(v: v)
-        lblKhoanChi.text = "Khoản chi"
-        lblKhoanThu.text = "Khoản thu"
-        lblSoTien.text = "Số tiền"
-        lblDanhMuc.text = "Danh mục"
-        lblDienGiai.text = "Diễn giải"
-        lblTaiKhoan.text = "Tài khoản"
-        lblNgay.text = "Ngày"
-        
-        btn_xong.setTitle("Lưu", for: .normal)
-        btn_xoa.setTitle("Xoá", for: .normal)
         
         txt_danhmuc.delegate = self
         txt_taikhoan.delegate = self
@@ -68,6 +57,22 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func loadtext(){
+        nav_item.title = "Chỉnh sửa".trans
+        lblGhiChep.text = "Ghi chép".trans
+        
+        lblKhoanChi.text = "Khoản chi".trans
+        lblKhoanThu.text = "Khoản thu".trans
+        lblSoTien.text = "Số tiền".trans
+        lblDanhMuc.text = "Danh mục".trans
+        lblDienGiai.text = "Diễn giải".trans
+        lblTaiKhoan.text = "Tài khoản".trans
+        lblNgay.text = "Ngày".trans
+        
+        btn_xong.setTitle("Lưu".trans, for: .normal)
+        btn_xoa.setTitle("Xoá".trans, for: .normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -174,8 +179,8 @@ class EditRecord_ViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func btn_xong_TouchUpInside(_ sender: Any) {
         if(b == nil || c == nil) {
-            let alert = UIAlertController(title: "Lỗi", message: "Danh mục và Tài khoản không được để trống.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Danh mục và Tài khoản không được để trống.".trans, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Hiểu".trans, style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else {

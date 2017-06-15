@@ -23,9 +23,14 @@ class Translater {
         "Cảnh báo": [["Warning"]],
         "Thông báo": [["Notice"]],
         "Thêm thành công!" : [["Add success!"]],
+        "Nhắc nhở":[["Notice"]],
         "Năm": [["Year"]],
         "Tháng": [["Month"]],
         "Ngày": [["Date", "Day"]],
+        "Tên":[["Name"]],
+        "Lưu":[["Save"]],
+        "Xoá":[["Delete"]],
+        "Hiểu":[["OK"]],
         
         //Settings
         "Cài đặt": [["Setting"]],
@@ -35,6 +40,19 @@ class Translater {
         
         //Money
         "Ghi chép": [["Add record"]],
+        "Danh sách ghi chép":[["List Records"]],
+        "Ghi chép nhanh":[["Fast Recording"]],
+        "Chuyển khoản":[["Transfer"]],
+        "Chỉnh sửa":[["Update record"]],
+        "Khoản chi":[["Expense"]],
+        "Khoản thu":[["Income"]],
+        "Diễn giải":[["Detail"]],
+        "Danh mục và Tài khoản không được để trống.":[["Category and Account can't empty."]],
+        "Từ TK":[["From"]],
+        "Đến TK":[["To"]],
+        "Các tài khoản không được để trống.":[["Accounts can't empty."]],
+        "Không thể chuyển trong cùng tài khoản.":[["Can't transfer in 1 account"]],
+        "Đã ghi":[["Recorded"]],
         
         //Bag Money
         "Tài khoản":[["Account"]],
@@ -58,7 +76,8 @@ class Translater {
         "Số tiền có sẵn trong túi không đúng":[["Money incorrect!"]],
         "Danh sách túi tiền": [["Accounts list"]],
         "Thu chi sẽ bị xóa theo túi tiền, bạn có muốn tiếp tục":[["This behavior will remove all record of this Account. Are you sure?"]],
-        
+        "Bạn muốn ghi chép nhanh mục này chứ?":[["Fast record this selected?"]],
+        "Ghi chép nhanh thành công":[["Record success"]],
         //Custom
         "Danh mục thu chi": [["Categories list"]],
         "Danh sách thiết lập nhanh":[["Availabilities list"]],
@@ -79,7 +98,15 @@ class Translater {
         "Tên thiết lập": [["Name"]],
         "Tên thiết lập nhanh không được để trống!": [["Name can't empty!"]],
         "Tên thiết lập đã tồn tại, hãy đặt tên khác.": [["This name existed, please try another name."]],
-
+        "Tên thiết lập nhanh đã tồn tại.":[["This name existed"]],
+        "Danh mục chi": [["Expense Categories"]],
+        "Danh mục thu":[["Income Categories"]],
+        "Cập nhật thiết lập": [["Update custom"]],
+        "Hãy chọn túi tiền!":[["Please choose account."]],
+        "Hãy chọn danh mục cho thiết lập nhanh.": [["Please choose category."]],
+        "Số tiền không đúng":[["Money Incorrect"]],
+        "Bạn chưa có danh mục thu nào. Hãy tạo 1 cái trước." : [["Please insert new category first."]],
+        
         //Report
         "Thống kê": [["Report"]],
         "Từ ngày":[["From"]],
@@ -88,8 +115,8 @@ class Translater {
         "Thống kê theo":[["Report for"]],
         "Thu":[["Income"]],
         "Chi": [["Expense"]],
-        "Chuyển khoản": [["Transfer"]],
-        "Tùy chọn":[["Option"]]
+        "Tùy chọn":[["Option"]],
+        "Không có dữ liệu để thống kê":[["Don't have data to calculate"]]
         
         
     ]

@@ -34,7 +34,7 @@ class SelectBagMoney_ViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nav_item.title = "Tài khoản"
+        nav_item.title = "Tài khoản".trans
         tblBagMoney.delegate = self
         tblBagMoney.dataSource = self
     }

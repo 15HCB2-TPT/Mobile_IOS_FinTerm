@@ -422,7 +422,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="145-Fi-SR5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="PXo-Tu-naH">
+                                    <navigationItem title="Thống kê" id="PXo-Tu-naH">
                                         <barButtonItem key="leftBarButtonItem" title="&lt;Trở lại" id="Rsv-wU-gDB">
                                             <connections>
                                                 <action selector="BackClick:" destination="rU1-ae-G0q" id="fb4-2H-8jX"/>

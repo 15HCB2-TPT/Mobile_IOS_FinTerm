@@ -32,7 +32,7 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate,UINavigati
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadtext()
         processData()
         let label = ["Thu","Chi"]
         let value = [thu,chi]
@@ -42,7 +42,7 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate,UINavigati
         
         
         if thu == 0 && chi == 0 && listreportitem.count == 0 {
-            let alerttemp = UIAlertController(title: "Thông báo", message: "Không có dữ liệu để thống kê", preferredStyle: .alert)
+            let alerttemp = UIAlertController(title: "Thông báo".trans, message: "Không có dữ liệu để thống kê".trans, preferredStyle: .alert)
             self.present(alerttemp,animated:true,completion: nil)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3, execute: {
                 alerttemp.dismiss(animated: true, completion: nil)
@@ -51,6 +51,11 @@ class ResultReport_ViewController: UIViewController,ChartViewDelegate,UINavigati
         }
         
         
+    }
+    
+    func loadtext(){
+        btn_back.title = "<Trở lại".trans
+        title_report.title = "Thống kê".trans
     }
     
     func setChart(dataPoints: [String], values: [Double]) {

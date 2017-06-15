@@ -10,12 +10,14 @@ import UIKit
 
 class ChooseInclude_ViewController: UIViewController,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var title_danhmucthu: UINavigationItem!
+    @IBOutlet weak var btn_back: UIBarButtonItem!
     @IBOutlet weak var table_categoryThu: UITableView!
     var thucategory:[Category] = Database.select(entityName: "Category", predicater: NSPredicate(format: "category_type.name == 'Thu'"), sorter: [NSSortDescriptor(key: "name", ascending: true)]) as! [Category]
     var customdelegate:SelectedCategory? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadtext()
         table_categoryThu.delegate = self
         table_categoryThu.dataSource = self
         // Do any additional setup after loading the view.
@@ -30,6 +32,10 @@ class ChooseInclude_ViewController: UIViewController,UINavigationControllerDeleg
         navigationController?.popViewController(animated: true)
     }
 
+    func loadtext(){
+        btn_back.title = "<Trở lại".trans
+        title_danhmucthu.title = "Danh mục thu".trans
+    }
     //tableview override
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

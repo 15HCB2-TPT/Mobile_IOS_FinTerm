@@ -10,6 +10,17 @@ import UIKit
 
 class DetailCommon_ViewController: UIViewController,UINavigationControllerDelegate,UIPickerViewDelegate,UITextFieldDelegate {
 
+    
+
+    @IBOutlet weak var title_capnhatthietlap: UINavigationItem!
+    @IBOutlet weak var lbl_name: UILabel!
+    @IBOutlet weak var lbl_taikhoan: UILabel!
+    @IBOutlet weak var lbl_loaidung: UILabel!
+    @IBOutlet weak var lbl_danhmuc: UILabel!
+    @IBOutlet weak var lbl_sotien: UILabel!
+    @IBOutlet weak var btn_luu: UIButton!
+    @IBOutlet weak var btn_huy: UIButton!
+    
     var common = Common()
     var pickerview_tuitien = UIPickerView()
     var pickerview_thuchi = UIPickerView()
@@ -31,14 +42,26 @@ class DetailCommon_ViewController: UIViewController,UINavigationControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         processload()
+        loadtext()
         // Do any additional setup after loading the view.
+    }
+    
+    func loadtext(){
+        title_capnhatthietlap.title = "Cập nhật thiết lập".trans
+        lbl_name.text = "Tên".trans
+        lbl_taikhoan.text = "Tài khoản".trans
+        lbl_loaidung.text = "Loại phí".trans
+        lbl_danhmuc.text = "Danh mục".trans
+        lbl_sotien.text = "Số tiền".trans
+        btn_huy.setTitle("Hủy".trans, for: .normal)
+        btn_luu.setTitle("Lưu".trans, for: .normal)
     }
     
     func customtoolbar_pickerview(){
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(title: "Xong", style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
+        let doneBarButton = UIBarButtonItem(title: "Xong".trans, style: .plain, target: view, action: #selector(UIView.endEditing(_:)))
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         txt_tuitien.inputAccessoryView = keyboardToolbar
         txt_danhmuc.inputAccessoryView = keyboardToolbar
@@ -78,34 +101,34 @@ class DetailCommon_ViewController: UIViewController,UINavigationControllerDelega
 
     @IBAction func SaveClick(_ sender: Any) {
         if txt_ten.text == "" {
-            let alert = UIAlertController(title: "Lỗi", message: "Tên không được để trống.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Tên thiết lập nhanh không được để trống!".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
         let temp = Database.select(entityName: "Common", predicater: NSPredicate(format: "name = %@ AND category.category_type.name = %@",argumentArray: [common.name!,txt_thuchi.text!]), sorter: nil) as! [Common]
         if temp.count >= 2 {
-            let alert = UIAlertController(title: "Lỗi", message: "Tên thiết lập nhanh đã tồn tại.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Tên thiết lập nhanh đã tồn tại.".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
         if txt_tuitien.text == "" {
-            let alert = UIAlertController(title: "Lỗi", message: "Hãy chọn túi tiền!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Hãy chọn túi tiền!".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
         if Double(txt_sotien.text!) == nil {
-            let alert = UIAlertController(title: "Lỗi", message: "Số tiền không đúng", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Số tiền không đúng".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert,animated: true,completion: nil)
             return
         }
         
         if common.category == nil {
-            let alert = UIAlertController(title: "Lỗi", message: "Hãy chọn danh mục cho thiết lập nhanh.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+            let alert = UIAlertController(title: "Lỗi".trans, message: "Hãy chọn danh mục cho thiết lập nhanh.".trans, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
             self.present(alert,animated: true,completion: nil)
             return
         }
@@ -189,8 +212,8 @@ class DetailCommon_ViewController: UIViewController,UINavigationControllerDelega
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == txt_tuitien {
             if listtuitien.count <= 0 {
-                let alert = UIAlertController(title: "Nhắc nhở", message: "Bạn chưa có túi tiền nào. Hãy tạo 1 cái trước.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+                let alert = UIAlertController(title: "Nhắc nhở".trans, message: "Bạn chưa có túi tiền nào, hãy thêm túi tiền mới trước!".trans, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return false
             }
@@ -201,8 +224,8 @@ class DetailCommon_ViewController: UIViewController,UINavigationControllerDelega
         if textField == txt_danhmuc {
             if txt_thuchi.text=="Thu" {
                 if listdanhmucthu.count <= 0 {
-                    let alert = UIAlertController(title: "Nhắc nhở", message: "Bạn chưa có danh mục thu nào. Hãy tạo 1 cái trước.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Xong", style: .default, handler: nil))
+                    let alert = UIAlertController(title: "Nhắc nhở".trans, message: "Bạn chưa có danh mục thu nào. Hãy tạo 1 cái trước.".trans, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Xong".trans, style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                     return false
                 }else{

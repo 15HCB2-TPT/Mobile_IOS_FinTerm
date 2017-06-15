@@ -21,7 +21,13 @@ class MainTabBarController: UITabBarController {
         Translater.AddForm(form: self)
         for item in tabbar.items! {
             titles.append(item.title!)
+            do {
+                try item.title = item.title?.trans
+            } catch  {
+                
+            }
         }
+
         
         customTabbar()
         // Do any additional setup after loading the view.

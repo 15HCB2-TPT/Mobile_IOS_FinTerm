@@ -19,16 +19,29 @@ class Money_ViewController: UIViewController,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Ghi chép".trans
+        loadtext()
+        Translater.AddForm(form: self)
+        
         borderView(v: view_dsghichep)
-        btn_dsghichep.setTitle("Danh sách ghi chép", for: .normal)
+        
         borderView(v: view_ghichepnhanh)
-        btn_ghichepnhanh.setTitle("Ghi chép nhanh", for: .normal)
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         // Do any additional setup after loading the view.
+    }
+    
+    override func transReload() {
+        loadtext()
+    }
+    func loadtext(){
+        self.title = "Ghi chép".trans
+        btn_dsghichep.setTitle("Danh sách ghi chép".trans, for: .normal)
+        btn_ghichepnhanh.setTitle("Ghi chép nhanh".trans, for: .normal)
+        segmented.setTitle("Ghi chép".trans, forSegmentAt: 0)
+        segmented.setTitle("Chuyển khoản".trans, forSegmentAt: 1)
     }
 
     override func didReceiveMemoryWarning() {
